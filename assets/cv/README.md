@@ -1,0 +1,1 @@
+Coloca tu CV en PDF como `CV.pdf` en esta carpeta.
