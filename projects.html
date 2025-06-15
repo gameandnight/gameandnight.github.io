@@ -91,56 +91,66 @@
       </div>
       <div class="col-md-8">
         <h3>Detección de señales de tráfico con YOLO11x</h3>
-        <p>
-          Fine-tuning de YOLO11x para detección de señales de tráfico en tiempo real usando la webcam.
-        </p>
-        <p>
-          <strong>Pipeline:</strong>
+        <p>Fine-tuning de YOLO11x para detección de señales de tráfico en tiempo real usando la webcam.</p>
+        <p><strong>Pipeline:</strong>
           <ul>
-            <li>Etiquetado con CVAT, reforzando clases menos representadas y exportando en formato YOLO.</li>
-            <li>Entrenamiento local en GPU: variantes YOLO11n → YOLO11x, ajustes de batch size, early-stopping.</li>
-            <li>Pruebas en tiempo real: detección vía webcam y lectura de nombre de señal mediante síntesis de voz.</li>
-            <li>Optimización: reducción de clases activas en prueba real, balance de dataset para mejorar precisión y reducir falsos positivos.</li>
+            <li>Etiquetado con CVAT y exportación al formato YOLO.</li>
+            <li>Entrenamiento en GPU: variantes YOLO11n → YOLO11x, ajuste de hiperparámetros.</li>
+            <li>Pruebas en tiempo real: webcam, detección y síntesis de voz de la señal detectada.</li>
+            <li>Optimización de clases y balanceo para reducir falsos positivos.</li>
           </ul>
         </p>
         <p>
-          <!-- <a href="https://github.com/gameandnight/deteccion-senales" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
-          <!-- Si tienes demo online, descomenta y reemplaza enlace: -->
+          <a href="https://github.com/gameandnight/deteccion-senales" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a>
           <!-- <a href="https://tu-demo.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
-          <a href="https://www.youtube.com/watch?v=ID_DEL_VIDEO" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
+          <a href="https://www.youtube.com/watch?v=ID_VIDEO_DETECCION" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
         </p>
-        <!-- Embed de vídeo (opcional) -->
-        <!--
+        <!-- Opcional embed:
         <div class="mt-3">
           <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/ID_DEL_VIDEO" title="Demo detección señales" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/ID_VIDEO_DETECCION" title="Demo detección señales" allowfullscreen></iframe>
           </div>
         </div>
         -->
       </div>
     </div>
 
-    <!-- Aquí puedes añadir más bloques para otros proyectos -->
-    <!-- Por ejemplo: copia el siguiente bloque, cambia imagen, título y enlaces -->
-    <!--
+    <!-- Proyecto: Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter) -->
     <div class="row mb-4">
       <div class="col-md-4">
-        <img src="/assets/images/otro-proyecto.jpg" alt="Otro Proyecto" class="img-fluid rounded">
+        <img src="/assets/images/mini-juegos-gestos.jpg" alt="Suite de Mini Juegos controlados con gestos" class="img-fluid rounded">
       </div>
       <div class="col-md-8">
-        <h3>Título de Otro Proyecto</h3>
-        <p>Descripción breve del proyecto...</p>
-        <p>
-          <a href="https://github.com/gameandnight/otro-proyecto" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a>
-          <a href="https://demo.otro-proyecto.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a>
-          <a href="https://www.youtube.com/watch?v=ID_OTRO_VIDEO" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
+        <h3>Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter)</h3>
+        <p>Aplicación en Python que ofrece varios mini juegos interactivos controlados mediante gestos o pose corporal, usando OpenCV y una interfaz Tkinter.</p>
+        <p><strong>Descripción general / Pipeline:</strong>
+          <ul>
+            <li>Launcher en Tkinter con botones para cada mini juego: “Cuerpo”, “Dibujar”, “Atrapa la pelota”, “Piedra, Papel o Tijera” y “Snake” :contentReference[oaicite:6]{index=6}.</li>
+            <li>Para detección de landmarks de mano y pose se emplea CVZone PoseModule/HandTracking, facilitando el uso de MediaPipe para extraer coordenadas clave :contentReference[oaicite:7]{index=7}.</li>
+            <li>Lógica de cada mini juego: captura de cámara con `cv2.VideoCapture`, procesamiento de frames, interpretación de gestos para mover sprites, dibujar o decidir jugadas.</li>
+            <li>Manejo de eventos de teclado (‘q’ para salir) y retorno al menú sin cerrar la app por completo.</li>
+            <li>Pruebas y calibraciones para asegurar suficiente FPS y detección estable en distintas condiciones de iluminación.</li>
+          </ul>
         </p>
+        <p>
+          <a href="https://github.com/gameandnight/mini-juegos-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a>
+          <!-- <a href="https://tu-demo-mini-juegos.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+          <a href="https://www.youtube.com/watch?v=ID_VIDEO_MINIJUEGOS" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
+        </p>
+        <!-- Opcional embed:
+        <div class="mt-3">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/ID_VIDEO_MINIJUEGOS" title="Demo Mini Juegos controlados con gestos" allowfullscreen></iframe>
+          </div>
+        </div>
+        -->
       </div>
     </div>
-    -->
 
+    <!-- Más proyectos: duplica bloques anteriores y ajusta -->
   </div>
 </section>
+
 
 
   <footer class="bg-dark text-white text-center py-3">
