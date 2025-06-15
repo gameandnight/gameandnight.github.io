@@ -125,7 +125,7 @@
         <p>Aplicación en Python que ofrece varios mini juegos interactivos controlados mediante gestos o pose corporal, usando OpenCV y una interfaz Tkinter.</p>
         <p><strong>Descripción general / Pipeline:</strong>
           <ul>
-            <li>Launcher en Tkinter con botones para cada mini juego: “Cuerpo”, "Manos", “Dibujar”, “Atrapa la pelota”, “Piedra, Papel o Tijera” y “Snake”.</li>
+            <li>Launcher en Tkinter con botones para cada mini juego: "Manos", “Cuerpo”, “Dibujar”, “Atrapa la pelota”, “Piedra, Papel o Tijera” y “Snake”.</li>
             <li>Para detección de landmarks de mano y pose se emplea CVZone PoseModule/HandTracking, facilitando el uso de MediaPipe para extraer coordenadas clave.</li>
             <li>Lógica de cada mini juego: captura de cámara con `cv2.VideoCapture`, procesamiento de frames, interpretación de gestos para mover sprites, dibujar o decidir jugadas.</li>
             <li>Manejo de eventos de teclado (‘q’ para salir) y retorno al menú sin cerrar la app por completo.</li>
