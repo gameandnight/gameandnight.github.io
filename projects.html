@@ -111,6 +111,69 @@
     </div>
   </section>
 
+  <section class="bg-light py-5">
+  <div class="container">
+    <h1>Proyectos Destacados</h1>
+
+    <!-- Proyecto: Detección de señales de tráfico con YOLO11x -->
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <img src="/assets/images/deteccion-senales.jpg" alt="Detección de señales de tráfico con YOLO11x" class="img-fluid rounded">
+      </div>
+      <div class="col-md-8">
+        <h3>Detección de señales de tráfico con YOLO11x</h3>
+        <p>
+          Fine-tuning de YOLO11x para detección de señales de tráfico en tiempo real usando la webcam.
+        </p>
+        <p>
+          <strong>Pipeline:</strong>
+          <ul>
+            <li>Etiquetado con CVAT, reforzando clases menos representadas y exportando en formato YOLO.</li>
+            <li>Entrenamiento local en GPU: variantes YOLO11n → YOLO11x, ajustes de batch size, early-stopping.</li>
+            <li>Pruebas en tiempo real: detección vía webcam y lectura de nombre de señal mediante síntesis de voz.</li>
+            <li>Optimización: reducción de clases activas en prueba real, balance de dataset para mejorar precisión y reducir falsos positivos.</li>
+          </ul>
+        </p>
+        <p>
+          <a href="https://github.com/gameandnight/deteccion-senales" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a>
+          <!-- Si tienes demo online, descomenta y reemplaza enlace: -->
+          <!-- <a href="https://tu-demo.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+          <a href="https://www.youtube.com/watch?v=ID_DEL_VIDEO" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
+        </p>
+        <!-- Embed de vídeo (opcional) -->
+        <!--
+        <div class="mt-3">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/ID_DEL_VIDEO" title="Demo detección señales" allowfullscreen></iframe>
+          </div>
+        </div>
+        -->
+      </div>
+    </div>
+
+    <!-- Aquí puedes añadir más bloques para otros proyectos -->
+    <!-- Por ejemplo: copia el siguiente bloque, cambia imagen, título y enlaces -->
+    <!--
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <img src="/assets/images/otro-proyecto.jpg" alt="Otro Proyecto" class="img-fluid rounded">
+      </div>
+      <div class="col-md-8">
+        <h3>Título de Otro Proyecto</h3>
+        <p>Descripción breve del proyecto...</p>
+        <p>
+          <a href="https://github.com/gameandnight/otro-proyecto" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a>
+          <a href="https://demo.otro-proyecto.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a>
+          <a href="https://www.youtube.com/watch?v=ID_OTRO_VIDEO" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
+        </p>
+      </div>
+    </div>
+    -->
+
+  </div>
+</section>
+
+
   <footer class="bg-dark text-white text-center py-3">
     <div class="container"><small>&copy; 2025 Iker Redondo Serra</small></div>
   </footer>
