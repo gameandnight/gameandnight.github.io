@@ -31,6 +31,10 @@
         height: 200px; /* Ajusta la altura según convenga */
         object-fit: cover;
       }
+      /* Margen inferior entre imágenes apiladas */
+      .project-img + .project-img {
+        margin-top: 0.5rem;
+      }
       /* Opcional: si quieres que la columna de imagen no se encoja demasiado en pantallas pequeñas */
       @media (min-width: 768px) {
         .col-md-4 {
@@ -74,8 +78,8 @@
         <h1>Proyectos Destacados</h1>
 
         <!-- Proyecto: Detección de señales de tráfico con YOLO11x -->
-        <div class="row mb-4 align-items-center">
-          <div class="col-md-4 d-flex justify-content-center">
+        <div class="row mb-4 align-items-start">
+          <div class="col-md-4 d-flex flex-column align-items-center">
             <img
               src="/assets/images/deteccion-senales.jpg"
               alt="Detección de señales de tráfico con YOLO11x"
@@ -108,8 +112,8 @@
         </div>
 
         <!-- Proyecto: Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter) -->
-        <div class="row mb-4 align-items-center">
-          <div class="col-md-4 d-flex justify-content-center">
+        <div class="row mb-4 align-items-start">
+          <div class="col-md-4 d-flex flex-column align-items-center">
             <img
               src="/assets/images/mini-juegos-gestos.jpg"
               alt="Suite de Mini Juegos controlados con gestos"
@@ -143,14 +147,20 @@
         </div>
 
         <!-- Proyecto: Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter) -->
-        <div class="row mb-4 align-items-center">
-          <div class="col-md-4 d-flex justify-content-center">
-            <!-- Imagen representativa: sube captura en assets/images/trivial-gestos.jpg -->
+        <div class="row mb-4 align-items-start">
+          <div class="col-md-4 d-flex flex-column align-items-center">
+            <!-- Múltiples imágenes apiladas verticalmente -->
             <img
-              src="/assets/images/trivial-gestos.jpg"
-              alt="Juego de Trivial controlado con gestos"
+              src="/assets/images/trivial-gestos-1.jpg"
+              alt="Juego de Trivial - captura 1"
               class="img-fluid rounded project-img"
             >
+            <img
+              src="/assets/images/trivial-gestos-2.jpg"
+              alt="Juego de Trivial - captura 2"
+              class="img-fluid rounded project-img"
+            >
+            <!-- Puedes añadir más imágenes si deseas, con la misma clase .project-img -->
           </div>
           <div class="col-md-8">
             <h3>Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter)</h3>
@@ -231,14 +241,25 @@
         </div>
 
         <!-- Proyecto: Juego de Plataformas y Shooter de Naves controlado con gestos RPS -->
-        <div class="row mb-4 align-items-center">
-          <div class="col-md-4 d-flex justify-content-center">
-            <!-- Imagen representativa: sube capturas de cada nivel en assets/images/ -->
+        <div class="row mb-4 align-items-start">
+          <div class="col-md-4 d-flex flex-column align-items-center">
+            <!-- Múltiples imágenes apiladas verticalmente -->
             <img
-              src="/assets/images/juego.jpg"
-              alt="Juego Plataformas y Naves controlado con gestos"
+              src="/assets/images/juego-nivel1.jpg"
+              alt="Juego Plataformas - Nivel 1"
               class="img-fluid rounded project-img"
             >
+            <img
+              src="/assets/images/juego-nivel2.jpg"
+              alt="Juego Plataformas - Nivel 2"
+              class="img-fluid rounded project-img"
+            >
+            <img
+              src="/assets/images/juego-nivel3.jpg"
+              alt="Juego Shooter de Naves - Nivel 3"
+              class="img-fluid rounded project-img"
+            >
+            <!-- Si deseas más capturas, añade más <img> con la clase project-img -->
           </div>
           <div class="col-md-8">
             <h3>Juego de Plataformas y Shooter de Naves controlado con gestos RPS</h3>
@@ -255,7 +276,13 @@
                   <li><code>player.py</code> y <code>spaceship.py</code>: Definen las clases de entidad del jugador: atributos como posición, velocidad, animaciones o sprites, métodos de actualización de posición, colisiones y dibujo en pantalla.</li>
                   <li><code>levels.py</code>: Definición de cada nivel de plataforma (coordenadas de bloques, obstáculos, nubes, trees, enemigos) y funciones para colisiones y generación de contenido procedimental o estático según nivel. También patrones para shooter (enemigos, spawn, boss).</li>
                   <li><code>sound.py</code>: Inicialización y reproducción de música de fondo y efectos de sonido (salto, disparo, explosiones, boss defeat), usando <code>pygame.mixer</code> u otra librería de audio.</li>
-                  <li><code>assets/</code>: Carpeta con imágenes (fondos: <code>background1.png</code>, <code>background2.png</code>..., imágenes de naves, enemigos, sprites de gesto: <code>Rock.png</code>, <code>Paper.png</code>, <code>Scissors.png</code> para mostrar al usuario zona de detección), sonidos (<code>jump.wav</code>, <code>shoot.wav</code>, <code>explosion.wav</code>, etc.), configuraciones JSON o CSV para parámetros de niveles o patrones de enemigo.</li>
+                  <li><code>assets/</code>: Carpeta con imágenes y sonidos (fondos, sprites, gestos, efectos). Ejemplos:
+                    <ul>
+                      <li><code>assets/images/juego-nivel1.jpg</code>, <code>juego-nivel2.jpg</code>, <code>juego-nivel3.jpg</code> para capturas de cada nivel.</li>
+                      <li><code>assets/gestos/Rock.png</code>, <code>Paper.png</code>, <code>Scissors.png</code> para feedback de detección de gesto.</li>
+                      <li><code>assets/sounds/jump.wav</code>, <code>shoot.wav</code>, <code>explosion.wav</code>, <code>boss.wav</code>, etc.</li>
+                    </ul>
+                  </li>
                 </ul>
               </li>
               <li><strong>Interfaz de inicio / menú:</strong>
@@ -275,90 +302,79 @@
                       <li><strong>“tijeras”</strong>: en plataformas se mapea a “retroceder” o “acción secundaria” (por ejemplo, deslizarse o agacharse); en shooter, mapea a “bajar” o “cambiar arma/escudo”.</li>
                     </ul>
                   </li>
-                  <li>En pantalla de juego, se puede mostrar un recuadro pequeño con feed de cámara y/o íconos de <code>Rock.png</code>, <code>Paper.png</code>, <code>Scissors.png</code> para guiar al usuario y confirmar gesto detectado, ayudando a calibrar posición de la mano.</li>
+                  <li>En pantalla de juego, se puede mostrar un recuadro pequeño con feed de cámara y/o íconos de gesto para guiar al usuario y confirmar gesto detectado.</li>
                 </ul>
               </li>
               <li><strong>Niveles de Plataformas (Level 1 y Level 2):</strong>
                 <ul>
-                  <li>Datos de nivel cargados desde <code>levels.py</code>: arrays de bloques, obstáculos, nubes, árboles y enemigos. Level 2 añade complejidad: plataformas móviles, enemigos básicos con patrones de movimiento.</li>
-                  <li>Clase <code>Player</code> en <code>player.py</code> gestiona posición, velocidad vertical (gravedad), colisiones con bloques y enemigos. Según gesto:
+                  <li>Datos de nivel cargados desde <code>levels.py</code>: arrays de bloques, obstáculos, nubes, árboles y enemigos. Level 2 añade complejidad: plataformas móviles, enemigos con patrones de movimiento.</li>
+                  <li>Clase <code>Player</code> gestiona posición, velocidad vertical (gravedad), colisiones con bloques y enemigos. Según gesto:
                     <ul>
-                      <li>“piedra”: mueve al jugador hacia la derecha con velocidad definida.</li>
-                      <li>“papel”: activa salto (ajustando <code>player.velocity_y</code>), con animación de salto y sonido (<code>jump.wav</code>).</li>
-                      <li>“tijeras”: acción secundaria (p.ej. agacharse, deslizarse o disparo de proyectil en plataformas, según diseño), con animación y sonido opcional.</li>
+                      <li>“piedra”: mueve al jugador hacia la derecha.</li>
+                      <li>“papel”: activa salto.</li>
+                      <li>“tijeras”: acción secundaria (agacharse, deslizarse o disparar proyectil en plataformas).</li>
                     </ul>
                   </li>
-                  <li>En cada iteración del bucle de <code>modePlatform</code>:
+                  <li>En cada iteración de <code>modePlatform</code>:
                     <ul>
-                      <li>Se actualiza posición del jugador y posición de scroll (scroll_x) para simular avance por el nivel.</li>
-                      <li><code>pantalla.draw_parallax_background</code> dibuja fondo con efecto parallax según scroll_x.</li>
-                      <li><code>pantalla.draw_obstacles</code>, <code>draw_blocks</code>, <code>draw_powerups</code> dibujan elementos del nivel.</li>
-                      <li>Se detectan colisiones mediante funciones en <code>levels.py</code> (por ejemplo, colisión jugador-plataforma, jugador-enemigo). Si colisión con enemigo: restar vida o reiniciar punto de control.</li>
-                      <li>Se reproduce música de fondo y efectos mediante <code>sound.play_music</code> y <code>play_sound</code> (salto, impacto, recogida de power-up).</li>
-                      <li>Al completar todos los bloques o alcanzar meta: marcar nivel completado y mostrar mensaje “Nivel completado” en pantalla (texto centrado). Opcionalmente esperar a que el jugador presione una tecla (‘I’) o gesto específico para volver al menú.</li>
-                      <li>Si vida llega a cero, mostrar “Game Over” y regresar al menú o reiniciar nivel.</li>
+                      <li>Actualizar posición del jugador y scroll para simular avance.</li>
+                      <li>Dibujo de fondo parallax, bloques, obstáculos, elementos con funciones de <code>pantalla.py</code>.</li>
+                      <li>Detección de colisiones y gestión de vida o punto de control.</li>
+                      <li>Reproducción de música y efectos con <code>sound.py</code>.</li>
+                      <li>Al completar el nivel: mostrar “Nivel completado” y esperar entrada para volver al menú.</li>
+                      <li>Si vida llega a cero: “Game Over” y opción de reiniciar o volver al menú.</li>
                     </ul>
                   </li>
-                  <li>Configuraciones de dificultad: en nivel 2 se incrementa velocidad de scroll, frecuencia de enemigos, mayor altitud de salto requerida o más plataformas móviles.</li>
+                  <li>Configuraciones de dificultad: nivel 2 mayor velocidad de scroll, más enemigos, saltos más altos o plataformas móviles.</li>
                 </ul>
               </li>
               <li><strong>Nivel Shooter de Naves (Level 3):</strong>
                 <ul>
-                  <li>Fondo espacial dibujado con <code>pantalla.draw_parallax_background</code> usando imágenes de <code>assets/backgrounds/espacio.jpg</code> o similares.</li>
-                  <li>Clase <code>Spaceship</code> en <code>spaceship.py</code> maneja la nave del jugador: posición inicial, animaciones o rotación si aplica, vida y disparos.</li>
-                  <li>Mapeo de gestos para shooter:
+                  <li>Fondo espacial dibujado con <code>pantalla.draw_parallax_background</code> usando imágenes en <code>assets/backgrounds/espacio.jpg</code>.</li>
+                  <li>Clase <code>Spaceship</code>: posición, animaciones, vida y disparos.</li>
+                  <li>Mapeo de gestos:
                     <ul>
-                      <li>“piedra”: movimiento vertical (por ejemplo, subir o avance lateral leve según diseño).</li>
-                      <li>“papel”: disparo principal (crear proyectil en posición de la nave, con efecto visual y sonido “shoot.wav”).</li>
-                      <li>“tijeras”: activar escudo o cambiar arma (por ejemplo, modo ráfaga, misil especial), con animación y sonido asociado.</li>
+                      <li>“piedra”: mover nave (subir o avance lateral leve).</li>
+                      <li>“papel”: disparo principal (crear proyectil con efecto y sonido).</li>
+                      <li>“tijeras”: activar escudo o cambiar arma.</li>
                     </ul>
                   </li>
-                  <li>Generación de enemigos y obstáculos:
-                    <ul>
-                      <li>Patrones definidos en <code>levels.py</code> o en configuraciones JSON: oleadas de enemigos con posiciones y comportamientos.</li>
-                      <li>Scroll automático: el nivel avanza sin intervención; el jugador debe reaccionar con gestos para disparar o esquivar.</li>
-                    </ul>
-                  </li>
+                  <li>Generación de enemigos y obstáculos con patrones en JSON o <code>levels.py</code>, scroll automático del nivel.</li>
                   <li>Boss final:
                     <ul>
-                      <li>Al finalizar oleadas, aparece sprite de boss (<code>assets/backgrounds/boss3.png</code> u otro), con patrones de ataque (disparos dirigidos, barreras). Mapea gestos para esquivar/defender y atacar: “papel” dispara contra boss, “tijeras” activa maniobra evasiva o cambio de arma, “piedra” puede servir para recargar o subir posición.</li>
-                      <li>Gestión de vida del boss y del jugador: actualizar barras en UI (<code>draw_ui</code>), reproducir efectos (explosión final, sonido de victoria).</li>
+                      <li>Aparece sprite de boss con patrones de ataque. Mapear gestos para atacar, esquivar o recargar.</li>
+                      <li>Gestión de vida y UI: mostrar barras de vida, reproducir efectos de explosión y victoria.</li>
                     </ul>
                   </li>
-                  <li>Colisiones:
-                    <ul>
-                      <li>Entre disparos del jugador y enemigos/boss: detonaciones con animación y sonido.</li>
-                      <li>Entre la nave y disparos enemigos: restar vida o terminar si vida=0.</li>
-                    </ul>
-                  </li>
-                  <li>Al derrotar al boss: mostrar “Jefe derrotado” con texto centrado; reproducir música de victoria; esperar entrada de usuario (tecla o gesto) para volver al menú principal.</li>
+                  <li>Colisiones: disparos vs enemigos/boss y nave vs disparos enemigos, gestionando vida.</li>
+                  <li>Al derrotar al boss: mostrar “Jefe derrotado”, reproducir música de victoria y esperar input para volver al menú.</li>
                 </ul>
               </li>
               <li><strong>Detección de teclado / gestos adicionales:</strong>
                 <ul>
-                  <li>Permite pulsar ‘q’ para salir de cualquier modo y regresar al menú.</li>
-                  <li>Opcionalmente, un gesto especial o combinación (por ejemplo, mantener “papel” + “tijeras”) podría pausar o reiniciar.</li>
+                  <li>‘q’ para salir de cualquier modo y regresar al menú.</li>
+                  <li>Gesto especial opcional para pausar/reiniciar.</li>
                 </ul>
               </li>
               <li><strong>Retroalimentación visual y audio:</strong>
                 <ul>
-                  <li>En cada acción clave, se dibuja texto en pantalla con <code>cv2.putText</code> o Pygame <code>font.render</code>: “Salto”, “Disparo”, “Escudo activado”, “Vida: X”.</li>
-                  <li>Se reproducen sonidos vía <code>pygame.mixer</code> (sonidos de salto, disparo, explosión, música de fondo, alerta de vida baja).</li>
-                  <li>Opcional síntesis de voz (gTTS) para narrar eventos clave (“Nivel completado”, “Jefe derrotado”), aunque en este proyecto puede usarse texto y sonidos pregrabados.</li>
+                  <li>Dibujo de texto en pantalla (ej. “Salto”, “Disparo”, “Vida: X”) con <code>cv2.putText</code> o Pygame <code>font.render</code>.</li>
+                  <li>Reproducción de sonidos con <code>pygame.mixer</code> (salto, disparo, explosión, música de fondo, alerta de vida baja).</li>
+                  <li>Opcional síntesis de voz (gTTS) para narrar eventos clave (“Nivel completado”, “Jefe derrotado”).</li>
                 </ul>
               </li>
               <li><strong>Calibración y optimización:</strong>
                 <ul>
-                  <li>Ajustar parámetros de <code>HandDetector</code>: <code>detectionCon</code>, <code>maxHands</code>, tolerancias de <code>fingersUp</code> para robustez en distintas condiciones de iluminación.</li>
-                  <li>Reducir resolución de captura si FPS baja: e.g., capturar a 640×480 en vez de 1280×720.</li>
-                  <li>Cache de assets en <code>pantalla.py</code> para evitar recargas: imágenes y sonidos se cargan una vez.</li>
+                  <li>Ajuste de parámetros de <code>HandDetector</code> (<code>detectionCon</code>, <code>maxHands</code>, tolerancias de <code>fingersUp</code>) para robustez en distintas condiciones de iluminación.</li>
+                  <li>Reducir resolución de captura si FPS baja (p.ej. 640×480 en vez de 1280×720).</li>
+                  <li>Cache de assets en <code>pantalla.py</code> para evitar recargas múltiples de imágenes o sonidos.</li>
                 </ul>
               </li>
               <li><strong>Recursos y gestión de archivos:</strong>
                 <ul>
                   <li>Carpeta <code>assets/backgrounds/</code>: fondos de plataformas y espacio.</li>
-                  <li>Carpeta <code>assets/sprites/</code> o similar: imágenes de jugador, enemigos, naves, obstáculos.</li>
-                  <li>Carpeta <code>assets/gestos/</code>: <code>Rock.png</code>, <code>Paper.png</code>, <code>Scissors.png</code> para mostrar feedback de detección de gesto.</li>
+                  <li>Carpeta <code>assets/sprites/</code>: imágenes de jugador, enemigos, naves, obstáculos.</li>
+                  <li>Carpeta <code>assets/gestos/</code>: <code>Rock.png</code>, <code>Paper.png</code>, <code>Scissors.png</code> para feedback visual de gesto.</li>
                   <li>Carpeta <code>assets/sounds/</code>: <code>jump.wav</code>, <code>shoot.wav</code>, <code>explosion.wav</code>, <code>boss.wav</code>, etc.</li>
                   <li>Archivos de configuración (JSON/CSV) para patrones de enemigos o parámetros de niveles.</li>
                 </ul>
@@ -368,18 +384,18 @@
                   <li>Python 3.x</li>
                   <li>OpenCV (<code>opencv-python</code>) y CVZone (<code>cvzone</code>, <code>mediapipe</code>) para detección de gestos.</li>
                   <li>Pygame para renderizado 2D, gestión de sonido y detección de teclado.</li>
-                  <li>Tkinter (opcional) para menú inicial, o todo en Pygame si prefieres una sola ventana.</li>
+                  <li>Tkinter (opcional) para menú inicial, o todo en Pygame.</li>
                   <li>gTTS o librería de audio para síntesis de voz (opcional).</li>
-                  <li>Pillow (<code>PIL</code>) si necesitas manipular sprites o fondos antes de mostrarlos.</li>
-                  <li>Otras librerías estándar: <code>numpy</code>, <code>random</code>, <code>time</code>, <code>json</code>.</li>
+                  <li>Pillow (<code>PIL</code>) para manipular sprites o fondos si es necesario.</li>
+                  <li>Otras librerías: <code>numpy</code>, <code>random</code>, <code>time</code>, <code>json</code>.</li>
                 </ul>
               </li>
               <li><strong>Pruebas y grabación de demo:</strong>
                 <ul>
-                  <li>Ejecutar localmente en distintas condiciones de iluminación y ángulos de cámara para garantizar detección fiable de gestos durante el juego.</li>
-                  <li>Grabar con OBS Studio o Game Bar: mostrar menú inicial, Nivel 1, Nivel 2, luego Nivel 3 con boss final, evidenciando cómo los gestos RPS controlan las acciones.</li>
+                  <li>Ejecutar localmente en distintas condiciones de iluminación y ángulos de cámara.</li>
+                  <li>Grabar con OBS Studio o Game Bar: mostrar menú inicial, Nivel 1, Nivel 2, Nivel 3 con boss final, evidenciando gestos RPS controlando acciones.</li>
                   <li>Tomar capturas de pantalla representativas de cada nivel para la imagen en el portfolio.</li>
-                  <li>Opcionalmente editar vídeo de demo (cortar inicio/fin, añadir texto de presentación) antes de subir a YouTube.</li>
+                  <li>Opcionalmente editar vídeo (cortar inicio/fin, añadir texto) antes de subir a YouTube.</li>
                 </ul>
               </li>
             </ul>
