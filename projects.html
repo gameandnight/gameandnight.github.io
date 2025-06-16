@@ -25,6 +25,18 @@
         font-weight: bold;
         color: #0d6efd;
       }
+      /* Asegura que todas las imágenes de proyectos tengan la misma altura y cobertura */
+      .project-img {
+        width: 100%;
+        height: 200px; /* Ajusta la altura según convenga */
+        object-fit: cover;
+      }
+      /* Opcional: si quieres que la columna de imagen no se encoja demasiado en pantallas pequeñas */
+      @media (min-width: 768px) {
+        .col-md-4 {
+          max-width: 33.3333%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -56,20 +68,24 @@
         </div>
       </div>
     </nav>
+
     <section class="bg-light py-5">
       <div class="container">
         <h1>Proyectos Destacados</h1>
 
         <!-- Proyecto: Detección de señales de tráfico con YOLO11x -->
-        <div class="row mb-4">
-          <div class="col-md-4">
-            <img src="/assets/images/deteccion-senales.jpg" alt="Detección de señales de tráfico con YOLO11x" class="img-fluid rounded">
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-4 d-flex justify-content-center">
+            <img
+              src="/assets/images/deteccion-senales.jpg"
+              alt="Detección de señales de tráfico con YOLO11x"
+              class="img-fluid rounded project-img"
+            >
           </div>
           <div class="col-md-8">
             <h3>Detección de señales de tráfico con YOLO11x</h3>
             <p>Fine-tuning de YOLO11x para detección de señales de tráfico en tiempo real usando la webcam.</p>
-            <p><strong>Pipeline:</strong>
-            </p>
+            <p><strong>Pipeline:</strong></p>
             <ul>
               <li>Etiquetado con CVAT y exportación al formato YOLO.</li>
               <li>Entrenamiento en GPU: variantes YOLO11n → YOLO11x, ajuste de hiperparámetros.</li>
@@ -92,15 +108,18 @@
         </div>
 
         <!-- Proyecto: Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter) -->
-        <div class="row mb-4">
-          <div class="col-md-4">
-            <img src="/assets/images/mini-juegos-gestos.jpg" alt="Suite de Mini Juegos controlados con gestos" class="img-fluid rounded">
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-4 d-flex justify-content-center">
+            <img
+              src="/assets/images/mini-juegos-gestos.jpg"
+              alt="Suite de Mini Juegos controlados con gestos"
+              class="img-fluid rounded project-img"
+            >
           </div>
           <div class="col-md-8">
             <h3>Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter)</h3>
             <p>Aplicación en Python que ofrece varios mini juegos interactivos controlados mediante gestos o pose corporal, usando OpenCV y una interfaz Tkinter.</p>
-            <p><strong>Descripción general / Pipeline:</strong>
-            </p>
+            <p><strong>Descripción general / Pipeline:</strong></p>
             <ul>
               <li>Launcher en Tkinter con botones para cada mini juego: "Manos", “Cuerpo”, “Dibujar”, “Atrapa la pelota”, “Piedra, Papel o Tijera” y “Snake”.</li>
               <li>Para detección de landmarks de mano y pose se emplea CVZone PoseModule/HandTracking, facilitando el uso de MediaPipe para extraer coordenadas clave.</li>
@@ -123,98 +142,103 @@
           </div>
         </div>
 
-        <!-- Más proyectos: duplica bloques anteriores y ajusta -->
-      </div>
-
-      <!-- Proyecto: Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter) -->
-      <div class="row mb-4">
-        <div class="col-md-4">
-          <!-- Imagen representativa: sube captura en assets/images/trivial-gestos.jpg -->
-          <img src="/assets/images/trivial-gestos.jpg" alt="Juego de Trivial controlado con gestos" class="img-fluid rounded">
-        </div>
-        <div class="col-md-8">
-          <h3>Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter)</h3>
-          <p>Aplicación en Python que presenta preguntas de trivia en diferentes categorías, permitiendo seleccionar la respuesta mediante gestos de mano (rock/paper/scissors) capturados por la webcam.</p>
-          <p><strong>Descripción general / Pipeline:</strong></p>
-          <ul>
-            <li><strong>Interfaz de menú con Tkinter:</strong> Al iniciar, se muestra una ventana Tkinter con botones para cada categoría de preguntas (p. ej. ESO, Bachiller, Informática). El usuario selecciona una categoría para iniciar el trivial.</li>
-            <li><strong>Carga de preguntas:</strong> El código lee archivos JSON con preguntas y opciones (por ejemplo <code>questions_eso.json</code>, <code>questions_bachiller.json</code>), donde cada elemento incluye la pregunta, las opciones y el índice de la respuesta correcta.</li>
-            <li><strong>Preparación de recursos visuales:</strong> Se carga una imagen de fondo (<code>Resources/BG.png</code>) redimensionada a la resolución de la ventana (p.ej. 1280×720). Se preparan imágenes de feedback (correcto/incorrecto) (<code>correct.wav</code>, <code>incorrect.wav</code>) y sprites opcionales.</li>
-            <li><strong>Captura de cámara y detección de gestos:</strong>
-              <ul>
-                <li>Se inicializa <code>cv2.VideoCapture(0)</code> para capturar frames de la webcam.</li>
-                <li>Se utiliza CVZone HandDetector (basado en MediaPipe) para detectar la mano y extraer landmarks, con los cuales se interpreta el gesto rock/paper/scissors como selección de respuesta. Esto permite mapear cada opción a un gesto: “Piedra”, “Papel” o “Tijeras”. :contentReference[oaicite:0]{index=0}</li>
-                <li>En cada pregunta, tras mostrarla en pantalla, se espera a que el detector identifique claramente uno de los gestos. Durante esta espera, se muestra la imagen de fondo más un recuadro con el feed de cámara, indicando al usuario que haga el gesto.</li>
-              </ul>
-            </li>
-            <li><strong>Síntesis de voz y feedback:</strong>
-              <ul>
-                <li>Se usa gTTS para convertir a audio el texto de la pregunta y de las opciones, generando un archivo de audio temporal que se reproduce (por ejemplo con pygame) para narrar la pregunta y las opciones. :contentReference[oaicite:1]{index=1}</li>
-                <li>Tras que el usuario hace el gesto y se detecta la elección, se compara con la respuesta correcta almacenada en JSON.</li>
-                <li>Se reproduce un sonido o mensaje de audio indicando “Correcto” o “Incorrecto” (<code>Resources/correct.wav</code> / <code>Resources/incorrect.wav</code>).</li>
-              </ul>
-            </li>
-            <li><strong>Lógica de flujo de juego:</strong>
-              <ul>
-                <li>Se muestra la pregunta y se invoca la narración por voz.</li>
-                <li>Se espera la selección por gesto; si no se detecta tras cierto tiempo, se puede repetir la pregunta o avisar al usuario.</li>
-                <li>Tras respuesta, se muestra feedback y pasa a la siguiente pregunta o finaliza la ronda.</li>
-                <li>Al finalizar la categoría o al pulsar la tecla ‘q’, se cierra la ventana de OpenCV y se regresa al menú Tkinter.</li>
-              </ul>
-            </li>
-            <li><strong>Configuración y calibración:</strong>
-              <ul>
-                <li>Permite ajustar la confianza del detector de manos y la sensibilidad de reconocimiento de gestos para funcionar en distintas condiciones de iluminación.</li>
-                <li>Verifica FPS para asegurar experiencia fluida. Si la velocidad de detección es baja, se puede reducir la resolución o ajustar parámetros del detector.</li>
-              </ul>
-            </li>
-            <li><strong>Gestión de archivos:</strong>
-              <ul>
-                <li>Archivos JSON en carpeta raíz o en <code>Resources/</code>, por ejemplo <code>questions_eso.json</code>, <code>questions_bachiller.json</code>, <code>questions_profesores.json</code>.</li>
-                <li>Recursos en <code>Resources/</code>: <code>BG.png</code>, <code>correct.wav</code>, <code>incorrect.wav</code>, y otros assets.</li>
-              </ul>
-            </li>
-            <li><strong>Dependencias:</strong>
-              <ul>
-                <li>Python 3.x</li>
-                <li>OpenCV (<code>opencv-python</code>)</li>
-                <li>CVZone (<code>cvzone</code>, requiere <code>mediapipe</code>)</li>
-                <li>gTTS (<code>gtts</code>), pygame (para reproducir audio) o librería similar</li>
-                <li>Pillow (<code>PIL</code>) para dibujar texto sobre la imagen con fuentes personalizadas</li>
-                <li>Tkinter (incluido en la mayoría de distribuciones Python) para la GUI del menú</li>
-                <li>Otros: <code>numpy</code>, <code>random</code>, <code>time</code>, <code>json</code> etc.</li>
-              </ul>
-            </li>
-            <li><strong>Pruebas y grabación de demo:</strong>
-              <ul>
-                <li>Grabar con OBS o Game Bar mostrando la ventana Tkinter de selección y luego la sesión de trivial: pregunta en pantalla, usuario realiza gesto, detección y feedback de voz.</li>
-                <li>Tomar capturas de pantalla para la imagen representativa del proyecto en tu portfolio.</li>
-              </ul>
-            </li>
-          </ul>
-          <p>
-            <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
-            <a href="https://github.com/gameandnight/trivia-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a>
-            <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
-            <!-- <a href="https://tu-demo-trivia.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
-            <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo del trivial controlado con gestos -->
-            <a href="https://www.youtube.com/watch?v=ID_VIDEO_TRIVIAL" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
-          </p>
-          <!-- Embed de vídeo (opcional): descomentar si deseas embeber el vídeo directamente -->
-          <!--
-          <div class="mt-3">
-            <div class="ratio ratio-16x9">
-              <iframe src="https://www.youtube.com/embed/ID_VIDEO_TRIVIAL" title="Demo Juego de Trivial con gestos" allowfullscreen></iframe>
-            </div>
+        <!-- Proyecto: Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter) -->
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-4 d-flex justify-content-center">
+            <!-- Imagen representativa: sube captura en assets/images/trivial-gestos.jpg -->
+            <img
+              src="/assets/images/trivial-gestos.jpg"
+              alt="Juego de Trivial controlado con gestos"
+              class="img-fluid rounded project-img"
+            >
           </div>
-          -->
+          <div class="col-md-8">
+            <h3>Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter)</h3>
+            <p>Aplicación en Python que presenta preguntas de trivia en diferentes categorías, permitiendo seleccionar la respuesta mediante gestos de mano (rock/paper/scissors) capturados por la webcam.</p>
+            <p><strong>Descripción general / Pipeline:</strong></p>
+            <ul>
+              <li><strong>Interfaz de menú con Tkinter:</strong> Al iniciar, se muestra una ventana Tkinter con botones para cada categoría de preguntas (p. ej. ESO, Bachiller, Informática). El usuario selecciona una categoría para iniciar el trivial.</li>
+              <li><strong>Carga de preguntas:</strong> El código lee archivos JSON con preguntas y opciones (por ejemplo <code>questions_eso.json</code>, <code>questions_bachiller.json</code>), donde cada elemento incluye la pregunta, las opciones y el índice de la respuesta correcta.</li>
+              <li><strong>Preparación de recursos visuales:</strong> Se carga una imagen de fondo (<code>Resources/BG.png</code>) redimensionada a la resolución de la ventana (p.ej. 1280×720). Se preparan imágenes de feedback (correcto/incorrecto) (<code>correct.wav</code>, <code>incorrect.wav</code>) y sprites opcionales.</li>
+              <li><strong>Captura de cámara y detección de gestos:</strong>
+                <ul>
+                  <li>Se inicializa <code>cv2.VideoCapture(0)</code> para capturar frames de la webcam.</li>
+                  <li>Se utiliza CVZone HandDetector (basado en MediaPipe) para detectar la mano y extraer landmarks, con los cuales se interpreta el gesto rock/paper/scissors como selección de respuesta. Esto permite mapear cada opción a un gesto: “Piedra”, “Papel” o “Tijeras”.</li>
+                  <li>En cada pregunta, tras mostrarla en pantalla, se espera a que el detector identifique claramente uno de los gestos. Durante esta espera, se muestra la imagen de fondo más un recuadro con el feed de cámara, indicando al usuario que haga el gesto.</li>
+                </ul>
+              </li>
+              <li><strong>Síntesis de voz y feedback:</strong>
+                <ul>
+                  <li>Se usa gTTS para convertir a audio el texto de la pregunta y de las opciones, generando un archivo de audio temporal que se reproduce (por ejemplo con pygame) para narrar la pregunta y las opciones.</li>
+                  <li>Tras que el usuario hace el gesto y se detecta la elección, se compara con la respuesta correcta almacenada en JSON.</li>
+                  <li>Se reproduce un sonido o mensaje de audio indicando “Correcto” o “Incorrecto” (<code>Resources/correct.wav</code> / <code>Resources/incorrect.wav</code>).</li>
+                </ul>
+              </li>
+              <li><strong>Lógica de flujo de juego:</strong>
+                <ul>
+                  <li>Se muestra la pregunta y se invoca la narración por voz.</li>
+                  <li>Se espera la selección por gesto; si no se detecta tras cierto tiempo, se puede repetir la pregunta o avisar al usuario.</li>
+                  <li>Tras respuesta, se muestra feedback y pasa a la siguiente pregunta o finaliza la ronda.</li>
+                  <li>Al finalizar la categoría o al pulsar la tecla ‘q’, se cierra la ventana de OpenCV y se regresa al menú Tkinter.</li>
+                </ul>
+              </li>
+              <li><strong>Configuración y calibración:</strong>
+                <ul>
+                  <li>Permite ajustar la confianza del detector de manos y la sensibilidad de reconocimiento de gestos para funcionar en distintas condiciones de iluminación.</li>
+                  <li>Verifica FPS para asegurar experiencia fluida. Si la velocidad de detección es baja, se puede reducir la resolución o ajustar parámetros del detector.</li>
+                </ul>
+              </li>
+              <li><strong>Gestión de archivos:</strong>
+                <ul>
+                  <li>Archivos JSON en carpeta raíz o en <code>Resources/</code>, por ejemplo <code>questions_eso.json</code>, <code>questions_bachiller.json</code>, <code>questions_profesores.json</code>.</li>
+                  <li>Recursos en <code>Resources/</code>: <code>BG.png</code>, <code>correct.wav</code>, <code>incorrect.wav</code>, y otros assets.</li>
+                </ul>
+              </li>
+              <li><strong>Dependencias:</strong>
+                <ul>
+                  <li>Python 3.x</li>
+                  <li>OpenCV (<code>opencv-python</code>)</li>
+                  <li>CVZone (<code>cvzone</code>, requiere <code>mediapipe</code>)</li>
+                  <li>gTTS (<code>gtts</code>), pygame (para reproducir audio) o librería similar</li>
+                  <li>Pillow (<code>PIL</code>) para dibujar texto sobre la imagen con fuentes personalizadas</li>
+                  <li>Tkinter (incluido en la mayoría de distribuciones Python) para la GUI del menú</li>
+                  <li>Otros: <code>numpy</code>, <code>random</code>, <code>time</code>, <code>json</code> etc.</li>
+                </ul>
+              </li>
+              <li><strong>Pruebas y grabación de demo:</strong>
+                <ul>
+                  <li>Grabar con OBS o Game Bar mostrando la ventana Tkinter de selección y luego la sesión de trivial: pregunta en pantalla, usuario realiza gesto, detección y feedback de voz.</li>
+                  <li>Tomar capturas de pantalla para la imagen representativa del proyecto en tu portfolio.</li>
+                </ul>
+              </li>
+            </ul>
+            <p>
+              <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
+              <a href="https://github.com/gameandnight/trivia-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a>
+              <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
+              <!-- <a href="https://tu-demo-trivia.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+              <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo del trivial controlado con gestos -->
+              <a href="https://www.youtube.com/watch?v=ID_VIDEO_TRIVIAL" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
+            </p>
+            <!-- Opcional embed de vídeo:
+            <div class="mt-3">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/ID_VIDEO_TRIVIAL" title="Demo Juego de Trivial con gestos" allowfullscreen></iframe>
+              </div>
+            </div>
+            -->
+          </div>
         </div>
 
         <!-- Proyecto: Juego de Plataformas y Shooter de Naves controlado con gestos RPS -->
-        <div class="row mb-4">
-          <div class="col-md-4">
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-4 d-flex justify-content-center">
             <!-- Imagen representativa: sube capturas de cada nivel en assets/images/ -->
-            <img src="/assets/images/proyecto-ejemplo.jpg" alt="Juego Plataformas y Naves controlado con gestos" class="img-fluid rounded">
+            <img
+              src="/assets/images/juego.jpg"
+              alt="Juego Plataformas y Naves controlado con gestos"
+              class="img-fluid rounded project-img"
+            >
           </div>
           <div class="col-md-8">
             <h3>Juego de Plataformas y Shooter de Naves controlado con gestos RPS</h3>
@@ -367,8 +391,7 @@
               <!-- Enlace a vídeo de demostración en YouTube mostrando los tres niveles y boss final controlados con gestos -->
               <a href="https://www.youtube.com/watch?v=ID_VIDEO_JUEGO_PLATAFORMAS" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
             </p>
-            <!-- Embed de vídeo (opcional): descomentar si deseas embeber el vídeo directamente -->
-            <!--
+            <!-- Opcional embed de vídeo:
             <div class="mt-3">
               <div class="ratio ratio-16x9">
                 <iframe src="https://www.youtube.com/embed/ID_VIDEO_JUEGO_PLATAFORMAS" title="Demo Juego Plataformas y Naves con gestos" allowfullscreen></iframe>
