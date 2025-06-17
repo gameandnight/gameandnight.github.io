@@ -454,10 +454,10 @@
             <p><strong>Minijuego: “Snake” controlado con gestos</strong></p>
             <ul>
               <li><strong>Función:</strong> <code>run_snake_game()</code> en <code>snake.py</code>.</li>
-              <li><strong>Descripción:</strong> Versión de Snake donde la dirección de movimiento se controla mediante gestos piedra/papel/tijeras en vez de teclas.</li>
+              <li><strong>Descripción:</strong> Versión de Snake donde la dirección de movimiento se controla mediante gestos con la mano (capta un dedo como punto que se toma como referencia y la serpiente avanza en esa dirección).</li>
               <li><strong>Pipeline:</strong>
                 <ul>
-                  <li>Inicializa cámara y <code>HandDetector</code> para reconocer gestos RPS.</li>
+                  <li>Inicializa cámara y <code>HandDetector</code> para reconocer gestos.</li>
                   <li>Inicializa Pygame (o OpenCV con renderizado personalizado) para dibujar el tablero de Snake:
                     <ul>
                       <li>Fondo estilo cuadrícula retro.</li>
@@ -469,12 +469,12 @@
                   <li>Cuenta atrás inicial (3…2…1) antes de empezar.</li>
                   <li>En bucle:
                     <ul>
-                      <li>Captura frame de cámara y detecta gesto:
-                        <ul>
+                      <li>Captura frame de cámara y detecta un dedo como punto de referencia hacia donde avanzará la serpiente:
+                        <!-- <ul>
                           <li>“piedra”: mover snake hacia la derecha.</li>
                           <li>“papel”: mover snake hacia arriba.</li>
                           <li>“tijeras”: mover snake hacia la izquierda o abajo, según convención definida.</li>
-                        </ul>
+                        </ul> -->
                       </li>
                       <li>Actualiza posición de la serpiente y gestiona colisiones:
                         <ul>
@@ -495,14 +495,14 @@
                   </li>
                 </ul>
               </li>
-              <li><strong>Comentarios importantes:</strong>
+              <!-- <li><strong>Comentarios importantes:</strong>
                 <ul>
                   <li>Mapeo claro de gestos a direcciones: definir convención y mostrar en pantalla íconos de “Rock”, “Paper”, “Scissors” para guiar al usuario.</li>
                   <li>Optimizar FPS del juego y de la detección de gesto para evitar retrasos que arruinen la jugabilidad.</li>
                   <li>Buffer de detección: quizá requerir confirmación de gesto estable antes de cambiar dirección, para evitar cambios bruscos erróneos.</li>
                   <li>Incluir sonido de comer, muerte, música de fondo (opcional) usando <code>pygame.mixer</code> o similar.</li>
                 </ul>
-              </li>
+              </li> -->
             </ul>
 
             <p>
