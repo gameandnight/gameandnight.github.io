@@ -108,7 +108,7 @@
             <p>
               Proyecto de fine-tuning de un modelo YOLO11x para detección de señales de tráfico en tiempo real mediante webcam. 
               Se parte de un dataset preexistente de ~12.000 imágenes etiquetadas, reforzando clases menos representadas
-              y entrenando localmente con early-stopping y ajustes de hiperparámetros para equilibrar recursos y precisión :contentReference[oaicite:20]{index=20}.
+              y entrenando localmente con early-stopping y ajustes de hiperparámetros para equilibrar recursos y precisión.
             </p>
 
             <!-- Pipeline detallado -->
@@ -118,7 +118,7 @@
               <li>
                 <strong>Investigación de herramientas:</strong> 
                 Se evaluaron CVAT y Roboflow. Se seleccionó CVAT por control local de datos y exportación directa a formato YOLO
-                (a pesar de limitaciones en auto-etiquetado), permitiendo un flujo de trabajo local seguro :contentReference[oaicite:21]{index=21}.
+                (a pesar de limitaciones en auto-etiquetado), permitiendo un flujo de trabajo local seguro.
                 <!-- Comentario: podrías añadir enlace a la documentación interna o a ejemplos de configuración Docker de CVAT. -->
               </li>
 
@@ -126,7 +126,7 @@
               <li>
                 <strong>Creación y refuerzo del dataset:</strong> 
                 Partiendo de un dataset preexistente, se identificaron clases poco representadas (e.g., “giro a la izquierda”) y se añadieron manualmente imágenes etiquetadas en CVAT para balancear.
-                Exportación en formato YOLO generó archivos de coordenadas listos para entrenamiento local :contentReference[oaicite:22]{index=22}.
+                Exportación en formato YOLO generó archivos de coordenadas listos para entrenamiento local.
                 <!-- Comentario: podrías enlazar al script de procesamiento de data.yaml o al README que explica la estructura de carpetas. -->
               </li>
 
@@ -177,13 +177,13 @@
               </li>
 
               <!-- Documentación y resultados -->
-              <li>
+              <!-- <li>
                 <strong>Documentación y resultados:</strong> 
                 - Carpeta “resultados entrenamiento” incluye métricas (mAP, curvas de entrenamiento).  
                 - Carpeta “pruebas imagenes” con capturas de detección en imágenes estáticas.  
-                - Scripts “entrenamiento.py” y “prueba.py” aportan reproducibilidad.  
+                - Scripts “entrenamiento.py” y “prueba.py” aportan reproducibilidad.  -->
                 <!-- Comentario: se puede agregar enlace o referencia al README en el repositorio que explique la estructura de carpetas del proyecto. -->
-              </li>
+              <!-- </li> -->
             </ul>
 
             <!-- Enlaces de interés -->
