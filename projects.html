@@ -207,33 +207,313 @@
             -->
           </div>
         </div>
-
         <!-- Proyecto: Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter) -->
         <div class="row mb-4 align-items-start">
+          <!-- Columna de imágenes: varias capturas apiladas verticalmente -->
           <div class="col-md-4 d-flex flex-column align-items-center">
+            <!-- Imagen principal: pantalla del launcher Tkinter -->
             <img
-              src="/assets/images/mini-juegos-gestos.jpg"
-              alt="Suite de Mini Juegos controlados con gestos"
+              src="/assets/images/mini-juegos-gestos-launcher.jpg"
+              alt="Launcher de Mini Juegos controlados con gestos"
               class="img-fluid rounded project-img"
             >
+            <!-- Imagen de ejemplo: detección de mano en uno de los juegos -->
+            <img
+              src="/assets/images/mini-juegos-gestos-mano-deteccion.jpg"
+              alt="Detección de mano en Mini Juegos"
+              class="img-fluid rounded project-img mt-2"
+            >
+            <!-- Imagen de ejemplo: pantalla de Snake con overlay de gestos -->
+            <img
+              src="/assets/images/mini-juegos-gestos-snake.jpg"
+              alt="Snake controlado con gestos"
+              class="img-fluid rounded project-img mt-2"
+            >
+            <!-- Nota: añade más imágenes según capturas de cada minijuego, con la clase .project-img -->
           </div>
+
           <div class="col-md-8">
             <h3>Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter)</h3>
-            <p>Aplicación en Python que ofrece varios mini juegos interactivos controlados mediante gestos o pose corporal, usando OpenCV y una interfaz Tkinter.</p>
-            <p><strong>Descripción general / Pipeline:</strong></p>
-            <ul>
-              <li>Launcher en Tkinter con botones para cada mini juego: "Manos", “Cuerpo”, “Dibujar”, “Atrapa la pelota”, “Piedra, Papel o Tijera” y “Snake”.</li>
-              <li>Para detección de landmarks de mano y pose se emplea CVZone PoseModule/HandTracking, facilitando el uso de MediaPipe para extraer coordenadas clave.</li>
-              <li>Lógica de cada mini juego: captura de cámara con <code>cv2.VideoCapture</code>, procesamiento de frames, interpretación de gestos para mover sprites, dibujar o decidir jugadas.</li>
-              <li>Manejo de eventos de teclado (‘q’ para salir) y retorno al menú sin cerrar la app por completo.</li>
-              <!-- <li>Pruebas y calibraciones para asegurar suficiente FPS y detección estable en distintas condiciones de iluminación.</li> -->
-            </ul>
+            <!-- Breve descripción general -->
             <p>
+              Aplicación en Python que agrupa varios mini juegos interactivos, todos controlados mediante gestos capturados por webcam.
+              Usa una interfaz principal en Tkinter para seleccionar cada juego, y emplea CVZone (MediaPipe) para la detección de mano/pose.
+            </p>
+
+            <p><strong>Interfaz principal (Launcher con Tkinter):</strong></p>
+            <ul>
+              <li>
+                Al ejecutar <code>main.py</code>, se abre una ventana Tkinter titulada "CV Games" con:
+                <ul>
+                  <li>Etiqueta instructiva: “Selecciona un minijuego”.</li>
+                  <li>Indicador: “Presiona Q para salir de un minijuego”.</li>
+                  <li>Botones para cada minijuego:
+                    <ul>
+                      <li>"Manos" → <code>run_hand_tracking()</code></li>
+                      <li>"Cuerpo" → <code>run_pose_tracking()</code></li>
+                      <li>"Dibujar" → <code>run_drawing()</code></li>
+                      <li>"Atrapa la pelota" → <code>run_catch_game()</code></li>
+                      <li>"Piedra, Papel o Tijera" → <code>run_rps_game()</code></li>
+                      <li>"Snake" → <code>run_snake_game()</code></li>
+                    </ul>
+                  </li>
+                  <li>Botón “Salir” para cerrar la aplicación.</li>
+                  <li>
+                    Cada botón lanza el juego en un hilo separado (<code>threading.Thread</code>), evitando bloquear la GUI y permitiendo volver al launcher al cerrar el juego.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <p><strong>Dependencias generales:</strong></p>
+            <ul>
+              <li>Python 3.x</li>
+              <li>OpenCV (<code>opencv-python</code>) para captura de cámara y renderizado en ventana.</li>
+              <li>CVZone (<code>cvzone</code>) que envuelve MediaPipe para detección de manos y pose.</li>
+              <li>Tkinter (incluido en Python) para la GUI launcher.</li>
+              <li>NumPy para operaciones en arrays de imagen.</li>
+              <li>random, time, threading, según necesidad de cada juego.</li>
+            </ul>
+
+            <hr>
+
+            <p><strong>Minijuego: “Manos” (Hand Tracking)</strong></p>
+            <ul>
+              <li><strong>Función:</strong> <code>run_hand_tracking()</code> en <code>manos.py</code>.</li>
+              <li><strong>Descripción:</strong> Muestra en ventana OpenCV el feed de la webcam con detección de manos en tiempo real.</li>
+              <li><strong>Pipeline:</strong>
+                <ul>
+                  <li>Inicializa <code>cv2.VideoCapture(0)</code> y <code>HandDetector(maxHands=2)</code>.</li>
+                  <li>En bucle:
+                    <ul>
+                      <li>Lee frame de la cámara.</li>
+                      <li>Aplica <code>detector.findHands(img)</code> para dibujar landmarks y bounding boxes.</li>
+                      <li>Si detecta manos, imprime en consola “Mano detectada” (útil para debug).</li>
+                      <li>Muestra el frame con <code>cv2.imshow</code> (“Hand Tracking”).</li>
+                      <li>Espera tecla ‘q’ para salir y cerrar ventana.</li>
+                    </ul>
+                  </li>
+                  <li>Libera recursos al cerrar: <code>cap.release()</code> y <code>cv2.destroyAllWindows()</code>.</li>
+                </ul>
+              </li>
+              <li><strong>Comentarios importantes:</strong>
+                <ul>
+                  <li>Ventana configurada en modo redimensionable y pantalla completa opcional (<code>cv2.WINDOW_NORMAL</code> + <code>WND_PROP_FULLSCREEN</code>).</li>
+                  <li>Útil para comprobar robustez de detección antes de usar gestos en otros juegos.</li>
+                  <li>Puede servir como demo independiente de detección de mano.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <hr>
+
+            <p><strong>Minijuego: “Cuerpo” (Pose Tracking)</strong></p>
+            <ul>
+              <li><strong>Función:</strong> <code>run_pose_tracking()</code> en <code>cuerpo.py</code>.</li>
+              <li><strong>Descripción:</strong> Detecta pose corporal (landmarks de cuerpo) en tiempo real y muestra sobre la imagen.</li>
+              <li><strong>Pipeline:</strong>
+                <ul>
+                  <li>Inicializa <code>cv2.VideoCapture(0)</code> y <code>PoseDetector()</code>.</li>
+                  <li>En bucle:
+                    <ul>
+                      <li>Lee frame de la cámara.</li>
+                      <li>Aplica <code>detector.findPose(img)</code> o método equivalente para dibujar esqueleto.</li>
+                      <li>Muestra el frame con <code>cv2.imshow</code> (“Cuerpo”).</li>
+                      <li>Espera tecla ‘q’ para salir.</li>
+                    </ul>
+                  </li>
+                  <li>Libera recursos y cierra ventana al salir.</li>
+                </ul>
+              </li>
+              <li><strong>Comentarios importantes:</strong>
+                <ul>
+                  <li>Útil para calibrar posiciones de cámara cuando se requiera pose corporal en futuros proyectos.</li>
+                  <li>Ventana también en modo fullscreen opcional para mejor visibilidad.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <hr>
+
+            <p><strong>Minijuego: “Dibujar” (Drawing con Mano)</strong></p>
+            <ul>
+              <li><strong>Función:</strong> <code>run_drawing()</code> en <code>dibujar.py</code>.</li>
+              <li><strong>Descripción:</strong> Permite dibujar sobre el lienzo con gestos de mano:
+                <ul>
+                  <li>Usa CVZone HandDetector para detectar posición y gesto de la mano.</li>
+                  <li>Dependiendo del gesto (por ejemplo, gesto “piedra/papel/tijeras” o número de dedos), cambia la herramienta:
+                    <ul>
+                      <li>ICON_CHANGE (ej.: tijeras) para cambiar color o grosor.</li>
+                      <li>ICON_ERASE (ej.: papel) para borrar parte del dibujo.</li>
+                      <li>ICON_CLEAR (ej.: piedra) para limpiar todo el lienzo.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><strong>Pipeline:</strong>
+                <ul>
+                  <li>Carga íconos RGBA con <code>cv2.imread('assets/...png', cv2.IMREAD_UNCHANGED)</code> y redimensiona para UI inferior.</li>
+                  <li>Inicializa cámara y detector: <code>HandDetector</code>.</li>
+                  <li>Crea lienzo (canvas) en memoria (array NumPy) sobre el que se dibuja líneas según posición detectada de la punta del dedo índice u otro gesto.</li>
+                  <li>En bucle:
+                    <ul>
+                      <li>Captura frame de cámara.</li>
+                      <li>Detecta manos y landmarks.</li>
+                      <li>Interpreta gesto actual para determinar acción (dibujar, borrar, cambiar herramienta).</li>
+                      <li>Dibuja sobre el canvas: líneas, formas, o borra según corresponda.</li>
+                      <li>Renderiza el canvas sobre el frame o en ventana separada, junto con UI de íconos en la parte inferior.</li>
+                      <li>Espera ‘q’ para salir y volver al launcher.</li>
+                    </ul>
+                  </li>
+                  <li>Gestiona sincronización para evitar “congelar” la captura al cambiar íconos; combina canvas y frame eficientemente.</li>
+                </ul>
+              </li>
+              <li><strong>Comentarios importantes:</strong>
+                <ul>
+                  <li>Es importante manejar el canal alfa de los íconos para que se sobrepongan correctamente.</li>
+                  <li>Optimizar la frecuencia de dibujo para mantener FPS adecuados (por ejemplo, limitar tamaño de canvas o procesar sólo cuando hay cambio significativo).</li>
+                  <li>Permitir limpiar lienzo o cambiar grosor/color con gestos específicos, mostrar feedback visual (ícono resaltado).</li>
+                </ul>
+              </li>
+            </ul>
+
+            <hr>
+
+            <p><strong>Minijuego: “Atrapa la pelota”</strong></p>
+            <ul>
+              <li><strong>Función:</strong> <code>run_catch_game()</code> en <code>pelota.py</code>.</li>
+              <li><strong>Descripción:</strong> Juego donde el usuario “atrapa” una bola virtual moviendo la mano; la bola se mueve sobre la pantalla y hay que interceptarla con el área de la mano detectada.</li>
+              <li><strong>Pipeline:</strong>
+                <ul>
+                  <li>Inicializa cámara y <code>HandDetector(maxHands=1)</code>.</li>
+                  <li>Variables del juego: posición y radio de la bola, velocidad, puntuación, niveles de dificultad creciente.</li>
+                  <li>En bucle:
+                    <ul>
+                      <li>Captura frame de cámara.</li>
+                      <li>Dibuja la bola en posición actual; la bola se desplaza aleatoriamente o con patrón hacia la mano.</li>
+                      <li>Detecta mano: obtiene bounding box o landmarks de palma.</li>
+                      <li>Comprueba colisión: si la mano “toca” la bola (distancia menor), incrementa la puntuación y reposiciona la bola para siguiente ronda.</li>
+                      <li>Aumenta la dificultad: acelera la bola, reduce tamaño del área de captura, etc.</li>
+                      <li>Muestra puntuación en pantalla, puede mostrar temporizador o vidas.</li>
+                      <li>Espera ‘q’ para salir y volver al launcher.</li>
+                    </ul>
+                  </li>
+                  <li>Gestiona FPS y la suavidad de la bola; optimiza detección para que la mano no interfiera con UI.</li>
+                </ul>
+              </li>
+              <li><strong>Comentarios importantes:</strong>
+                <ul>
+                  <li>Es conveniente mostrar un feedback visual cuando la bola es atrapada (efecto de explosión o cambio de color).</li>
+                  <li>Puede incluir sonido (opcional) al atrapar la bola usando <code>pygame.mixer</code> o similar.</li>
+                  <li>Calibrar área de detección: usar landmarks para definir área precisa de “agarre”.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <hr>
+
+            <p><strong>Minijuego: “Piedra, Papel o Tijera”</strong></p>
+            <ul>
+              <li><strong>Función:</strong> <code>run_rps_game()</code> en <code>piedra.py</code>.</li>
+              <li><strong>Descripción:</strong> Juego clásico contra la computadora; el usuario muestra gesto (piedra/papel/tijeras) y la aplicación detecta el gesto y enfrenta contra una jugada aleatoria del equipo contrario.</li>
+              <li><strong>Pipeline:</strong>
+                <ul>
+                  <li>Carga íconos: <code>Rock.png</code>, <code>Paper.png</code>, <code>Scissors.png</code> para mostrar la jugada detectada y la jugada de la CPU.</li>
+                  <li>Inicializa cámara y <code>HandDetector</code>.</li>
+                  <li>En bucle de juego:
+                    <ul>
+                      <li>Muestra en pantalla instrucciones: “Muestra tu gesto”.</li>
+                      <li>Captura frames y detecta mano; con <code>detector.fingersUp(hand)</code> interpreta:
+                        <ul>
+                          <li>“piedra”: todos los dedos cerrados.</li>
+                          <li>“papel”: todos los dedos extendidos.</li>
+                          <li>“tijeras”: índice y medio extendidos, resto cerrados.</li>
+                        </ul>
+                      </li>
+                      <li>Cuando se detecta un gesto estable durante cierto tiempo, se fija la jugada del usuario.</li>
+                      <li>Genera jugada de la CPU aleatoria.</li>
+                      <li>Determina resultado: victoria, derrota o empate.</li>
+                      <li>Muestra íconos correspondientes (usuario vs CPU) y texto del resultado en pantalla.</li>
+                      <li>Opción de repetir: espera tecla o gesto para jugar de nuevo, o ‘q’ para salir al launcher.</li>
+                    </ul>
+                  </li>
+                  <li>Gestiona visualización de iconos con canal alfa para superponer sobre el frame.</li>
+                </ul>
+              </li>
+              <li><strong>Comentarios importantes:</strong>
+                <ul>
+                  <li>Asegurar detección estable del gesto: puede requerir un pequeño retardo o confirmación múltiple antes de fijar la jugada.</li>
+                  <li>Mostrar indicador visual (por ejemplo, recuadro verde) cuando se detecta claramente el gesto, para feedback al usuario.</li>
+                  <li>Mostrar resultados de forma clara y atractiva: animaciones simples, sonido opcional.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <hr>
+
+            <p><strong>Minijuego: “Snake” controlado con gestos</strong></p>
+            <ul>
+              <li><strong>Función:</strong> <code>run_snake_game()</code> en <code>snake.py</code>.</li>
+              <li><strong>Descripción:</strong> Versión de Snake donde la dirección de movimiento se controla mediante gestos piedra/papel/tijeras en vez de teclas.</li>
+              <li><strong>Pipeline:</strong>
+                <ul>
+                  <li>Inicializa cámara y <code>HandDetector</code> para reconocer gestos RPS.</li>
+                  <li>Inicializa Pygame (o OpenCV con renderizado personalizado) para dibujar el tablero de Snake:
+                    <ul>
+                      <li>Fondo estilo cuadrícula retro.</li>
+                      <li>Cuerpo de la serpiente con gradiente de color.</li>
+                      <li>Comida representada con imagen de manzana.</li>
+                      <li>Marcador en pantalla con puntuación y récord.</li>
+                    </ul>
+                  </li>
+                  <li>Cuenta atrás inicial (3…2…1) antes de empezar.</li>
+                  <li>En bucle:
+                    <ul>
+                      <li>Captura frame de cámara y detecta gesto:
+                        <ul>
+                          <li>“piedra”: mover snake hacia la derecha.</li>
+                          <li>“papel”: mover snake hacia arriba.</li>
+                          <li>“tijeras”: mover snake hacia la izquierda o abajo, según convención definida.</li>
+                        </ul>
+                      </li>
+                      <li>Actualiza posición de la serpiente y gestiona colisiones:
+                        <ul>
+                          <li>Con comida: incrementa longitud y puntuación; genera nueva comida en posición aleatoria.</li>
+                          <li>Con bordes o con el propio cuerpo: termina el juego (“Game Over”).</li>
+                        </ul>
+                      </li>
+                      <li>Aumenta velocidad cada cierto número de puntos.</li>
+                      <li>Dibuja todo: fondo, serpiente, comida, UI (puntuación y record). Opcional overlay de feed de cámara en esquina para feedback de gesto.</li>
+                      <li>Espera gesto ‘q’ o tecla ‘q’ para salir al launcher.</li>
+                    </ul>
+                  </li>
+                  <li>Al finalizar (Game Over):
+                    <ul>
+                      <li>Muestra overlay semitransparente con mensaje “Game Over” y puntuación final.</li>
+                      <li>Opción de reiniciar o salir al launcher.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><strong>Comentarios importantes:</strong>
+                <ul>
+                  <li>Mapeo claro de gestos a direcciones: definir convención y mostrar en pantalla íconos de “Rock”, “Paper”, “Scissors” para guiar al usuario.</li>
+                  <li>Optimizar FPS del juego y de la detección de gesto para evitar retrasos que arruinen la jugabilidad.</li>
+                  <li>Buffer de detección: quizá requerir confirmación de gesto estable antes de cambiar dirección, para evitar cambios bruscos erróneos.</li>
+                  <li>Incluir sonido de comer, muerte, música de fondo (opcional) usando <code>pygame.mixer</code> o similar.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <p>
+              <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
               <!-- <a href="https://github.com/gameandnight/mini-juegos-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+              <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
               <!-- <a href="https://tu-demo-mini-juegos.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+              <!-- Enlace a vídeo de demostración en YouTube mostrando cada minijuego en acción -->
               <!-- <a href="https://www.youtube.com/watch?v=ID_VIDEO_MINIJUEGOS" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a> -->
             </p>
-            <!-- Opcional embed:
+            <!-- Opcional embed de vídeo:
             <div class="mt-3">
               <div class="ratio ratio-16x9">
                 <iframe src="https://www.youtube.com/embed/ID_VIDEO_MINIJUEGOS" title="Demo Mini Juegos controlados con gestos" allowfullscreen></iframe>
