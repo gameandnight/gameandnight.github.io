@@ -47,8 +47,15 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">Iker Redondo Serra</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -79,32 +86,122 @@
 
         <!-- Proyecto: Detección de señales de tráfico con YOLO11x -->
         <div class="row mb-4 align-items-start">
+          <!-- Columna de imagen: se centra verticalmente con align-items-start en la fila -->
           <div class="col-md-4 d-flex flex-column align-items-center">
+            <!-- Imagen representativa: capturas de pantalla de la demo en tiempo real -->
             <img
               src="/assets/images/deteccion-senales.jpg"
               alt="Detección de señales de tráfico con YOLO11x"
               class="img-fluid rounded project-img"
             >
+            <!-- Comentario: 
+                 Aquí podrías incluir varias mini-imágenes (thumbnails) si quieres mostrar pasos intermedios, 
+                 p.ej., una captura del etiquetado en CVAT, otra del entrenamiento en consola, otra de la inferencia en pantalla.
+                 Ejemplo:
+                 <img src="/assets/images/detalle-cvat.jpg" alt="Etiquetado en CVAT" class="img-fluid rounded project-img mt-2">
+            -->
           </div>
+
           <div class="col-md-8">
             <h3>Detección de señales de tráfico con YOLO11x</h3>
-            <p>Fine-tuning de YOLO11x para detección de señales de tráfico en tiempo real usando la webcam.</p>
-            <p><strong>Pipeline:</strong></p>
-            <ul>
-              <li>Etiquetado con CVAT y exportación al formato YOLO.</li>
-              <li>Entrenamiento en GPU: variantes YOLO11n → YOLO11x, ajuste de hiperparámetros.</li>
-              <li>Pruebas en tiempo real: webcam, detección y síntesis de voz de la señal detectada.</li>
-              <li>Optimización de clases y balanceo para reducir falsos positivos.</li>
-            </ul>
+            <!-- Breve descripción general -->
             <p>
-              <!-- <a href="https://github.com/gameandnight/deteccion-senales" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
-              <!-- <a href="https://tu-demo.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
-              <!-- <a href="https://www.youtube.com/watch?v=ID_VIDEO_DETECCION" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a> -->
+              Proyecto de fine-tuning de un modelo YOLO11x para detección de señales de tráfico en tiempo real mediante webcam. 
+              Se parte de un dataset preexistente de ~12.000 imágenes etiquetadas, reforzando clases menos representadas
+              y entrenando localmente con early-stopping y ajustes de hiperparámetros para equilibrar recursos y precisión :contentReference[oaicite:20]{index=20}.
             </p>
-            <!-- Opcional embed:
+
+            <!-- Pipeline detallado -->
+            <p><strong>Pipeline completo:</strong></p>
+            <ul>
+              <!-- Investigación de herramientas de etiquetado -->
+              <li>
+                <strong>Investigación de herramientas:</strong> 
+                Se evaluaron CVAT y Roboflow. Se seleccionó CVAT por control local de datos y exportación directa a formato YOLO
+                (a pesar de limitaciones en auto-etiquetado), permitiendo un flujo de trabajo local seguro :contentReference[oaicite:21]{index=21}.
+                <!-- Comentario: podrías añadir enlace a la documentación interna o a ejemplos de configuración Docker de CVAT. -->
+              </li>
+
+              <!-- Creación y refuerzo de dataset -->
+              <li>
+                <strong>Creación y refuerzo del dataset:</strong> 
+                Partiendo de un dataset preexistente, se identificaron clases poco representadas (e.g., “giro a la izquierda”) y se añadieron manualmente imágenes etiquetadas en CVAT para balancear.
+                Exportación en formato YOLO generó archivos de coordenadas listos para entrenamiento local :contentReference[oaicite:22]{index=22}.
+                <!-- Comentario: podrías enlazar al script de procesamiento de data.yaml o al README que explica la estructura de carpetas. -->
+              </li>
+
+              <!-- Entrenamiento inicial -->
+              <li>
+                <strong>Entrenamiento inicial con YOLO11n:</strong> 
+                Se entrenó primero en portátil (~24h) y luego en máquina más potente (<4h) con early-stopping antes de 100 épocas, validando rendimiento en clasificación de imágenes. Los nombres de señales se adaptaron a castellano en segundo entrenamiento.
+                <!-- Comentario: referencia a “entrenamiento.py” y logs de entrenamiento, ubicado en carpeta “resultados entrenamiento”. -->
+              </li>
+
+              <!-- Pruebas en tiempo real con YOLO11n -->
+              <li>
+                <strong>Pruebas en tiempo real con YOLO11n:</strong> 
+                Se integró modelo en script de prueba (prueba.py), capturando con OpenCV y leyendo nombre por síntesis de voz. Se observaron limitaciones: lentitud en inferencia y detecciones ruidosas con muchas clases.
+                <!-- Comentario: problemas detectados incluyen congelamiento de cámara durante la síntesis de audio y solapamiento de lecturas. -->
+              </li>
+
+              <!-- Migración a YOLO11x -->
+              <li>
+                <strong>Migración a YOLO11x:</strong> 
+                Para mejorar rendimiento en tiempo real, se entrenó un modelo YOLO11x (~13h en PC con GPU, ajustando batch size por VRAM). Early-stopping antes de 100 épocas. Este modelo mostró mejor facilidad para detectar en webcam, aunque aún con falsos positivos debido a gran número de clases.
+                <!-- Comentario: puedes enlazar al script específico de entrenamiento con YOLO11x y parámetros usados. -->
+              </li>
+
+              <!-- Evaluación y reducción de clases -->
+              <li>
+                <strong>Evaluación y reducción de clases en inferencia:</strong> 
+                En el script de detección en tiempo real se redujo temporalmente el conjunto de clases a detectar (ej. 10 en lugar de 49), mejorando estabilidad y reduciendo falsos positivos.  
+                <!-- Comentario: indica dónde en el código se filtran las clases activas. -->
+              </li>
+
+              <!-- Ajustes de inferencia y síntesis de voz -->
+              <li>
+                <strong>Ajustes en prueba en tiempo real:</strong> 
+                - Gestión de congelamientos: se pausó la captura de frames antes de reproducir audio y se retomó tras finalizar la lectura.  
+                - Manejo de múltiples detecciones simultáneas: lógica para seleccionar lectura de señal prioritaria o en cola, evitando interrupciones mutuas.  
+                <!-- Comentario: referencia a fragmento de código donde se controla la espera de audio y reanudación de bucle OpenCV. -->
+              </li>
+
+              <!-- Optimización futura -->
+              <li>
+                <strong>Optimización futura:</strong> 
+                - Reforzar dataset manualmente o mediante scripts de reetiquetado para balancear todas las clases y reducir confusiones.  
+                - Probar modelos intermedios (YOLO11m, YOLO11l) para equilibrio entre recursos y velocidad.  
+                - Data augmentation y ajustes de hiperparámetros (learning rate, image size, batch size) en entrenamiento.  
+                - Posible integración de detección multitarea: filtrar clases irrelevantes según contexto o región geográfica.  
+                <!-- Comentario: enlazar a scripts de data augmentation o notas de configuración. -->
+              </li>
+
+              <!-- Documentación y resultados -->
+              <li>
+                <strong>Documentación y resultados:</strong> 
+                - Carpeta “resultados entrenamiento” incluye métricas (mAP, curvas de entrenamiento).  
+                - Carpeta “pruebas imagenes” con capturas de detección en imágenes estáticas.  
+                - Scripts “entrenamiento.py” y “prueba.py” aportan reproducibilidad.  
+                <!-- Comentario: se puede agregar enlace o referencia al README en el repositorio que explique la estructura de carpetas del proyecto. -->
+              </li>
+            </ul>
+
+            <!-- Enlaces de interés -->
+            <p>
+              <!-- Descomenta según disponibilidad: -->
+              <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
+              <!-- <a href="https://github.com/gameandnight/deteccion-senales" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+              <!-- Si existe demo online o notebook con prueba, añade enlace aquí -->
+              <!-- <a href="https://tu-demo.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+              <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo -->
+              <!-- <a href="https://www.youtube.com/watch?v=TU_VIDEO_ID" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a> -->
+            </p>
+
+            <!-- Opcional: embed de vídeo de demo -->
+            <!--
             <div class="mt-3">
               <div class="ratio ratio-16x9">
-                <iframe src="https://www.youtube.com/embed/ID_VIDEO_DETECCION" title="Demo detección señales" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/TU_VIDEO_ID" title="Demo detección señales" allowfullscreen></iframe>
               </div>
             </div>
             -->
@@ -208,7 +305,7 @@
                 <ul>
                   <li>Python 3.x</li>
                   <li>OpenCV (<code>opencv-python</code>)</li>
-                  <li>CVZone (<code>cvzone</code>, requiere <code>mediapipe</code>)</li>
+                  <li>CVZone (<code>cvzone</code>, <code>mediapipe</code>)</li>
                   <li>gTTS (<code>gtts</code>), pygame (para reproducir audio) o librería similar</li>
                   <li>Pillow (<code>PIL</code>) para dibujar texto sobre la imagen con fuentes personalizadas</li>
                   <li>Tkinter (incluido en la mayoría de distribuciones Python) para la GUI del menú</li>
