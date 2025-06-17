@@ -113,6 +113,245 @@
         </div>
       </div>
       <!-- Añade aquí más tarjetas de proyectos -->
+
+      <!-- Proyecto: Detección de señales de tráfico con YOLO11x -->
+        <div class="row mb-4 align-items-start">
+          <div class="col-md-4 d-flex flex-column align-items-center">
+            <img
+              src="/assets/images/deteccion-senales.jpg"
+              alt="Detección de señales de tráfico con YOLO11x"
+              class="img-fluid rounded project-img"
+            >
+          </div>
+          <div class="col-md-8">
+            <h3>Detección de señales de tráfico con YOLO11x</h3>
+            <p>Fine-tuning de YOLO11x para detección de señales de tráfico en tiempo real usando la webcam.</p>
+            <p><strong>Pipeline:</strong></p>
+            <ul>
+              <li>Etiquetado con CVAT y exportación al formato YOLO.</li>
+              <li>Entrenamiento en GPU: variantes YOLO11n → YOLO11x, ajuste de hiperparámetros.</li>
+              <li>Pruebas en tiempo real: webcam, detección y síntesis de voz de la señal detectada.</li>
+              <li>Optimización de clases y balanceo para reducir falsos positivos.</li>
+            </ul>
+            <p>
+              <!-- <a href="https://github.com/gameandnight/deteccion-senales" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+              <!-- <a href="https://tu-demo.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+              <a href="https://www.youtube.com/watch?v=ID_VIDEO_DETECCION" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
+            </p>
+            <!-- Opcional embed:
+            <div class="mt-3">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/ID_VIDEO_DETECCION" title="Demo detección señales" allowfullscreen></iframe>
+              </div>
+            </div>
+            -->
+          </div>
+        </div>
+
+        <!-- Proyecto: Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter) -->
+        <div class="row mb-4 align-items-start">
+          <div class="col-md-4 d-flex flex-column align-items-center">
+            <img
+              src="/assets/images/mini-juegos-gestos.jpg"
+              alt="Suite de Mini Juegos controlados con gestos"
+              class="img-fluid rounded project-img"
+            >
+          </div>
+          <div class="col-md-8">
+            <h3>Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter)</h3>
+            <p>Aplicación en Python que ofrece varios mini juegos interactivos controlados mediante gestos o pose corporal, usando OpenCV y una interfaz Tkinter.</p>
+            <p><strong>Descripción general / Pipeline:</strong></p>
+            <ul>
+              <li>Launcher en Tkinter con botones para cada mini juego: "Manos", “Cuerpo”, “Dibujar”, “Atrapa la pelota”, “Piedra, Papel o Tijera” y “Snake”.</li>
+              <li>Para detección de landmarks de mano y pose se emplea CVZone PoseModule/HandTracking, facilitando el uso de MediaPipe para extraer coordenadas clave.</li>
+              <li>Lógica de cada mini juego: captura de cámara con <code>cv2.VideoCapture</code>, procesamiento de frames, interpretación de gestos para mover sprites, dibujar o decidir jugadas.</li>
+              <li>Manejo de eventos de teclado (‘q’ para salir) y retorno al menú sin cerrar la app por completo.</li>
+              <!-- <li>Pruebas y calibraciones para asegurar suficiente FPS y detección estable en distintas condiciones de iluminación.</li> -->
+            </ul>
+            <p>
+              <!-- <a href="https://github.com/gameandnight/mini-juegos-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+              <!-- <a href="https://tu-demo-mini-juegos.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+              <a href="https://www.youtube.com/watch?v=ID_VIDEO_MINIJUEGOS" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
+            </p>
+            <!-- Opcional embed:
+            <div class="mt-3">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/ID_VIDEO_MINIJUEGOS" title="Demo Mini Juegos controlados con gestos" allowfullscreen></iframe>
+              </div>
+            </div>
+            -->
+          </div>
+        </div>
+
+        <!-- Proyecto: Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter) -->
+        <div class="row mb-4 align-items-start">
+          <div class="col-md-4 d-flex flex-column align-items-center">
+            <!-- Múltiples imágenes apiladas verticalmente -->
+            <img
+              src="/assets/images/trivial-gestos.jpg"
+              alt="Juego de Trivial - captura 1"
+              class="img-fluid rounded project-img"
+            >
+            <!-- <img
+              src="/assets/images/trivial-gestos-2.jpg"
+              alt="Juego de Trivial - captura 2"
+              class="img-fluid rounded project-img"
+            > -->
+            <!-- Puedes añadir más imágenes si deseas, con la misma clase .project-img -->
+          </div>
+          <div class="col-md-8">
+            <h3>Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter)</h3>
+            <p>Aplicación en Python que presenta preguntas de trivia en diferentes categorías, permitiendo seleccionar la respuesta mediante gestos de mano (rock/paper/scissors) capturados por la webcam.</p>
+            <p><strong>Descripción general / Pipeline:</strong></p>
+            <ul>
+              <li><strong>Interfaz de menú con Tkinter:</strong> Al iniciar, se muestra una ventana Tkinter con botones para cada categoría de preguntas (p. ej. ESO, Bachiller, Informática). El usuario selecciona una categoría para iniciar el trivial.</li>
+              <li><strong>Carga de preguntas:</strong> El código lee archivos JSON con preguntas y opciones (por ejemplo <code>questions_eso.json</code>, <code>questions_bachiller.json</code>), donde cada elemento incluye la pregunta, las opciones y el índice de la respuesta correcta.</li>
+              <li><strong>Preparación de recursos visuales:</strong> Se carga una imagen de fondo (<code>Resources/BG.png</code>) redimensionada a la resolución de la ventana (p.ej. 1280×720). Se preparan imágenes de feedback (correcto/incorrecto) (<code>correct.wav</code>, <code>incorrect.wav</code>) y sprites opcionales.</li>
+              <li><strong>Captura de cámara y detección de gestos:</strong>
+                <ul>
+                  <li>Se inicializa <code>cv2.VideoCapture(0)</code> para capturar frames de la webcam.</li>
+                  <li>Se utiliza CVZone HandDetector (basado en MediaPipe) para detectar la mano y extraer landmarks, con los cuales se interpreta el gesto rock/paper/scissors como selección de respuesta. Esto permite mapear cada opción a un gesto: “Piedra”, “Papel” o “Tijeras”.</li>
+                  <li>En cada pregunta, tras mostrarla en pantalla, se espera a que el detector identifique claramente uno de los gestos. Durante esta espera, se muestra la imagen de fondo más un recuadro con el feed de cámara, indicando al usuario que haga el gesto.</li>
+                </ul>
+              </li>
+              <li><strong>Dependencias:</strong>
+                <ul>
+                  <li>Python 3.x</li>
+                  <li>OpenCV (<code>opencv-python</code>)</li>
+                  <li>CVZone (<code>cvzone</code>, requiere <code>mediapipe</code>)</li>
+                  <li>gTTS (<code>gtts</code>), pygame (para reproducir audio) o librería similar</li>
+                  <li>Pillow (<code>PIL</code>) para dibujar texto sobre la imagen con fuentes personalizadas</li>
+                  <li>Tkinter (incluido en la mayoría de distribuciones Python) para la GUI del menú</li>
+                  <li>Otros: <code>numpy</code>, <code>random</code>, <code>time</code>, <code>json</code> etc.</li>
+                </ul>
+              </li>
+              <!-- <li><strong>Pruebas y grabación de demo:</strong>
+                <ul>
+                  <li>Grabar con OBS o Game Bar mostrando la ventana Tkinter de selección y luego la sesión de trivial: pregunta en pantalla, usuario realiza gesto, detección y feedback de voz.</li>
+                  <li>Tomar capturas de pantalla para la imagen representativa del proyecto en tu portfolio.</li>
+                </ul>
+              </li> -->
+            </ul>
+            <p>
+              <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
+              <!-- <a href="https://github.com/gameandnight/trivia-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+              <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
+              <!-- <a href="https://tu-demo-trivia.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+              <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo del trivial controlado con gestos -->
+              <a href="https://www.youtube.com/watch?v=ID_VIDEO_TRIVIAL" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
+            </p>
+            <!-- Opcional embed de vídeo:
+            <div class="mt-3">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/ID_VIDEO_TRIVIAL" title="Demo Juego de Trivial con gestos" allowfullscreen></iframe>
+              </div>
+            </div>
+            -->
+          </div>
+        </div>
+
+        <!-- Proyecto: Juego de Plataformas y Shooter de Naves controlado con gestos RPS -->
+        <div class="row mb-4 align-items-start">
+          <div class="col-md-4 d-flex flex-column align-items-center">
+            <!-- Múltiples imágenes apiladas verticalmente -->
+            <img
+              src="/assets/images/juego-nivel1.jpg"
+              alt="Juego Plataformas - Nivel 1"
+              class="img-fluid rounded project-img"
+            >
+            <img
+              src="/assets/images/juego-nivel2.jpg"
+              alt="Juego Plataformas - Nivel 2"
+              class="img-fluid rounded project-img"
+            >
+            <!-- <img
+              src="/assets/images/juego-nivel3.jpg"
+              alt="Juego Shooter de Naves - Nivel 3"
+              class="img-fluid rounded project-img"
+            > -->
+            <!-- Si deseas más capturas, añade más <img> con la clase project-img -->
+          </div>
+          <div class="col-md-8">
+            <h3>Juego de Plataformas y Shooter de Naves controlado con gestos RPS</h3>
+            <p>Aplicación en Python que combina dos niveles de plataformas y un tercer nivel de shooter de naves con scroll automático y boss final, controlados mediante gestos de mano (Rock/Paper/Scissors) detectados con la webcam.</p>
+            <p><strong>Descripción general / Pipeline:</strong></p>
+            <ul>
+              <li><strong>Estructura modular:</strong>
+                <ul>
+                  <li><code>game.py</code>: Punto de entrada. Inicializa Pygame, HandDetector (CVZone) y controla el bucle principal, alternando entre modos de plataforma y modo shooter según selección.</li>
+                  <li><code>gestures.py</code>: Función <code>detect_gesture</code> que recibe lista de manos detectadas por <code>HandDetector</code> y devuelve “piedra”, “papel” o “tijeras” según dedos levantados (rock/paper/scissors). Mapea cada gesto a acciones del juego.</li>
+                  <li><code>modePlatform.py</code>: Lógica de niveles de plataformas. Obtiene datos de cada nivel desde <code>levels.py</code>, usa <code>pantalla.py</code> para dibujar fondos, bloques, obstáculos, nubes, árboles y UI, y <code>player.py</code> para la clase Player con física (gravedad, salto, colisiones).</li>
+                  <li><code>modeSpace.py</code>: Lógica del shooter de naves. Usa <code>spaceship.py</code> para la clase de la nave del jugador, <code>pantalla.py</code> para dibujar fondo espacial, obstáculos y UI, y controla enemigos, disparos y boss final.</li>
+                  <li><code>pantalla.py</code>: Funciones para dibujar la interfaz común: parallax backgrounds, UI (vidas, puntuación), obstáculos, sprites, textos en pantalla, gestionando carga única de assets para optimizar rendimiento.</li>
+                  <li><code>player.py</code> y <code>spaceship.py</code>: Definen las clases de entidad del jugador: atributos como posición, velocidad, animaciones o sprites, métodos de actualización de posición, colisiones y dibujo en pantalla.</li>
+                  <li><code>levels.py</code>: Definición de cada nivel de plataforma (coordenadas de bloques, obstáculos, nubes, trees, enemigos) y funciones para colisiones y generación de contenido procedimental o estático según nivel. También patrones para shooter (enemigos, spawn, boss).</li>
+                  <li><code>sound.py</code>: Inicialización y reproducción de música de fondo y efectos de sonido (salto, disparo, explosiones, boss defeat), usando <code>pygame.mixer</code> u otra librería de audio.</li>
+                  <li><code>assets/</code>: Carpeta con imágenes y sonidos (fondos, sprites, gestos, efectos). Ejemplos:
+                    <ul>
+                      <li><code>assets/images/juego-nivel1.jpg</code>, <code>juego-nivel2.jpg</code>, <code>juego-nivel3.jpg</code> para capturas de cada nivel.</li>
+                      <li><code>assets/gestos/Rock.png</code>, <code>Paper.png</code>, <code>Scissors.png</code> para feedback de detección de gesto.</li>
+                      <li><code>assets/sounds/jump.wav</code>, <code>shoot.wav</code>, <code>explosion.wav</code>, <code>boss.wav</code>, etc.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <!-- <li><strong>Interfaz de inicio / menú:</strong>
+                <ul>
+                  <li>Ventana inicial (Tkinter o Pygame): muestra opciones “Nivel 1 (Plataformas)”, “Nivel 2 (Plataformas avanzado)”, “Nivel 3 (Shooter de naves)”.</li>
+                  <li>Al elegir nivel, se inicia el modo correspondiente en <code>game.py</code>, que llama a <code>modePlatform.modePlatform(...)</code> o <code>modeSpace.modeSpace(...)</code> con parámetros de configuración (resolución, velocidad, assets cargados, detector de gestos).</li>
+                </ul>
+              </li> -->
+              <li><strong>Captura de cámara y detección de gestos:</strong>
+                <ul>
+                  <li>Se inicializa <code>cv2.VideoCapture(0)</code> para leer frames de la webcam.</li>
+                  <li>Se crea <code>HandDetector(detectionCon=0.8, maxHands=1)</code> de CVZone para detectar mano y extraer landmarks de MediaPipe con pocas líneas de código.</li>
+                  <li>En cada frame, <code>hands, frame = detector.findHands(frame)</code> devuelve lista de manos detectadas y dibuja recuadros sobre la imagen. Luego <code>detect_gesture(hands, detector)</code> evalúa <code>detector.fingersUp(hand)</code> y devuelve:
+                    <ul>
+                      <li><strong>“piedra”</strong>: en niveles de plataforma se interpreta como “avanzar” o “moverse adelante”; en shooter, se interpreta como “subir”.</li>
+                      <li><strong>“papel”</strong>: en plataformas se mapea a “saltar” (salto normal o más alto en nivel 2); en shooter, mapea a “disparar” o activar arma principal.</li>
+                      <li><strong>“tijeras”</strong>: en plataformas se mapea a “retroceder” ; en shooter, mapea a “bajar”.</li>
+                    </ul>
+                  </li>
+                  <li>En pantalla de juego, se muestra un recuadro pequeño con feed de cámara y/o íconos de gesto para guiar al usuario y confirmar gesto detectado.</li>
+                </ul>
+              </li>              
+              <li><strong>Dependencias:</strong>
+                <ul>
+                  <li>Python 3.x</li>
+                  <li>OpenCV (<code>opencv-python</code>) y CVZone (<code>cvzone</code>, <code>mediapipe</code>) para detección de gestos.</li>
+                  <li>Pygame para renderizado 2D, gestión de sonido y detección de teclado.</li>
+                  <li>Tkinter (opcional) para menú inicial, o todo en Pygame.</li>
+                  <!-- <li>gTTS o librería de audio para síntesis de voz (opcional).</li> -->
+                  <!-- <li>Pillow (<code>PIL</code>) para manipular sprites o fondos si es necesario.</li> -->
+                  <li>Otras librerías: <code>numpy</code>, <code>random</code>, <code>time</code>, <code>json</code>.</li>
+                </ul>
+              </li>
+              <!-- <li><strong>Pruebas y grabación de demo:</strong>
+                <ul>
+                  <li>Ejecutar localmente en distintas condiciones de iluminación y ángulos de cámara.</li>
+                  <li>Grabar con OBS Studio o Game Bar: mostrar menú inicial, Nivel 1, Nivel 2, Nivel 3 con boss final, evidenciando gestos RPS controlando acciones.</li>
+                  <li>Tomar capturas de pantalla representativas de cada nivel para la imagen en el portfolio.</li>
+                  <li>Opcionalmente editar vídeo (cortar inicio/fin, añadir texto) antes de subir a YouTube.</li>
+                </ul>
+              </li> -->
+            </ul>
+            <p>
+              <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
+              <!-- <a href="https://github.com/gameandnight/juego-plataformas-naves-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+              <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
+              <!-- <a href="https://tu-demo-juego-gestos.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+              <!-- Enlace a vídeo de demostración en YouTube mostrando los tres niveles y boss final controlados con gestos -->
+              <a href="https://youtu.be/6NqIDnq6rIg" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
+            </p>
+            <!-- Opcional embed de vídeo:
+            <div class="mt-3">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/ID_VIDEO_JUEGO_PLATAFORMAS" title="Demo Juego Plataformas y Naves con gestos" allowfullscreen></iframe>
+              </div>
+            </div>
+            -->
+          </div>
+        </div>
       
     </div>
   </section>
