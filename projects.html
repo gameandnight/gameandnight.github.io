@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Proyectos - Iker Redondo Serra</title>
@@ -21,481 +22,544 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-      .nav-link[aria-current="page"] {
-        font-weight: bold;
-        color: #0d6efd;
-      }
-      /* Asegura que todas las imágenes de proyectos tengan la misma altura y cobertura */
-      .project-img {
-        width: 100%;
-        height: 400px; /* Ajusta la altura según convenga */
-        object-fit: cover;
-      }
-      /* Margen inferior entre imágenes apiladas */
-      .project-img + .project-img {
-        margin-top: 0.5rem;
-      }
-      /* Opcional: si quieres que la columna de imagen no se encoja demasiado en pantallas pequeñas */
-      @media (min-width: 768px) {
-        .col-md-4 {
-          max-width: 33.3333%;
+        .nav-link[aria-current="page"] {
+            font-weight: bold;
+            color: #0d6efd;
         }
-      }
+
+        /* Asegura que todas las imágenes de proyectos tengan la misma altura y cobertura */
+        .project-img {
+            width: 100%;
+            height: 400px;
+            /* Ajusta la altura según convenga */
+            object-fit: cover;
+        }
+
+        /* Margen inferior entre imágenes apiladas */
+        .project-img+.project-img {
+            margin-top: 0.5rem;
+        }
+
+        /* Opcional: si quieres que la columna de imagen no se encoja demasiado en pantallas pequeñas */
+        @media (min-width: 768px) {
+            .col-md-4 {
+                max-width: 33.3333%;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">Iker Redondo Serra</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about.html">Sobre mí</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/projects.html" aria-current="page">Proyectos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contact.html">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/assets/cv/CV.pdf" target="_blank" rel="noopener">Descargar CV</a>
-            </li>
-          </ul>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Iker Redondo Serra</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects.html" aria-current="page">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/assets/cv/CV.pdf" target="_blank" rel="noopener">Descargar CV</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <section class="bg-light py-5">
-      <div class="container">
-        <h1>Proyectos Destacados</h1>
+        <div class="container">
+            <h1>Proyectos Destacados</h1>
 
-        <!-- Proyecto: Detección de señales de tráfico con YOLO11x -->
-        <div class="row mb-4 align-items-start">
-          <!-- Columna de imagen: se centra verticalmente con align-items-start en la fila -->
-          <div class="col-md-4 d-flex flex-column align-items-center">
-            <!-- Imagen representativa: capturas de pantalla de la demo en tiempo real -->
-            <img
-              src="/assets/images/deteccion-senales.jpg"
-              alt="Detección de señales de tráfico con YOLO11x"
-              class="img-fluid rounded project-img"
-            >
-            <!-- Comentario: 
+            <!-- Proyecto: Detección de señales de tráfico con YOLO11x -->
+            <div class="row mb-4 align-items-start">
+                <!-- Columna de imagen: se centra verticalmente con align-items-start en la fila -->
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <!-- Imagen representativa: capturas de pantalla de la demo en tiempo real -->
+                    <img src="/assets/images/deteccion-senales.jpg" alt="Detección de señales de tráfico con YOLO11x"
+                        class="img-fluid rounded project-img">
+                    <!-- Comentario: 
                  Aquí podrías incluir varias mini-imágenes (thumbnails) si quieres mostrar pasos intermedios, 
                  p.ej., una captura del etiquetado en CVAT, otra del entrenamiento en consola, otra de la inferencia en pantalla.
                  Ejemplo:
                  <img src="/assets/images/detalle-cvat.jpg" alt="Etiquetado en CVAT" class="img-fluid rounded project-img mt-2">
             -->
-          </div>
+                </div>
 
-          <div class="col-md-8">
-            <h3>Detección de señales de tráfico con YOLO11x</h3>
-            <!-- Breve descripción general -->
-            <p>
-              Proyecto de fine-tuning de un modelo YOLO11x para detección de señales de tráfico en tiempo real mediante webcam. 
-              Se parte de un dataset preexistente de ~12.000 imágenes etiquetadas, reforzando clases menos representadas
-              y entrenando localmente con early-stopping y ajustes de hiperparámetros para equilibrar recursos y precisión.
-            </p>
+                <div class="col-md-8">
+                    <h3>Detección de señales de tráfico con YOLO11x</h3>
+                    <!-- Breve descripción general -->
+                    <p>
+                        Proyecto de fine-tuning de un modelo YOLO11x para detección de señales de tráfico en tiempo real
+                        mediante webcam.
+                        Se parte de un dataset preexistente de ~12.000 imágenes etiquetadas, reforzando clases menos
+                        representadas
+                        y entrenando localmente con early-stopping y ajustes de hiperparámetros para equilibrar recursos
+                        y precisión.
+                    </p>
 
-            <!-- Pipeline detallado -->
-            <p><strong>Pipeline completo:</strong></p>
-            <ul>
-              <!-- Investigación de herramientas de etiquetado -->
-              <li>
-                <strong>Investigación de herramientas:</strong> 
-                Se evaluaron CVAT y Roboflow. Se seleccionó CVAT por control local de datos y exportación directa a formato YOLO
-                (a pesar de limitaciones en auto-etiquetado), permitiendo un flujo de trabajo local seguro.
-                <!-- Comentario: podrías añadir enlace a la documentación interna o a ejemplos de configuración Docker de CVAT. -->
-              </li>
+                    <!-- Pipeline detallado -->
+                    <p><strong>Pipeline completo:</strong></p>
+                    <ul>
+                        <!-- Investigación de herramientas de etiquetado -->
+                        <li>
+                            <strong>Investigación de herramientas:</strong>
+                            Se evaluaron CVAT y Roboflow. Se seleccionó CVAT por control local de datos y exportación
+                            directa a formato YOLO
+                            (a pesar de limitaciones en auto-etiquetado), permitiendo un flujo de trabajo local seguro.
+                            <!-- Comentario: podrías añadir enlace a la documentación interna o a ejemplos de configuración Docker de CVAT. -->
+                        </li>
 
-              <!-- Creación y refuerzo de dataset -->
-              <li>
-                <strong>Creación y refuerzo del dataset:</strong> 
-                Partiendo de un dataset preexistente, se identificaron clases poco representadas (e.g., “giro a la izquierda”) y se añadieron manualmente imágenes etiquetadas en CVAT para balancear.
-                Exportación en formato YOLO generó archivos de coordenadas listos para entrenamiento local.
-                <!-- Comentario: podrías enlazar al script de procesamiento de data.yaml o al README que explica la estructura de carpetas. -->
-              </li>
+                        <!-- Creación y refuerzo de dataset -->
+                        <li>
+                            <strong>Creación y refuerzo del dataset:</strong>
+                            Partiendo de un dataset preexistente, se identificaron clases poco representadas (e.g.,
+                            “giro a la izquierda”) y se añadieron manualmente imágenes etiquetadas en CVAT para
+                            balancear.
+                            Exportación en formato YOLO generó archivos de coordenadas listos para entrenamiento local.
+                            <!-- Comentario: podrías enlazar al script de procesamiento de data.yaml o al README que explica la estructura de carpetas. -->
+                        </li>
 
-              <!-- Entrenamiento inicial -->
-              <li>
-                <strong>Entrenamiento inicial con YOLO11n:</strong> 
-                Se entrenó primero en portátil (~24h) y luego en máquina más potente (<4h) con early-stopping antes de 100 épocas, validando rendimiento en clasificación de imágenes. Los nombres de señales se adaptaron a castellano en segundo entrenamiento.
-                <!-- Comentario: referencia a “entrenamiento.py” y logs de entrenamiento, ubicado en carpeta “resultados entrenamiento”. -->
-              </li>
+                        <!-- Entrenamiento inicial -->
+                        <li>
+                            <strong>Entrenamiento inicial con YOLO11n:</strong>
+                            Se entrenó primero en portátil (~24h) y luego en máquina más potente (<4h) con
+                                early-stopping antes de 100 épocas, validando rendimiento en clasificación de imágenes.
+                                Los nombres de señales se adaptaron a castellano en segundo entrenamiento. <!--
+                                Comentario: referencia a “entrenamiento.py” y logs de entrenamiento, ubicado en carpeta
+                                “resultados entrenamiento”. -->
+                        </li>
 
-              <!-- Pruebas en tiempo real con YOLO11n -->
-              <li>
-                <strong>Pruebas en tiempo real con YOLO11n:</strong> 
-                Se integró modelo en script de prueba (prueba.py), capturando con OpenCV y leyendo nombre por síntesis de voz. Se observaron limitaciones: lentitud en inferencia y detecciones ruidosas con muchas clases.
-                <!-- Comentario: problemas detectados incluyen congelamiento de cámara durante la síntesis de audio y solapamiento de lecturas. -->
-              </li>
+                        <!-- Pruebas en tiempo real con YOLO11n -->
+                        <li>
+                            <strong>Pruebas en tiempo real con YOLO11n:</strong>
+                            Se integró modelo en script de prueba (prueba.py), capturando con OpenCV y leyendo nombre
+                            por síntesis de voz. Se observaron limitaciones: lentitud en inferencia y detecciones
+                            ruidosas con muchas clases.
+                            <!-- Comentario: problemas detectados incluyen congelamiento de cámara durante la síntesis de audio y solapamiento de lecturas. -->
+                        </li>
 
-              <!-- Migración a YOLO11x -->
-              <li>
-                <strong>Migración a YOLO11x:</strong> 
-                Para mejorar rendimiento en tiempo real, se entrenó un modelo YOLO11x (~13h en PC con GPU, ajustando batch size por VRAM). Early-stopping antes de 100 épocas. Este modelo mostró mejor facilidad para detectar en webcam, aunque aún con falsos positivos debido a gran número de clases.
-                <!-- Comentario: puedes enlazar al script específico de entrenamiento con YOLO11x y parámetros usados. -->
-              </li>
+                        <!-- Migración a YOLO11x -->
+                        <li>
+                            <strong>Migración a YOLO11x:</strong>
+                            Para mejorar rendimiento en tiempo real, se entrenó un modelo YOLO11x (~13h en PC con GPU,
+                            ajustando batch size por VRAM). Early-stopping antes de 100 épocas. Este modelo mostró mejor
+                            facilidad para detectar en webcam, aunque aún con falsos positivos debido a gran número de
+                            clases.
+                            <!-- Comentario: puedes enlazar al script específico de entrenamiento con YOLO11x y parámetros usados. -->
+                        </li>
 
-              <!-- Evaluación y reducción de clases -->
-              <li>
-                <strong>Evaluación y reducción de clases en inferencia:</strong> 
-                En el script de detección en tiempo real se redujo temporalmente el conjunto de clases a detectar (ej. 10 en lugar de 49), mejorando estabilidad y reduciendo falsos positivos.  
-                <!-- Comentario: indica dónde en el código se filtran las clases activas. -->
-              </li>
+                        <!-- Evaluación y reducción de clases -->
+                        <li>
+                            <strong>Evaluación y reducción de clases en inferencia:</strong>
+                            En el script de detección en tiempo real se redujo temporalmente el conjunto de clases a
+                            detectar (ej. 10 en lugar de 49), mejorando estabilidad y reduciendo falsos positivos.
+                            <!-- Comentario: indica dónde en el código se filtran las clases activas. -->
+                        </li>
 
-              <!-- Ajustes de inferencia y síntesis de voz -->
-              <li>
-                <strong>Ajustes en prueba en tiempo real:</strong> 
-                - Gestión de congelamientos: se pausó la captura de frames antes de reproducir audio y se retomó tras finalizar la lectura.  
-                - Manejo de múltiples detecciones simultáneas: lógica para seleccionar lectura de señal prioritaria o en cola, evitando interrupciones mutuas.  
-                <!-- Comentario: referencia a fragmento de código donde se controla la espera de audio y reanudación de bucle OpenCV. -->
-              </li>
+                        <!-- Ajustes de inferencia y síntesis de voz -->
+                        <li>
+                            <strong>Ajustes en prueba en tiempo real:</strong>
+                            - Gestión de congelamientos: se pausó la captura de frames antes de reproducir audio y se
+                            retomó tras finalizar la lectura.
+                            - Manejo de múltiples detecciones simultáneas: lógica para seleccionar lectura de señal
+                            prioritaria o en cola, evitando interrupciones mutuas.
+                            <!-- Comentario: referencia a fragmento de código donde se controla la espera de audio y reanudación de bucle OpenCV. -->
+                        </li>
 
-              <!-- Optimización futura -->
-              <li>
-                <strong>Optimización futura:</strong> 
-                - Reforzar dataset manualmente o mediante scripts de reetiquetado para balancear todas las clases y reducir confusiones.  
-                - Probar modelos intermedios (YOLO11m, YOLO11l) para equilibrio entre recursos y velocidad.  
-                - Data augmentation y ajustes de hiperparámetros (learning rate, image size, batch size) en entrenamiento.  
-                - Posible integración de detección multitarea: filtrar clases irrelevantes según contexto o región geográfica.  
-                <!-- Comentario: enlazar a scripts de data augmentation o notas de configuración. -->
-              </li>
+                        <!-- Optimización futura -->
+                        <li>
+                            <strong>Optimización futura:</strong>
+                            - Reforzar dataset manualmente o mediante scripts de reetiquetado para balancear todas las
+                            clases y reducir confusiones.
+                            - Probar modelos intermedios (YOLO11m, YOLO11l) para equilibrio entre recursos y velocidad.
+                            - Data augmentation y ajustes de hiperparámetros (learning rate, image size, batch size) en
+                            entrenamiento.
+                            - Posible integración de detección multitarea: filtrar clases irrelevantes según contexto o
+                            región geográfica.
+                            <!-- Comentario: enlazar a scripts de data augmentation o notas de configuración. -->
+                        </li>
 
-              <!-- Documentación y resultados -->
-              <!-- <li>
+                        <!-- Documentación y resultados -->
+                        <!-- <li>
                 <strong>Documentación y resultados:</strong> 
                 - Carpeta “resultados entrenamiento” incluye métricas (mAP, curvas de entrenamiento).  
                 - Carpeta “pruebas imagenes” con capturas de detección en imágenes estáticas.  
                 - Scripts “entrenamiento.py” y “prueba.py” aportan reproducibilidad.  -->
-                <!-- Comentario: se puede agregar enlace o referencia al README en el repositorio que explique la estructura de carpetas del proyecto. -->
-              <!-- </li> -->
-            </ul>
+                        <!-- Comentario: se puede agregar enlace o referencia al README en el repositorio que explique la estructura de carpetas del proyecto. -->
+                        <!-- </li> -->
+                    </ul>
 
-            <!-- Enlaces de interés -->
-            <p>
-              <!-- Descomenta según disponibilidad: -->
-              <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
-              <!-- <a href="https://github.com/gameandnight/deteccion-senales" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
-              <!-- Si existe demo online o notebook con prueba, añade enlace aquí -->
-              <!-- <a href="https://tu-demo.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
-              <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo -->
-              <a href="https://youtu.be/JsIJ2fRwF0g" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
-            </p>
+                    <!-- Enlaces de interés -->
+                    <p>
+                        <!-- Descomenta según disponibilidad: -->
+                        <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
+                        <!-- <a href="https://github.com/gameandnight/deteccion-senales" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+                        <!-- Si existe demo online o notebook con prueba, añade enlace aquí -->
+                        <!-- <a href="https://tu-demo.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+                        <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo -->
+                        <a href="https://youtu.be/JsIJ2fRwF0g" class="btn btn-info btn-sm" target="_blank"
+                            rel="noopener">Ver Vídeo</a>
+                    </p>
 
-            <!-- Opcional: embed de vídeo de demo -->
-            <!--
+                    <!-- Opcional: embed de vídeo de demo -->
+                    <!--
             <div class="mt-3">
               <div class="ratio ratio-16x9">
                 <iframe src="https://www.youtube.com/embed/TU_VIDEO_ID" title="Demo detección señales" allowfullscreen></iframe>
               </div>
             </div>
             -->
-          </div>
-        </div>
-        <!-- Proyecto: Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter) -->
-        <div class="row mb-4 align-items-start">
-          <!-- Columna de imágenes: varias capturas apiladas verticalmente -->
-          <div class="col-md-4 d-flex flex-column align-items-center">
-            <!-- Imagen principal: pantalla del launcher Tkinter -->
-            <img
-              src="/assets/images/mini-juegos-gestos.jpg"
-              alt="Launcher de Mini Juegos controlados con gestos"
-              class="img-fluid rounded project-img"
-            >
-            <!-- Imagen de ejemplo: detección de mano en uno de los juegos 
+                </div>
+            </div>
+            <!-- Proyecto: Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter) -->
+            <div class="row mb-4 align-items-start">
+                <!-- Columna de imágenes: varias capturas apiladas verticalmente -->
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <!-- Imagen principal: pantalla del launcher Tkinter -->
+                    <img src="/assets/images/mini-juegos-gestos.jpg"
+                        alt="Launcher de Mini Juegos controlados con gestos" class="img-fluid rounded project-img">
+                    <!-- Imagen de ejemplo: detección de mano en uno de los juegos 
             <img
               src="/assets/images/mini-juegos-gestos-mano-deteccion.jpg"
               alt="Detección de mano en Mini Juegos"
               class="img-fluid rounded project-img mt-2"
             > -->
-            <!-- Imagen de ejemplo: pantalla de Snake con overlay de gestos 
+                    <!-- Imagen de ejemplo: pantalla de Snake con overlay de gestos 
             <img
               src="/assets/images/mini-juegos-gestos-snake.jpg"
               alt="Snake controlado con gestos"
               class="img-fluid rounded project-img mt-2"
             > -->
-            <!-- Nota: añade más imágenes según capturas de cada minijuego, con la clase .project-img -->
-          </div>
+                    <!-- Nota: añade más imágenes según capturas de cada minijuego, con la clase .project-img -->
+                </div>
 
-          <div class="col-md-8">
-            <h3>Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter)</h3>
-            <!-- Breve descripción general -->
-            <p>
-              Aplicación en Python que agrupa varios mini juegos interactivos, todos controlados mediante gestos capturados por webcam.
-              Usa una interfaz principal en Tkinter para seleccionar cada juego, y emplea CVZone (MediaPipe) para la detección de mano/pose.
-            </p>
+                <div class="col-md-8">
+                    <h3>Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter)</h3>
+                    <!-- Breve descripción general -->
+                    <p>
+                        Aplicación en Python que agrupa varios mini juegos interactivos, todos controlados mediante
+                        gestos capturados por webcam.
+                        Usa una interfaz principal en Tkinter para seleccionar cada juego, y emplea CVZone (MediaPipe)
+                        para la detección de mano/pose.
+                    </p>
 
-            <p><strong>Interfaz principal (Launcher con Tkinter):</strong></p>
-            <ul>
-              <li>
-                Al ejecutar <code>main.py</code>, se abre una ventana Tkinter titulada "CV Games" con:
-                <ul>
-                  <li>Etiqueta instructiva: “Selecciona un minijuego”.</li>
-                  <li>Indicador: “Presiona Q para salir de un minijuego”.</li>
-                  <li>Botones para cada minijuego:
+                    <p><strong>Interfaz principal (Launcher con Tkinter):</strong></p>
                     <ul>
-                      <li>"Manos" → <code>run_hand_tracking()</code></li>
-                      <li>"Cuerpo" → <code>run_pose_tracking()</code></li>
-                      <li>"Dibujar" → <code>run_drawing()</code></li>
-                      <li>"Atrapa la pelota" → <code>run_catch_game()</code></li>
-                      <li>"Piedra, Papel o Tijera" → <code>run_rps_game()</code></li>
-                      <li>"Snake" → <code>run_snake_game()</code></li>
+                        <li>
+                            Al ejecutar <code>main.py</code>, se abre una ventana Tkinter titulada "CV Games" con:
+                            <ul>
+                                <li>Etiqueta instructiva: “Selecciona un minijuego”.</li>
+                                <li>Indicador: “Presiona Q para salir de un minijuego”.</li>
+                                <li>Botones para cada minijuego:
+                                    <ul>
+                                        <li>"Manos" → <code>run_hand_tracking()</code></li>
+                                        <li>"Cuerpo" → <code>run_pose_tracking()</code></li>
+                                        <li>"Dibujar" → <code>run_drawing()</code></li>
+                                        <li>"Atrapa la pelota" → <code>run_catch_game()</code></li>
+                                        <li>"Piedra, Papel o Tijera" → <code>run_rps_game()</code></li>
+                                        <li>"Snake" → <code>run_snake_game()</code></li>
+                                    </ul>
+                                </li>
+                                <li>Botón “Salir” para cerrar la aplicación.</li>
+                                <li>
+                                    Cada botón lanza el juego en un hilo separado (<code>threading.Thread</code>),
+                                    evitando bloquear la GUI y permitiendo volver al launcher al cerrar el juego.
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
-                  </li>
-                  <li>Botón “Salir” para cerrar la aplicación.</li>
-                  <li>
-                    Cada botón lanza el juego en un hilo separado (<code>threading.Thread</code>), evitando bloquear la GUI y permitiendo volver al launcher al cerrar el juego.
-                  </li>
-                </ul>
-              </li>
-            </ul>
 
-            <p><strong>Dependencias generales:</strong></p>
-            <ul>
-              <li>Python 3.x</li>
-              <li>OpenCV (<code>opencv-python</code>) para captura de cámara y renderizado en ventana.</li>
-              <li>CVZone (<code>cvzone</code>) que envuelve MediaPipe para detección de manos y pose.</li>
-              <li>Tkinter (incluido en Python) para la GUI launcher.</li>
-              <li>NumPy para operaciones en arrays de imagen.</li>
-              <li>random, time, threading, según necesidad de cada juego.</li>
-            </ul>
-
-            <hr>
-
-            <p><strong>Minijuego: “Manos” (Hand Tracking)</strong></p>
-            <ul>
-              <li><strong>Función:</strong> <code>run_hand_tracking()</code> en <code>manos.py</code>.</li>
-              <li><strong>Descripción:</strong> Muestra en ventana OpenCV el feed de la webcam con detección de manos en tiempo real.</li>
-              <li><strong>Pipeline:</strong>
-                <ul>
-                  <li>Inicializa <code>cv2.VideoCapture(0)</code> y <code>HandDetector(maxHands=2)</code>.</li>
-                  <li>En bucle:
+                    <p><strong>Dependencias generales:</strong></p>
                     <ul>
-                      <li>Lee frame de la cámara.</li>
-                      <li>Aplica <code>detector.findHands(img)</code> para dibujar landmarks y bounding boxes.</li>
-                      <li>Si detecta manos, imprime en consola “Mano detectada” (útil para debug).</li>
-                      <li>Muestra el frame con <code>cv2.imshow</code> (“Hand Tracking”).</li>
-                      <li>Espera tecla ‘q’ para salir y cerrar ventana.</li>
+                        <li>Python 3.x</li>
+                        <li>OpenCV (<code>opencv-python</code>) para captura de cámara y renderizado en ventana.</li>
+                        <li>CVZone (<code>cvzone</code>) que envuelve MediaPipe para detección de manos y pose.</li>
+                        <li>Tkinter (incluido en Python) para la GUI launcher.</li>
+                        <li>NumPy para operaciones en arrays de imagen.</li>
+                        <li>random, time, threading, según necesidad de cada juego.</li>
                     </ul>
-                  </li>
-                  <li>Libera recursos al cerrar: <code>cap.release()</code> y <code>cv2.destroyAllWindows()</code>.</li>
-                </ul>
-              </li>
-              <li><strong>Comentarios importantes:</strong>
-                <ul>
-                  <li>Ventana configurada en modo redimensionable y pantalla completa opcional (<code>cv2.WINDOW_NORMAL</code> + <code>WND_PROP_FULLSCREEN</code>).</li>
-                  <li>Útil para comprobar robustez de detección antes de usar gestos en otros juegos.</li>
-                  <li>Puede servir como demo independiente de detección de mano.</li>
-                </ul>
-              </li>
-            </ul>
 
-            <hr>
+                    <hr>
 
-            <p><strong>Minijuego: “Cuerpo” (Pose Tracking)</strong></p>
-            <ul>
-              <li><strong>Función:</strong> <code>run_pose_tracking()</code> en <code>cuerpo.py</code>.</li>
-              <li><strong>Descripción:</strong> Detecta pose corporal (landmarks de cuerpo) en tiempo real y muestra sobre la imagen.</li>
-              <li><strong>Pipeline:</strong>
-                <ul>
-                  <li>Inicializa <code>cv2.VideoCapture(0)</code> y <code>PoseDetector()</code>.</li>
-                  <li>En bucle:
+                    <p><strong>Minijuego: “Manos” (Hand Tracking)</strong></p>
                     <ul>
-                      <li>Lee frame de la cámara.</li>
-                      <li>Aplica <code>detector.findPose(img)</code> o método equivalente para dibujar esqueleto.</li>
-                      <li>Muestra el frame con <code>cv2.imshow</code> (“Cuerpo”).</li>
-                      <li>Espera tecla ‘q’ para salir.</li>
+                        <li><strong>Función:</strong> <code>run_hand_tracking()</code> en <code>manos.py</code>.</li>
+                        <li><strong>Descripción:</strong> Muestra en ventana OpenCV el feed de la webcam con detección
+                            de manos en tiempo real.</li>
+                        <li><strong>Pipeline:</strong>
+                            <ul>
+                                <li>Inicializa <code>cv2.VideoCapture(0)</code> y <code>HandDetector(maxHands=2)</code>.
+                                </li>
+                                <li>En bucle:
+                                    <ul>
+                                        <li>Lee frame de la cámara.</li>
+                                        <li>Aplica <code>detector.findHands(img)</code> para dibujar landmarks y
+                                            bounding boxes.</li>
+                                        <li>Si detecta manos, imprime en consola “Mano detectada” (útil para debug).
+                                        </li>
+                                        <li>Muestra el frame con <code>cv2.imshow</code> (“Hand Tracking”).</li>
+                                        <li>Espera tecla ‘q’ para salir y cerrar ventana.</li>
+                                    </ul>
+                                </li>
+                                <li>Libera recursos al cerrar: <code>cap.release()</code> y
+                                    <code>cv2.destroyAllWindows()</code>.
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Comentarios importantes:</strong>
+                            <ul>
+                                <li>Ventana configurada en modo redimensionable y pantalla completa opcional
+                                    (<code>cv2.WINDOW_NORMAL</code> + <code>WND_PROP_FULLSCREEN</code>).</li>
+                                <li>Útil para comprobar robustez de detección antes de usar gestos en otros juegos.</li>
+                                <li>Puede servir como demo independiente de detección de mano.</li>
+                            </ul>
+                        </li>
                     </ul>
-                  </li>
-                  <li>Libera recursos y cierra ventana al salir.</li>
-                </ul>
-              </li>
-              <li><strong>Comentarios importantes:</strong>
-                <ul>
-                  <li>Útil para calibrar posiciones de cámara cuando se requiera pose corporal en futuros proyectos.</li>
-                  <li>Ventana también en modo fullscreen opcional para mejor visibilidad.</li>
-                </ul>
-              </li>
-            </ul>
 
-            <hr>
+                    <hr>
 
-            <p><strong>Minijuego: “Dibujar” (Drawing con Mano)</strong></p>
-            <ul>
-              <li><strong>Función:</strong> <code>run_drawing()</code> en <code>dibujar.py</code>.</li>
-              <li><strong>Descripción:</strong> Permite dibujar sobre el lienzo con gestos de mano:
-                <ul>
-                  <li>Usa CVZone HandDetector para detectar posición y gesto de la mano.</li>
-                  <li>Dependiendo del gesto (por ejemplo, gesto “piedra/papel/tijeras” o número de dedos), cambia la herramienta:
+                    <p><strong>Minijuego: “Cuerpo” (Pose Tracking)</strong></p>
                     <ul>
-                      <li>ICON_CHANGE (ej.: tijeras) para cambiar color.</li>
-                      <li>ICON_ERASE (ej.: papel) para borrar parte del dibujo.</li>
-                      <li>ICON_CLEAR (ej.: piedra) para limpiar todo el lienzo.</li>
+                        <li><strong>Función:</strong> <code>run_pose_tracking()</code> en <code>cuerpo.py</code>.</li>
+                        <li><strong>Descripción:</strong> Detecta pose corporal (landmarks de cuerpo) en tiempo real y
+                            muestra sobre la imagen.</li>
+                        <li><strong>Pipeline:</strong>
+                            <ul>
+                                <li>Inicializa <code>cv2.VideoCapture(0)</code> y <code>PoseDetector()</code>.</li>
+                                <li>En bucle:
+                                    <ul>
+                                        <li>Lee frame de la cámara.</li>
+                                        <li>Aplica <code>detector.findPose(img)</code> o método equivalente para dibujar
+                                            esqueleto.</li>
+                                        <li>Muestra el frame con <code>cv2.imshow</code> (“Cuerpo”).</li>
+                                        <li>Espera tecla ‘q’ para salir.</li>
+                                    </ul>
+                                </li>
+                                <li>Libera recursos y cierra ventana al salir.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Comentarios importantes:</strong>
+                            <ul>
+                                <li>Útil para calibrar posiciones de cámara cuando se requiera pose corporal en futuros
+                                    proyectos.</li>
+                                <li>Ventana también en modo fullscreen opcional para mejor visibilidad.</li>
+                            </ul>
+                        </li>
                     </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><strong>Pipeline:</strong>
-                <ul>
-                  <li>Carga íconos RGBA con <code>cv2.imread('assets/...png', cv2.IMREAD_UNCHANGED)</code> y redimensiona para UI inferior.</li>
-                  <li>Inicializa cámara y detector: <code>HandDetector</code>.</li>
-                  <li>Crea lienzo (canvas) en memoria (array NumPy) sobre el que se dibuja líneas según posición detectada de la punta del dedo índice u otro gesto.</li>
-                  <li>En bucle:
+
+                    <hr>
+
+                    <p><strong>Minijuego: “Dibujar” (Drawing con Mano)</strong></p>
                     <ul>
-                      <li>Captura frame de cámara.</li>
-                      <li>Detecta manos y landmarks.</li>
-                      <li>Interpreta gesto actual para determinar acción (dibujar, borrar, cambiar herramienta).</li>
-                      <li>Dibuja sobre el canvas: líneas, formas, o borra según corresponda.</li>
-                      <li>Renderiza el canvas sobre el frame o en ventana separada, junto con UI de íconos en la parte inferior.</li>
-                      <li>Espera ‘q’ para salir y volver al launcher.</li>
+                        <li><strong>Función:</strong> <code>run_drawing()</code> en <code>dibujar.py</code>.</li>
+                        <li><strong>Descripción:</strong> Permite dibujar sobre el lienzo con gestos de mano:
+                            <ul>
+                                <li>Usa CVZone HandDetector para detectar posición y gesto de la mano.</li>
+                                <li>Dependiendo del gesto (por ejemplo, gesto “piedra/papel/tijeras” o número de dedos),
+                                    cambia la herramienta:
+                                    <ul>
+                                        <li>ICON_CHANGE (ej.: tijeras) para cambiar color.</li>
+                                        <li>ICON_ERASE (ej.: papel) para borrar parte del dibujo.</li>
+                                        <li>ICON_CLEAR (ej.: piedra) para limpiar todo el lienzo.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Pipeline:</strong>
+                            <ul>
+                                <li>Carga íconos RGBA con <code>cv2.imread('assets/...png', cv2.IMREAD_UNCHANGED)</code>
+                                    y redimensiona para UI inferior.</li>
+                                <li>Inicializa cámara y detector: <code>HandDetector</code>.</li>
+                                <li>Crea lienzo (canvas) en memoria (array NumPy) sobre el que se dibuja líneas según
+                                    posición detectada de la punta del dedo índice u otro gesto.</li>
+                                <li>En bucle:
+                                    <ul>
+                                        <li>Captura frame de cámara.</li>
+                                        <li>Detecta manos y landmarks.</li>
+                                        <li>Interpreta gesto actual para determinar acción (dibujar, borrar, cambiar
+                                            herramienta).</li>
+                                        <li>Dibuja sobre el canvas: líneas, formas, o borra según corresponda.</li>
+                                        <li>Renderiza el canvas sobre el frame o en ventana separada, junto con UI de
+                                            íconos en la parte inferior.</li>
+                                        <li>Espera ‘q’ para salir y volver al launcher.</li>
+                                    </ul>
+                                </li>
+                                <li>Gestiona sincronización para evitar “congelar” la captura al cambiar íconos; combina
+                                    canvas y frame eficientemente.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Comentarios importantes:</strong>
+                            <ul>
+                                <li>Es importante manejar el canal alfa de los íconos para que se sobrepongan
+                                    correctamente.</li>
+                                <li>Optimizar la frecuencia de dibujo para mantener FPS adecuados (por ejemplo, limitar
+                                    tamaño de canvas o procesar sólo cuando hay cambio significativo).</li>
+                                <li>Permitir limpiar lienzo o cambiar color con gestos específicos, mostrar feedback
+                                    visual (ícono resaltado).</li>
+                            </ul>
+                        </li>
                     </ul>
-                  </li>
-                  <li>Gestiona sincronización para evitar “congelar” la captura al cambiar íconos; combina canvas y frame eficientemente.</li>
-                </ul>
-              </li>
-              <li><strong>Comentarios importantes:</strong>
-                <ul>
-                  <li>Es importante manejar el canal alfa de los íconos para que se sobrepongan correctamente.</li>
-                  <li>Optimizar la frecuencia de dibujo para mantener FPS adecuados (por ejemplo, limitar tamaño de canvas o procesar sólo cuando hay cambio significativo).</li>
-                  <li>Permitir limpiar lienzo o cambiar color con gestos específicos, mostrar feedback visual (ícono resaltado).</li>
-                </ul>
-              </li>
-            </ul>
 
-            <hr>
+                    <hr>
 
-            <p><strong>Minijuego: “Atrapa la pelota”</strong></p>
-            <ul>
-              <li><strong>Función:</strong> <code>run_catch_game()</code> en <code>pelota.py</code>.</li>
-              <li><strong>Descripción:</strong> Juego donde el usuario “atrapa” una bola virtual moviendo la mano; la bola se mueve sobre la pantalla y hay que interceptarla con el área de la mano detectada.</li>
-              <li><strong>Pipeline:</strong>
-                <ul>
-                  <li>Inicializa cámara y <code>HandDetector(maxHands=1)</code>.</li>
-                  <li>Variables del juego: posición y radio de la bola, velocidad, puntuación, niveles de dificultad creciente.</li>
-                  <li>En bucle:
+                    <p><strong>Minijuego: “Atrapa la pelota”</strong></p>
                     <ul>
-                      <li>Captura frame de cámara.</li>
-                      <li>Dibuja la bola en posición actual; la bola se desplaza aleatoriamente o con patrón hacia la mano.</li>
-                      <li>Detecta mano: obtiene bounding box o landmarks de palma.</li>
-                      <li>Comprueba colisión: si la mano “toca” la bola (distancia menor), incrementa la puntuación y reposiciona la bola para siguiente ronda.</li>
-                      <li>Aumenta la dificultad: acelera la bola, reduce tamaño del área de captura, etc.</li>
-                      <li>Muestra puntuación en pantalla, puede mostrar temporizador o vidas.</li>
-                      <li>Espera ‘q’ para salir y volver al launcher.</li>
+                        <li><strong>Función:</strong> <code>run_catch_game()</code> en <code>pelota.py</code>.</li>
+                        <li><strong>Descripción:</strong> Juego donde el usuario “atrapa” una bola virtual moviendo la
+                            mano; la bola se mueve sobre la pantalla y hay que interceptarla con el área de la mano
+                            detectada.</li>
+                        <li><strong>Pipeline:</strong>
+                            <ul>
+                                <li>Inicializa cámara y <code>HandDetector(maxHands=1)</code>.</li>
+                                <li>Variables del juego: posición y radio de la bola, velocidad, puntuación, niveles de
+                                    dificultad creciente.</li>
+                                <li>En bucle:
+                                    <ul>
+                                        <li>Captura frame de cámara.</li>
+                                        <li>Dibuja la bola en posición actual; la bola se desplaza aleatoriamente o con
+                                            patrón hacia la mano.</li>
+                                        <li>Detecta mano: obtiene bounding box o landmarks de palma.</li>
+                                        <li>Comprueba colisión: si la mano “toca” la bola (distancia menor), incrementa
+                                            la puntuación y reposiciona la bola para siguiente ronda.</li>
+                                        <li>Aumenta la dificultad: acelera la bola, reduce tamaño del área de captura,
+                                            etc.</li>
+                                        <li>Muestra puntuación en pantalla, puede mostrar temporizador o vidas.</li>
+                                        <li>Espera ‘q’ para salir y volver al launcher.</li>
+                                    </ul>
+                                </li>
+                                <li>Gestiona FPS y la suavidad de la bola; optimiza detección para que la mano no
+                                    interfiera con UI.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Comentarios importantes:</strong>
+                            <ul>
+                                <li>Es conveniente mostrar un feedback visual cuando la bola es atrapada (efecto de
+                                    explosión o cambio de color).</li>
+                                <li>Puede incluir sonido (opcional) al atrapar la bola usando <code>pygame.mixer</code>
+                                    o similar.</li>
+                                <li>Calibrar área de detección: usar landmarks para definir área precisa de “agarre”.
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
-                  </li>
-                  <li>Gestiona FPS y la suavidad de la bola; optimiza detección para que la mano no interfiera con UI.</li>
-                </ul>
-              </li>
-              <li><strong>Comentarios importantes:</strong>
-                <ul>
-                  <li>Es conveniente mostrar un feedback visual cuando la bola es atrapada (efecto de explosión o cambio de color).</li>
-                  <li>Puede incluir sonido (opcional) al atrapar la bola usando <code>pygame.mixer</code> o similar.</li>
-                  <li>Calibrar área de detección: usar landmarks para definir área precisa de “agarre”.</li>
-                </ul>
-              </li>
-            </ul>
 
-            <hr>
+                    <hr>
 
-            <p><strong>Minijuego: “Piedra, Papel o Tijera”</strong></p>
-            <ul>
-              <li><strong>Función:</strong> <code>run_rps_game()</code> en <code>piedra.py</code>.</li>
-              <li><strong>Descripción:</strong> Juego clásico contra la computadora; el usuario muestra gesto (piedra/papel/tijeras) y la aplicación detecta el gesto y enfrenta contra una jugada aleatoria del equipo contrario.</li>
-              <li><strong>Pipeline:</strong>
-                <ul>
-                  <li>Carga íconos: <code>Rock.png</code>, <code>Paper.png</code>, <code>Scissors.png</code> para mostrar la jugada detectada y la jugada de la CPU.</li>
-                  <li>Inicializa cámara y <code>HandDetector</code>.</li>
-                  <li>En bucle de juego:
+                    <p><strong>Minijuego: “Piedra, Papel o Tijera”</strong></p>
                     <ul>
-                      <li>Muestra en pantalla instrucciones: “Muestra tu gesto”.</li>
-                      <li>Captura frames y detecta mano; con <code>detector.fingersUp(hand)</code> interpreta:
-                        <ul>
-                          <li>“piedra”: todos los dedos cerrados.</li>
-                          <li>“papel”: todos los dedos extendidos.</li>
-                          <li>“tijeras”: índice y medio extendidos, resto cerrados.</li>
-                        </ul>
-                      </li>
-                      <li>Cuando se detecta un gesto estable durante cierto tiempo, se fija la jugada del usuario.</li>
-                      <li>Genera jugada de la CPU aleatoria.</li>
-                      <li>Determina resultado: victoria, derrota o empate.</li>
-                      <li>Muestra íconos correspondientes (usuario vs CPU) y texto del resultado en pantalla.</li>
-                      <li>Opción de repetir: espera tecla o gesto para jugar de nuevo, o ‘q’ para salir al launcher.</li>
+                        <li><strong>Función:</strong> <code>run_rps_game()</code> en <code>piedra.py</code>.</li>
+                        <li><strong>Descripción:</strong> Juego clásico contra la computadora; el usuario muestra gesto
+                            (piedra/papel/tijeras) y la aplicación detecta el gesto y enfrenta contra una jugada
+                            aleatoria del equipo contrario.</li>
+                        <li><strong>Pipeline:</strong>
+                            <ul>
+                                <li>Carga íconos: <code>Rock.png</code>, <code>Paper.png</code>,
+                                    <code>Scissors.png</code> para mostrar la jugada detectada y la jugada de la CPU.
+                                </li>
+                                <li>Inicializa cámara y <code>HandDetector</code>.</li>
+                                <li>En bucle de juego:
+                                    <ul>
+                                        <li>Muestra en pantalla instrucciones: “Muestra tu gesto”.</li>
+                                        <li>Captura frames y detecta mano; con <code>detector.fingersUp(hand)</code>
+                                            interpreta:
+                                            <ul>
+                                                <li>“piedra”: todos los dedos cerrados.</li>
+                                                <li>“papel”: todos los dedos extendidos.</li>
+                                                <li>“tijeras”: índice y medio extendidos, resto cerrados.</li>
+                                            </ul>
+                                        </li>
+                                        <li>Cuando se detecta un gesto estable durante cierto tiempo, se fija la jugada
+                                            del usuario.</li>
+                                        <li>Genera jugada de la CPU aleatoria.</li>
+                                        <li>Determina resultado: victoria, derrota o empate.</li>
+                                        <li>Muestra íconos correspondientes (usuario vs CPU) y texto del resultado en
+                                            pantalla.</li>
+                                        <li>Opción de repetir: espera tecla o gesto para jugar de nuevo, o ‘q’ para
+                                            salir al launcher.</li>
+                                    </ul>
+                                </li>
+                                <li>Gestiona visualización de iconos con canal alfa para superponer sobre el frame.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Comentarios importantes:</strong>
+                            <ul>
+                                <li>Asegurar detección estable del gesto: puede requerir un pequeño retardo o
+                                    confirmación múltiple antes de fijar la jugada.</li>
+                                <li>Mostrar indicador visual (por ejemplo, recuadro verde) cuando se detecta claramente
+                                    el gesto, para feedback al usuario.</li>
+                                <li>Mostrar resultados de forma clara y atractiva: animaciones simples, sonido opcional.
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
-                  </li>
-                  <li>Gestiona visualización de iconos con canal alfa para superponer sobre el frame.</li>
-                </ul>
-              </li>
-              <li><strong>Comentarios importantes:</strong>
-                <ul>
-                  <li>Asegurar detección estable del gesto: puede requerir un pequeño retardo o confirmación múltiple antes de fijar la jugada.</li>
-                  <li>Mostrar indicador visual (por ejemplo, recuadro verde) cuando se detecta claramente el gesto, para feedback al usuario.</li>
-                  <li>Mostrar resultados de forma clara y atractiva: animaciones simples, sonido opcional.</li>
-                </ul>
-              </li>
-            </ul>
 
-            <hr>
+                    <hr>
 
-            <p><strong>Minijuego: “Snake” controlado con gestos</strong></p>
-            <ul>
-              <li><strong>Función:</strong> <code>run_snake_game()</code> en <code>snake.py</code>.</li>
-              <li><strong>Descripción:</strong> Versión de Snake donde la dirección de movimiento se controla mediante gestos con la mano (capta un dedo como punto que se toma como referencia y la serpiente avanza en esa dirección).</li>
-              <li><strong>Pipeline:</strong>
-                <ul>
-                  <li>Inicializa cámara y <code>HandDetector</code> para reconocer gestos.</li>
-                  <li>Inicializa OpenCV con renderizado personalizado para dibujar el tablero de Snake:
+                    <p><strong>Minijuego: “Snake” controlado con gestos</strong></p>
                     <ul>
-                      <li>Fondo estilo cuadrícula retro.</li>
-                      <li>Cuerpo de la serpiente con gradiente de color.</li>
-                      <li>Comida representada con imagen de manzana.</li>
-                      <li>Marcador en pantalla con puntuación y récord.</li>
-                    </ul>
-                  </li>
-                  <li>Cuenta atrás inicial (3…2…1) antes de empezar.</li>
-                  <li>En bucle:
-                    <ul>
-                      <li>Captura frame de cámara y detecta un dedo como punto de referencia hacia donde avanzará la serpiente:
-                        <!-- <ul>
+                        <li><strong>Función:</strong> <code>run_snake_game()</code> en <code>snake.py</code>.</li>
+                        <li><strong>Descripción:</strong> Versión de Snake donde la dirección de movimiento se controla
+                            mediante gestos con la mano (capta un dedo como punto que se toma como referencia y la
+                            serpiente avanza en esa dirección).</li>
+                        <li><strong>Pipeline:</strong>
+                            <ul>
+                                <li>Inicializa cámara y <code>HandDetector</code> para reconocer gestos.</li>
+                                <li>Inicializa OpenCV con renderizado personalizado para dibujar el tablero de Snake:
+                                    <ul>
+                                        <li>Fondo estilo cuadrícula retro.</li>
+                                        <li>Cuerpo de la serpiente con gradiente de color.</li>
+                                        <li>Comida representada con imagen de manzana.</li>
+                                        <li>Marcador en pantalla con puntuación y récord.</li>
+                                    </ul>
+                                </li>
+                                <li>Cuenta atrás inicial (3…2…1) antes de empezar.</li>
+                                <li>En bucle:
+                                    <ul>
+                                        <li>Captura frame de cámara y detecta un dedo como punto de referencia hacia
+                                            donde avanzará la serpiente:
+                                            <!-- <ul>
                           <li>“piedra”: mover snake hacia la derecha.</li>
                           <li>“papel”: mover snake hacia arriba.</li>
                           <li>“tijeras”: mover snake hacia la izquierda o abajo, según convención definida.</li>
                         </ul> -->
-                      </li>
-                      <li>Actualiza posición de la serpiente y gestiona colisiones:
-                        <ul>
-                          <li>Con comida: incrementa longitud y puntuación; genera nueva comida en posición aleatoria.</li>
-                          <li>Con bordes o con el propio cuerpo: termina el juego (“Game Over”).</li>
-                        </ul>
-                      </li>
-                      <li>Aumenta velocidad cada cierto número de puntos.</li>
-                      <li>Dibuja todo: fondo, serpiente, comida, UI (puntuación y record). Opcional overlay de feed de cámara en esquina para feedback de gesto.</li>
-                      <li>Espera gesto ‘q’ o tecla ‘q’ para salir al launcher.</li>
-                    </ul>
-                  </li>
-                  <li>Al finalizar (Game Over):
-                    <ul>
-                      <li>Muestra overlay semitransparente con mensaje “Game Over” y puntuación final.</li>
-                      <!-- <li>Opción de reiniciar o salir al launcher.</li> -->
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <!-- <li><strong>Comentarios importantes:</strong>
+                                        </li>
+                                        <li>Actualiza posición de la serpiente y gestiona colisiones:
+                                            <ul>
+                                                <li>Con comida: incrementa longitud y puntuación; genera nueva comida en
+                                                    posición aleatoria.</li>
+                                                <li>Con bordes o con el propio cuerpo: termina el juego (“Game Over”).
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>Aumenta velocidad cada cierto número de puntos.</li>
+                                        <li>Dibuja todo: fondo, serpiente, comida, UI (puntuación y record). Opcional
+                                            overlay de feed de cámara en esquina para feedback de gesto.</li>
+                                        <li>Espera gesto ‘q’ o tecla ‘q’ para salir al launcher.</li>
+                                    </ul>
+                                </li>
+                                <li>Al finalizar (Game Over):
+                                    <ul>
+                                        <li>Muestra overlay semitransparente con mensaje “Game Over” y puntuación final.
+                                        </li>
+                                        <!-- <li>Opción de reiniciar o salir al launcher.</li> -->
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- <li><strong>Comentarios importantes:</strong>
                 <ul>
                   <li>Mapeo claro de gestos a direcciones: definir convención y mostrar en pantalla íconos de “Rock”, “Paper”, “Scissors” para guiar al usuario.</li>
                   <li>Optimizar FPS del juego y de la detección de gesto para evitar retrasos que arruinen la jugabilidad.</li>
@@ -503,271 +567,356 @@
                   <li>Incluir sonido de comer, muerte, música de fondo (opcional) usando <code>pygame.mixer</code> o similar.</li>
                 </ul>
               </li> -->
-            </ul>
+                    </ul>
 
-            <p>
-              <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
-              <!-- <a href="https://github.com/gameandnight/mini-juegos-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
-              <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
-              <!-- <a href="https://tu-demo-mini-juegos.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
-              <!-- Enlace a vídeo de demostración en YouTube mostrando cada minijuego en acción -->
-              <a href="https://youtu.be/Ss-ev0tnhW4" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
-            </p>
-            <!-- Opcional embed de vídeo:
+                    <p>
+                        <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
+                        <!-- <a href="https://github.com/gameandnight/mini-juegos-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+                        <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
+                        <!-- <a href="https://tu-demo-mini-juegos.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+                        <!-- Enlace a vídeo de demostración en YouTube mostrando cada minijuego en acción -->
+                        <a href="https://youtu.be/Ss-ev0tnhW4" class="btn btn-info btn-sm" target="_blank"
+                            rel="noopener">Ver Vídeo</a>
+                    </p>
+                    <!-- Opcional embed de vídeo:
             <div class="mt-3">
               <div class="ratio ratio-16x9">
                 <iframe src="https://www.youtube.com/embed/ID_VIDEO_MINIJUEGOS" title="Demo Mini Juegos controlados con gestos" allowfullscreen></iframe>
               </div>
             </div>
             -->
-          </div>
-        </div>
+                </div>
+            </div>
 
-        <!-- Proyecto: Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter) -->
-        <div class="row mb-4 align-items-start">
-          <div class="col-md-4 d-flex flex-column align-items-center">
-            <!-- Múltiples imágenes apiladas verticalmente -->
-            <img
-              src="/assets/images/trivial-gestos.jpg"
-              alt="Juego de Trivial - captura 1"
-              class="img-fluid rounded project-img"
-            >
-            <!-- <img
+            <!-- Proyecto: Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter) -->
+            <div class="row mb-4 align-items-start">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <!-- Múltiples imágenes apiladas verticalmente -->
+                    <img src="/assets/images/trivial-gestos.jpg" alt="Juego de Trivial - captura 1"
+                        class="img-fluid rounded project-img">
+                    <!-- <img
               src="/assets/images/trivial-gestos-2.jpg"
               alt="Juego de Trivial - captura 2"
               class="img-fluid rounded project-img"
             > -->
-            <!-- Puedes añadir más imágenes si deseas, con la misma clase .project-img -->
-          </div>
-          <div class="col-md-8">
-            <h3>Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter)</h3>
-            <p>Aplicación en Python que presenta preguntas de trivia en diferentes categorías, permitiendo seleccionar la respuesta mediante gestos de mano (rock/paper/scissors) capturados por la webcam.</p>
-            <p><strong>Descripción general / Pipeline:</strong></p>
-            <ul>
-              <li><strong>Interfaz de menú con Tkinter:</strong> Al iniciar, se muestra una ventana Tkinter con botones para cada categoría de preguntas (p. ej. ESO, Bachiller, Informática). El usuario selecciona una categoría para iniciar el trivial.</li>
-              <li><strong>Carga de preguntas:</strong> El código lee archivos JSON con preguntas y opciones (por ejemplo <code>questions_eso.json</code>, <code>questions_bachiller.json</code>), donde cada elemento incluye la pregunta, las opciones y el índice de la respuesta correcta.</li>
-              <li><strong>Preparación de recursos visuales:</strong> Se carga una imagen de fondo (<code>Resources/BG.png</code>) redimensionada a la resolución de la ventana (p.ej. 1280×720). Se preparan imágenes de feedback (correcto/incorrecto) (<code>correct.wav</code>, <code>incorrect.wav</code>) y sprites opcionales.</li>
-              <li><strong>Captura de cámara y detección de gestos:</strong>
-                <ul>
-                  <li>Se inicializa <code>cv2.VideoCapture(0)</code> para capturar frames de la webcam.</li>
-                  <li>Se utiliza CVZone HandDetector (basado en MediaPipe) para detectar la mano y extraer landmarks, con los cuales se interpreta el gesto rock/paper/scissors como selección de respuesta. Esto permite mapear cada opción a un gesto: “Piedra”, “Papel” o “Tijeras”.</li>
-                  <li>En cada pregunta, tras mostrarla en pantalla, se espera a que el detector identifique claramente uno de los gestos. Durante esta espera, se muestra la imagen de fondo más un recuadro con el feed de cámara, indicando al usuario que haga el gesto.</li>
-                </ul>
-              </li>
-              <li><strong>Síntesis de voz y feedback:</strong>
-                <ul>
-                  <li>Se usa gTTS para convertir a audio el texto de la pregunta y de las opciones, generando un archivo de audio temporal que se reproduce (por ejemplo con pygame) para narrar la pregunta y las opciones.</li>
-                  <li>Tras que el usuario hace el gesto y se detecta la elección, se compara con la respuesta correcta almacenada en JSON.</li>
-                  <li>Se reproduce un sonido o mensaje de audio indicando “Correcto” o “Incorrecto” (<code>Resources/correct.wav</code> / <code>Resources/incorrect.wav</code>).</li>
-                </ul>
-              </li>
-              <li><strong>Lógica de flujo de juego:</strong>
-                <ul>
-                  <li>Se muestra la pregunta y se invoca la narración por voz.</li>
-                  <!-- <li>Se espera la selección por gesto; si no se detecta tras cierto tiempo, se puede repetir la pregunta o avisar al usuario.</li> -->
-                  <li>Tras respuesta, se muestra feedback y pasa a la siguiente pregunta o finaliza la ronda.</li>
-                  <li>Al finalizar la categoría, se cierra la ventana de OpenCV y se regresa al menú Tkinter.</li>
-                </ul>
-              </li>
-              <!-- <li><strong>Configuración y calibración:</strong>
+                    <!-- Puedes añadir más imágenes si deseas, con la misma clase .project-img -->
+                </div>
+                <div class="col-md-8">
+                    <h3>Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter)</h3>
+                    <p>Aplicación en Python que presenta preguntas de trivia en diferentes categorías, permitiendo
+                        seleccionar la respuesta mediante gestos de mano (rock/paper/scissors) capturados por la webcam.
+                    </p>
+                    <p><strong>Descripción general / Pipeline:</strong></p>
+                    <ul>
+                        <li><strong>Interfaz de menú con Tkinter:</strong> Al iniciar, se muestra una ventana Tkinter
+                            con botones para cada categoría de preguntas (p. ej. ESO, Bachiller, Informática). El
+                            usuario selecciona una categoría para iniciar el trivial.</li>
+                        <li><strong>Carga de preguntas:</strong> El código lee archivos JSON con preguntas y opciones
+                            (por ejemplo <code>questions_eso.json</code>, <code>questions_bachiller.json</code>), donde
+                            cada elemento incluye la pregunta, las opciones y el índice de la respuesta correcta.</li>
+                        <li><strong>Preparación de recursos visuales:</strong> Se carga una imagen de fondo
+                            (<code>Resources/BG.png</code>) redimensionada a la resolución de la ventana (p.ej.
+                            1280×720). Se preparan imágenes de feedback (correcto/incorrecto) (<code>correct.wav</code>,
+                            <code>incorrect.wav</code>) y sprites opcionales.
+                        </li>
+                        <li><strong>Captura de cámara y detección de gestos:</strong>
+                            <ul>
+                                <li>Se inicializa <code>cv2.VideoCapture(0)</code> para capturar frames de la webcam.
+                                </li>
+                                <li>Se utiliza CVZone HandDetector (basado en MediaPipe) para detectar la mano y extraer
+                                    landmarks, con los cuales se interpreta el gesto rock/paper/scissors como selección
+                                    de respuesta. Esto permite mapear cada opción a un gesto: “Piedra”, “Papel” o
+                                    “Tijeras”.</li>
+                                <li>En cada pregunta, tras mostrarla en pantalla, se espera a que el detector
+                                    identifique claramente uno de los gestos. Durante esta espera, se muestra la imagen
+                                    de fondo más un recuadro con el feed de cámara, indicando al usuario que haga el
+                                    gesto.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Síntesis de voz y feedback:</strong>
+                            <ul>
+                                <li>Se usa gTTS para convertir a audio el texto de la pregunta y de las opciones,
+                                    generando un archivo de audio temporal que se reproduce (por ejemplo con pygame)
+                                    para narrar la pregunta y las opciones.</li>
+                                <li>Tras que el usuario hace el gesto y se detecta la elección, se compara con la
+                                    respuesta correcta almacenada en JSON.</li>
+                                <li>Se reproduce un sonido o mensaje de audio indicando “Correcto” o “Incorrecto”
+                                    (<code>Resources/correct.wav</code> / <code>Resources/incorrect.wav</code>).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Lógica de flujo de juego:</strong>
+                            <ul>
+                                <li>Se muestra la pregunta y se invoca la narración por voz.</li>
+                                <!-- <li>Se espera la selección por gesto; si no se detecta tras cierto tiempo, se puede repetir la pregunta o avisar al usuario.</li> -->
+                                <li>Tras respuesta, se muestra feedback y pasa a la siguiente pregunta o finaliza la
+                                    ronda.</li>
+                                <li>Al finalizar la categoría, se cierra la ventana de OpenCV y se regresa al menú
+                                    Tkinter.</li>
+                            </ul>
+                        </li>
+                        <!-- <li><strong>Configuración y calibración:</strong>
                 <ul>
                   <li>Permite ajustar la confianza del detector de manos y la sensibilidad de reconocimiento de gestos para funcionar en distintas condiciones de iluminación.</li>
                   <li>Verifica FPS para asegurar experiencia fluida. Si la velocidad de detección es baja, se puede reducir la resolución o ajustar parámetros del detector.</li>
                 </ul>
               </li> -->
-              <li><strong>Gestión de archivos:</strong>
-                <ul>
-                  <li>Archivos JSON en carpeta raíz o en <code>Resources/</code>, por ejemplo <code>questions_eso.json</code>, <code>questions_bachiller.json</code>, <code>questions_profesores.json</code>.</li>
-                  <li>Recursos en <code>Resources/</code>: <code>BG.png</code>, <code>correct.wav</code>, <code>incorrect.wav</code>, y otros assets.</li>
-                </ul>
-              </li>
-              <li><strong>Dependencias:</strong>
-                <ul>
-                  <li>Python 3.x</li>
-                  <li>OpenCV (<code>opencv-python</code>)</li>
-                  <li>CVZone (<code>cvzone</code>, <code>mediapipe</code>)</li>
-                  <li>gTTS (<code>gtts</code>), pygame (para reproducir audio) o librería similar</li>
-                  <li>Pillow (<code>PIL</code>) para dibujar texto sobre la imagen con fuentes personalizadas</li>
-                  <li>Tkinter (incluido en la mayoría de distribuciones Python) para la GUI del menú</li>
-                  <li>Otros: <code>numpy</code>, <code>random</code>, <code>time</code>, <code>json</code> etc.</li>
-                </ul>
-              </li>
-              <!-- <li><strong>Pruebas y grabación de demo:</strong>
+                        <li><strong>Gestión de archivos:</strong>
+                            <ul>
+                                <li>Archivos JSON en carpeta raíz o en <code>Resources/</code>, por ejemplo
+                                    <code>questions_eso.json</code>, <code>questions_bachiller.json</code>,
+                                    <code>questions_profesores.json</code>.
+                                </li>
+                                <li>Recursos en <code>Resources/</code>: <code>BG.png</code>, <code>correct.wav</code>,
+                                    <code>incorrect.wav</code>, y otros assets.
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Dependencias:</strong>
+                            <ul>
+                                <li>Python 3.x</li>
+                                <li>OpenCV (<code>opencv-python</code>)</li>
+                                <li>CVZone (<code>cvzone</code>, <code>mediapipe</code>)</li>
+                                <li>gTTS (<code>gtts</code>), pygame (para reproducir audio) o librería similar</li>
+                                <li>Pillow (<code>PIL</code>) para dibujar texto sobre la imagen con fuentes
+                                    personalizadas</li>
+                                <li>Tkinter (incluido en la mayoría de distribuciones Python) para la GUI del menú</li>
+                                <li>Otros: <code>numpy</code>, <code>random</code>, <code>time</code>, <code>json</code>
+                                    etc.</li>
+                            </ul>
+                        </li>
+                        <!-- <li><strong>Pruebas y grabación de demo:</strong>
                 <ul>
                   <li>Grabar con OBS o Game Bar mostrando la ventana Tkinter de selección y luego la sesión de trivial: pregunta en pantalla, usuario realiza gesto, detección y feedback de voz.</li>
                   <li>Tomar capturas de pantalla para la imagen representativa del proyecto en tu portfolio.</li>
                 </ul>
               </li> -->
-            </ul>
-            <p>
-              <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
-              <!-- <a href="https://github.com/gameandnight/trivia-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
-              <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
-              <!-- <a href="https://tu-demo-trivia.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
-              <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo del trivial controlado con gestos -->
-              <a href="https://youtu.be/atP5L56vz-Y" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
-            </p>
-            <!-- Opcional embed de vídeo:
+                    </ul>
+                    <p>
+                        <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
+                        <!-- <a href="https://github.com/gameandnight/trivia-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+                        <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
+                        <!-- <a href="https://tu-demo-trivia.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+                        <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo del trivial controlado con gestos -->
+                        <a href="https://youtu.be/atP5L56vz-Y" class="btn btn-info btn-sm" target="_blank"
+                            rel="noopener">Ver Vídeo</a>
+                    </p>
+                    <!-- Opcional embed de vídeo:
             <div class="mt-3">
               <div class="ratio ratio-16x9">
                 <iframe src="https://www.youtube.com/embed/ID_VIDEO_TRIVIAL" title="Demo Juego de Trivial con gestos" allowfullscreen></iframe>
               </div>
             </div>
             -->
-          </div>
-        </div>
+                </div>
+            </div>
 
-        <!-- Proyecto: Juego de Plataformas y Shooter de Naves controlado con gestos RPS -->
-        <div class="row mb-4 align-items-start">
-          <div class="col-md-4 d-flex flex-column align-items-center">
-            <!-- Múltiples imágenes apiladas verticalmente -->
-            <img
-              src="/assets/images/juego-nivel1.jpg"
-              alt="Juego Plataformas - Nivel 1"
-              class="img-fluid rounded project-img"
-            >
-            <img
-              src="/assets/images/juego-nivel2.jpg"
-              alt="Juego Plataformas - Nivel 2"
-              class="img-fluid rounded project-img"
-            >
-            <!-- <img
+            <!-- Proyecto: Juego de Plataformas y Shooter de Naves controlado con gestos RPS -->
+            <div class="row mb-4 align-items-start">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <!-- Múltiples imágenes apiladas verticalmente -->
+                    <img src="/assets/images/juego-nivel1.jpg" alt="Juego Plataformas - Nivel 1"
+                        class="img-fluid rounded project-img">
+                    <img src="/assets/images/juego-nivel2.jpg" alt="Juego Plataformas - Nivel 2"
+                        class="img-fluid rounded project-img">
+                    <!-- <img
               src="/assets/images/juego-nivel3.jpg"
               alt="Juego Shooter de Naves - Nivel 3"
               class="img-fluid rounded project-img"
             > -->
-            <!-- Si deseas más capturas, añade más <img> con la clase project-img -->
-          </div>
-          <div class="col-md-8">
-            <h3>Juego de Plataformas y Shooter de Naves controlado con gestos RPS</h3>
-            <p>Aplicación en Python que combina dos niveles de plataformas y un tercer nivel de shooter de naves con scroll automático y boss final, controlados mediante gestos de mano (Rock/Paper/Scissors) detectados con la webcam.</p>
-            <p><strong>Descripción general / Pipeline:</strong></p>
-            <ul>
-              <li><strong>Estructura modular:</strong>
-                <ul>
-                  <li><code>game.py</code>: Punto de entrada. Inicializa Pygame, HandDetector (CVZone) y controla el bucle principal, alternando entre modos de plataforma y modo shooter según selección.</li>
-                  <li><code>gestures.py</code>: Función <code>detect_gesture</code> que recibe lista de manos detectadas por <code>HandDetector</code> y devuelve “piedra”, “papel” o “tijeras” según dedos levantados (rock/paper/scissors). Mapea cada gesto a acciones del juego.</li>
-                  <li><code>modePlatform.py</code>: Lógica de niveles de plataformas. Obtiene datos de cada nivel desde <code>levels.py</code>, usa <code>pantalla.py</code> para dibujar fondos, bloques, obstáculos, nubes, árboles y UI, y <code>player.py</code> para la clase Player con física (gravedad, salto, colisiones).</li>
-                  <li><code>modeSpace.py</code>: Lógica del shooter de naves. Usa <code>spaceship.py</code> para la clase de la nave del jugador, <code>pantalla.py</code> para dibujar fondo espacial, obstáculos y UI, y controla enemigos, disparos y boss final.</li>
-                  <li><code>pantalla.py</code>: Funciones para dibujar la interfaz común: parallax backgrounds, UI (vidas, puntuación), obstáculos, sprites, textos en pantalla, gestionando carga única de assets para optimizar rendimiento.</li>
-                  <li><code>player.py</code> y <code>spaceship.py</code>: Definen las clases de entidad del jugador: atributos como posición, velocidad, animaciones o sprites, métodos de actualización de posición, colisiones y dibujo en pantalla.</li>
-                  <li><code>levels.py</code>: Definición de cada nivel de plataforma (coordenadas de bloques, obstáculos, nubes, trees, enemigos) y funciones para colisiones y generación de contenido procedimental o estático según nivel. También patrones para shooter (enemigos, spawn, boss).</li>
-                  <li><code>sound.py</code>: Inicialización y reproducción de música de fondo y efectos de sonido (salto, disparo, explosiones, boss defeat), usando <code>pygame.mixer</code> u otra librería de audio.</li>
-                  <li><code>assets/</code>: Carpeta con imágenes y sonidos (fondos, sprites, gestos, efectos). Ejemplos:
+                    <!-- Si deseas más capturas, añade más <img> con la clase project-img -->
+                </div>
+                <div class="col-md-8">
+                    <h3>Juego de Plataformas y Shooter de Naves controlado con gestos RPS</h3>
+                    <p>Aplicación en Python que combina dos niveles de plataformas y un tercer nivel de shooter de naves
+                        con scroll automático y boss final, controlados mediante gestos de mano (Rock/Paper/Scissors)
+                        detectados con la webcam.</p>
+                    <p><strong>Descripción general / Pipeline:</strong></p>
                     <ul>
-                      <li><code>assets/images/juego-nivel1.jpg</code>, <code>juego-nivel2.jpg</code>, <code>juego-nivel3.jpg</code> para capturas de cada nivel.</li>
-                      <li><code>assets/gestos/Rock.png</code>, <code>Paper.png</code>, <code>Scissors.png</code> para feedback de detección de gesto.</li>
-                      <li><code>assets/sounds/jump.wav</code>, <code>shoot.wav</code>, <code>explosion.wav</code>, <code>boss.wav</code>, etc.</li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <!-- <li><strong>Interfaz de inicio / menú:</strong>
+                        <li><strong>Estructura modular:</strong>
+                            <ul>
+                                <li><code>game.py</code>: Punto de entrada. Inicializa Pygame, HandDetector (CVZone) y
+                                    controla el bucle principal, alternando entre modos de plataforma y modo shooter
+                                    según selección.</li>
+                                <li><code>gestures.py</code>: Función <code>detect_gesture</code> que recibe lista de
+                                    manos detectadas por <code>HandDetector</code> y devuelve “piedra”, “papel” o
+                                    “tijeras” según dedos levantados (rock/paper/scissors). Mapea cada gesto a acciones
+                                    del juego.</li>
+                                <li><code>modePlatform.py</code>: Lógica de niveles de plataformas. Obtiene datos de
+                                    cada nivel desde <code>levels.py</code>, usa <code>pantalla.py</code> para dibujar
+                                    fondos, bloques, obstáculos, nubes, árboles y UI, y <code>player.py</code> para la
+                                    clase Player con física (gravedad, salto, colisiones).</li>
+                                <li><code>modeSpace.py</code>: Lógica del shooter de naves. Usa
+                                    <code>spaceship.py</code> para la clase de la nave del jugador,
+                                    <code>pantalla.py</code> para dibujar fondo espacial, obstáculos y UI, y controla
+                                    enemigos, disparos y boss final.
+                                </li>
+                                <li><code>pantalla.py</code>: Funciones para dibujar la interfaz común: parallax
+                                    backgrounds, UI (vidas, puntuación), obstáculos, sprites, textos en pantalla,
+                                    gestionando carga única de assets para optimizar rendimiento.</li>
+                                <li><code>player.py</code> y <code>spaceship.py</code>: Definen las clases de entidad
+                                    del jugador: atributos como posición, velocidad, animaciones o sprites, métodos de
+                                    actualización de posición, colisiones y dibujo en pantalla.</li>
+                                <li><code>levels.py</code>: Definición de cada nivel de plataforma (coordenadas de
+                                    bloques, obstáculos, nubes, trees, enemigos) y funciones para colisiones y
+                                    generación de contenido procedimental o estático según nivel. También patrones para
+                                    shooter (enemigos, spawn, boss).</li>
+                                <li><code>sound.py</code>: Inicialización y reproducción de música de fondo y efectos de
+                                    sonido (salto, disparo, explosiones, boss defeat), usando <code>pygame.mixer</code>
+                                    u otra librería de audio.</li>
+                                <li><code>assets/</code>: Carpeta con imágenes y sonidos (fondos, sprites, gestos,
+                                    efectos). Ejemplos:
+                                    <ul>
+                                        <li><code>assets/images/juego-nivel1.jpg</code>, <code>juego-nivel2.jpg</code>,
+                                            <code>juego-nivel3.jpg</code> para capturas de cada nivel.
+                                        </li>
+                                        <li><code>assets/gestos/Rock.png</code>, <code>Paper.png</code>,
+                                            <code>Scissors.png</code> para feedback de detección de gesto.
+                                        </li>
+                                        <li><code>assets/sounds/jump.wav</code>, <code>shoot.wav</code>,
+                                            <code>explosion.wav</code>, <code>boss.wav</code>, etc.
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- <li><strong>Interfaz de inicio / menú:</strong>
                 <ul>
                   <li>Ventana inicial (Tkinter o Pygame): muestra opciones “Nivel 1 (Plataformas)”, “Nivel 2 (Plataformas avanzado)”, “Nivel 3 (Shooter de naves)”.</li>
                   <li>Al elegir nivel, se inicia el modo correspondiente en <code>game.py</code>, que llama a <code>modePlatform.modePlatform(...)</code> o <code>modeSpace.modeSpace(...)</code> con parámetros de configuración (resolución, velocidad, assets cargados, detector de gestos).</li>
                 </ul>
               </li> -->
-              <li><strong>Captura de cámara y detección de gestos:</strong>
-                <ul>
-                  <li>Se inicializa <code>cv2.VideoCapture(0)</code> para leer frames de la webcam.</li>
-                  <li>Se crea <code>HandDetector(detectionCon=0.8, maxHands=1)</code> de CVZone para detectar mano y extraer landmarks de MediaPipe con pocas líneas de código.</li>
-                  <li>En cada frame, <code>hands, frame = detector.findHands(frame)</code> devuelve lista de manos detectadas y dibuja recuadros sobre la imagen. Luego <code>detect_gesture(hands, detector)</code> evalúa <code>detector.fingersUp(hand)</code> y devuelve:
-                    <ul>
-                      <li><strong>“piedra”</strong>: en niveles de plataforma se interpreta como “avanzar” o “moverse adelante”; en shooter, se interpreta como “subir”.</li>
-                      <li><strong>“papel”</strong>: en plataformas se mapea a “saltar” (salto normal o más alto en nivel 2); en shooter, mapea a “disparar” o activar arma principal.</li>
-                      <li><strong>“tijeras”</strong>: en plataformas se mapea a “retroceder” ; en shooter, mapea a “bajar”.</li>
-                    </ul>
-                  </li>
-                  <li>En pantalla de juego, se muestra un recuadro pequeño con feed de cámara y/o íconos de gesto para guiar al usuario y confirmar gesto detectado.</li>
-                </ul>
-              </li>
-              <li><strong>Niveles de Plataformas (Level 1 y Level 2):</strong>
-                <ul>
-                  <li>Datos de nivel cargados desde <code>levels.py</code>: arrays de bloques, obstáculos y enemigos con patrones de movimiento. Level 2 añade complejidad: plataformas móviles, enemigos con patrones de movimiento.</li>
-                  <li>Clase <code>Player</code> gestiona posición, velocidad vertical (gravedad), colisiones con bloques y enemigos. Según gesto:
-                    <ul>
-                      <li>“piedra”: mueve al jugador hacia la derecha.</li>
-                      <li>“papel”: activa salto.</li>
-                      <li>“tijeras”: mueve al jugador hacia la izquierda.</li>
-                    </ul>
-                  </li>
-                  <li>En cada iteración de <code>modePlatform</code>:
-                    <ul>
-                      <li>Actualizar posición del jugador y scroll para simular avance.</li>
-                      <li>Dibujo de fondo parallax, bloques, obstáculos, elementos con funciones de <code>pantalla.py</code>.</li>
-                      <li>Detección de colisiones y gestión de vida o punto de control.</li>
-                      <li>Reproducción de música y efectos con <code>sound.py</code>.</li>
-                      <li>Al completar el nivel: mostrar “Nivel completado” y esperar entrada para avanzar al siguiente nivel.</li>
-                      <li>Si vida llega a cero: “Game Over” y opción de reiniciar el nivel.</li>
-                    </ul>
-                  </li>
-                  <li>Configuraciones de dificultad: nivel 2  enemigos, saltos más altos y plataformas móviles.</li>
-                </ul>
-              </li>
-              <li><strong>Nivel Shooter de Naves (Level 3):</strong>
-                <ul>
-                  <li>Fondo espacial dibujado con <code>pantalla.draw_parallax_background</code> usando imágenes en <code>assets/backgrounds/espacio.jpg</code>.</li>
-                  <li>Clase <code>Spaceship</code>: posición, animaciones, vida y disparos.</li>
-                  <li>Mapeo de gestos:
-                    <ul>
-                      <li>“piedra”: mover nave (subir).</li>
-                      <li>“papel”: disparo principal (crear proyectil con efecto y sonido).</li>
-                      <li>“tijeras”:  mover nave (bajar).</li>
-                    </ul>
-                  </li>
-                  <li>Generación de enemigos y obstáculos con patrones en JSON o <code>levels.py</code>, scroll automático del nivel.</li>
-                  <li>Boss final:
-                    <ul>
-                      <li>Aparece sprite de boss con movimiento vertical automático  y que nos dispara cada cierto tiempo.</li>
-                      <li>Gestión de vida y UI: mostrar barras de vida, reproducir efectos de  victoria.</li>
-                    </ul>
-                  </li>
-                  <li>Colisiones: disparos vs enemigos/boss y nave vs disparos enemigos, gestionando vida.</li>
-                  <li>Al derrotar al boss: mostrar “Jefe derrotado”, reproducir música de victoria y esperar input para volver al primer nivel.</li>
-                </ul>
-              </li>
-              <li><strong>Detección de teclado / gestos adicionales:</strong>
-                <ul>
-                  <li>‘q’ para salir de cualquier modo y salir del juego.</li>
-                  <!-- <li>Gesto especial opcional para pausar/reiniciar.</li> -->
-                </ul>
-              </li>
-              <li><strong>Retroalimentación visual y audio:</strong>
-                <ul>
-                  <!-- <li>Dibujo de texto en pantalla (ej. “Salto”, “Disparo”, “Vida: X”) con <code>cv2.putText</code> o Pygame <code>font.render</code>.</li> -->
-                  <li>Reproducción de sonidos con <code>pygame.mixer</code> (salto, disparo, colisión, música de fondo).</li>
-                  <!-- <li>Opcional síntesis de voz (gTTS) para narrar eventos clave (“Nivel completado”, “Jefe derrotado”).</li> -->
-                </ul>
-              </li>
-              <li><strong>Calibración y optimización:</strong>
-                <ul>
-                  <!-- <li>Ajuste de parámetros de <code>HandDetector</code> (<code>detectionCon</code>, <code>maxHands</code>, tolerancias de <code>fingersUp</code>) para robustez en distintas condiciones de iluminación.</li>
+                        <li><strong>Captura de cámara y detección de gestos:</strong>
+                            <ul>
+                                <li>Se inicializa <code>cv2.VideoCapture(0)</code> para leer frames de la webcam.</li>
+                                <li>Se crea <code>HandDetector(detectionCon=0.8, maxHands=1)</code> de CVZone para
+                                    detectar mano y extraer landmarks de MediaPipe con pocas líneas de código.</li>
+                                <li>En cada frame, <code>hands, frame = detector.findHands(frame)</code> devuelve lista
+                                    de manos detectadas y dibuja recuadros sobre la imagen. Luego
+                                    <code>detect_gesture(hands, detector)</code> evalúa
+                                    <code>detector.fingersUp(hand)</code> y devuelve:
+                                    <ul>
+                                        <li><strong>“piedra”</strong>: en niveles de plataforma se interpreta como
+                                            “avanzar” o “moverse adelante”; en shooter, se interpreta como “subir”.</li>
+                                        <li><strong>“papel”</strong>: en plataformas se mapea a “saltar” (salto normal o
+                                            más alto en nivel 2); en shooter, mapea a “disparar” o activar arma
+                                            principal.</li>
+                                        <li><strong>“tijeras”</strong>: en plataformas se mapea a “retroceder” ; en
+                                            shooter, mapea a “bajar”.</li>
+                                    </ul>
+                                </li>
+                                <li>En pantalla de juego, se muestra un recuadro pequeño con feed de cámara y/o íconos
+                                    de gesto para guiar al usuario y confirmar gesto detectado.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Niveles de Plataformas (Level 1 y Level 2):</strong>
+                            <ul>
+                                <li>Datos de nivel cargados desde <code>levels.py</code>: arrays de bloques, obstáculos
+                                    y enemigos con patrones de movimiento. Level 2 añade complejidad: plataformas
+                                    móviles, enemigos con patrones de movimiento.</li>
+                                <li>Clase <code>Player</code> gestiona posición, velocidad vertical (gravedad),
+                                    colisiones con bloques y enemigos. Según gesto:
+                                    <ul>
+                                        <li>“piedra”: mueve al jugador hacia la derecha.</li>
+                                        <li>“papel”: activa salto.</li>
+                                        <li>“tijeras”: mueve al jugador hacia la izquierda.</li>
+                                    </ul>
+                                </li>
+                                <li>En cada iteración de <code>modePlatform</code>:
+                                    <ul>
+                                        <li>Actualizar posición del jugador y scroll para simular avance.</li>
+                                        <li>Dibujo de fondo parallax, bloques, obstáculos, elementos con funciones de
+                                            <code>pantalla.py</code>.
+                                        </li>
+                                        <li>Detección de colisiones y gestión de vida o punto de control.</li>
+                                        <li>Reproducción de música y efectos con <code>sound.py</code>.</li>
+                                        <li>Al completar el nivel: mostrar “Nivel completado” y esperar entrada para
+                                            avanzar al siguiente nivel.</li>
+                                        <li>Si vida llega a cero: “Game Over” y opción de reiniciar el nivel.</li>
+                                    </ul>
+                                </li>
+                                <li>Configuraciones de dificultad: nivel 2 enemigos, saltos más altos y plataformas
+                                    móviles.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nivel Shooter de Naves (Level 3):</strong>
+                            <ul>
+                                <li>Fondo espacial dibujado con <code>pantalla.draw_parallax_background</code> usando
+                                    imágenes en <code>assets/backgrounds/espacio.jpg</code>.</li>
+                                <li>Clase <code>Spaceship</code>: posición, animaciones, vida y disparos.</li>
+                                <li>Mapeo de gestos:
+                                    <ul>
+                                        <li>“piedra”: mover nave (subir).</li>
+                                        <li>“papel”: disparo principal (crear proyectil con efecto y sonido).</li>
+                                        <li>“tijeras”: mover nave (bajar).</li>
+                                    </ul>
+                                </li>
+                                <li>Generación de enemigos y obstáculos con patrones en JSON o <code>levels.py</code>,
+                                    scroll automático del nivel.</li>
+                                <li>Boss final:
+                                    <ul>
+                                        <li>Aparece sprite de boss con movimiento vertical automático y que nos dispara
+                                            cada cierto tiempo.</li>
+                                        <li>Gestión de vida y UI: mostrar barras de vida, reproducir efectos de
+                                            victoria.</li>
+                                    </ul>
+                                </li>
+                                <li>Colisiones: disparos vs enemigos/boss y nave vs disparos enemigos, gestionando vida.
+                                </li>
+                                <li>Al derrotar al boss: mostrar “Jefe derrotado”, reproducir música de victoria y
+                                    esperar input para volver al primer nivel.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Detección de teclado / gestos adicionales:</strong>
+                            <ul>
+                                <li>‘q’ para salir de cualquier modo y salir del juego.</li>
+                                <!-- <li>Gesto especial opcional para pausar/reiniciar.</li> -->
+                            </ul>
+                        </li>
+                        <li><strong>Retroalimentación visual y audio:</strong>
+                            <ul>
+                                <!-- <li>Dibujo de texto en pantalla (ej. “Salto”, “Disparo”, “Vida: X”) con <code>cv2.putText</code> o Pygame <code>font.render</code>.</li> -->
+                                <li>Reproducción de sonidos con <code>pygame.mixer</code> (salto, disparo, colisión,
+                                    música de fondo).</li>
+                                <!-- <li>Opcional síntesis de voz (gTTS) para narrar eventos clave (“Nivel completado”, “Jefe derrotado”).</li> -->
+                            </ul>
+                        </li>
+                        <li><strong>Calibración y optimización:</strong>
+                            <ul>
+                                <!-- <li>Ajuste de parámetros de <code>HandDetector</code> (<code>detectionCon</code>, <code>maxHands</code>, tolerancias de <code>fingersUp</code>) para robustez en distintas condiciones de iluminación.</li>
                   <li>Reducir resolución de captura si FPS baja (p.ej. 640×480 en vez de 1280×720).</li> -->
-                  <li>Cache de assets en <code>pantalla.py</code> para evitar recargas múltiples de imágenes o sonidos.</li>
-                </ul>
-              </li>
-              <li><strong>Recursos y gestión de archivos:</strong>
-                <ul>
-                  <li>Carpeta <code>assets/backgrounds/</code>: fondos de plataformas y espacio.</li>
-                  <li>Carpeta <code>assets/sprites/</code>: imágenes de jugador, enemigos, naves, obstáculos y para feedback visual de gesto.</li>
-                  <!-- <li>Carpeta <code>assets/gestos/</code>: <code>Rock.png</code>, <code>Paper.png</code>, <code>Scissors.png</code> para feedback visual de gesto.</li> -->
-                  <li>Carpeta <code>assets/sounds/</code>: <code>jump.wav</code>, <code>shoot.wav</code>, <code>coision.wav</code> etc.</li>
-                  <li>Archivos de configuración (JSON/CSV) para patrones de enemigos o parámetros de niveles.</li>
-                </ul>
-              </li>
-              <li><strong>Dependencias:</strong>
-                <ul>
-                  <li>Python 3.x</li>
-                  <li>OpenCV (<code>opencv-python</code>) y CVZone (<code>cvzone</code>, <code>mediapipe</code>) para detección de gestos.</li>
-                  <li>Pygame para renderizado 2D, gestión de sonido y detección de teclado.</li>
-                  <li>Tkinter (opcional) para menú inicial, o todo en Pygame.</li>
-                  <!-- <li>gTTS o librería de audio para síntesis de voz (opcional).</li> -->
-                  <!-- <li>Pillow (<code>PIL</code>) para manipular sprites o fondos si es necesario.</li> -->
-                  <li>Otras librerías: <code>numpy</code>, <code>random</code>, <code>time</code>, <code>json</code>.</li>
-                </ul>
-              </li>
-              <!-- <li><strong>Pruebas y grabación de demo:</strong>
+                                <li>Cache de assets en <code>pantalla.py</code> para evitar recargas múltiples de
+                                    imágenes o sonidos.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Recursos y gestión de archivos:</strong>
+                            <ul>
+                                <li>Carpeta <code>assets/backgrounds/</code>: fondos de plataformas y espacio.</li>
+                                <li>Carpeta <code>assets/sprites/</code>: imágenes de jugador, enemigos, naves,
+                                    obstáculos y para feedback visual de gesto.</li>
+                                <!-- <li>Carpeta <code>assets/gestos/</code>: <code>Rock.png</code>, <code>Paper.png</code>, <code>Scissors.png</code> para feedback visual de gesto.</li> -->
+                                <li>Carpeta <code>assets/sounds/</code>: <code>jump.wav</code>, <code>shoot.wav</code>,
+                                    <code>coision.wav</code> etc.
+                                </li>
+                                <li>Archivos de configuración (JSON/CSV) para patrones de enemigos o parámetros de
+                                    niveles.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dependencias:</strong>
+                            <ul>
+                                <li>Python 3.x</li>
+                                <li>OpenCV (<code>opencv-python</code>) y CVZone (<code>cvzone</code>,
+                                    <code>mediapipe</code>) para detección de gestos.
+                                </li>
+                                <li>Pygame para renderizado 2D, gestión de sonido y detección de teclado.</li>
+                                <li>Tkinter (opcional) para menú inicial, o todo en Pygame.</li>
+                                <!-- <li>gTTS o librería de audio para síntesis de voz (opcional).</li> -->
+                                <!-- <li>Pillow (<code>PIL</code>) para manipular sprites o fondos si es necesario.</li> -->
+                                <li>Otras librerías: <code>numpy</code>, <code>random</code>, <code>time</code>,
+                                    <code>json</code>.
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- <li><strong>Pruebas y grabación de demo:</strong>
                 <ul>
                   <li>Ejecutar localmente en distintas condiciones de iluminación y ángulos de cámara.</li>
                   <li>Grabar con OBS Studio o Game Bar: mostrar menú inicial, Nivel 1, Nivel 2, Nivel 3 con boss final, evidenciando gestos RPS controlando acciones.</li>
@@ -775,73 +924,100 @@
                   <li>Opcionalmente editar vídeo (cortar inicio/fin, añadir texto) antes de subir a YouTube.</li>
                 </ul>
               </li> -->
-            </ul>
-            <p>
-              <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
-              <!-- <a href="https://github.com/gameandnight/juego-plataformas-naves-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
-              <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
-              <!-- <a href="https://tu-demo-juego-gestos.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
-              <!-- Enlace a vídeo de demostración en YouTube mostrando los tres niveles y boss final controlados con gestos -->
-              <a href="https://youtu.be/6NqIDnq6rIg" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
-            </p>
-            <!-- Opcional embed de vídeo:
+                    </ul>
+                    <p>
+                        <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
+                        <!-- <a href="https://github.com/gameandnight/juego-plataformas-naves-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+                        <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
+                        <!-- <a href="https://tu-demo-juego-gestos.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+                        <!-- Enlace a vídeo de demostración en YouTube mostrando los tres niveles y boss final controlados con gestos -->
+                        <a href="https://youtu.be/6NqIDnq6rIg" class="btn btn-info btn-sm" target="_blank"
+                            rel="noopener">Ver Vídeo</a>
+                    </p>
+                    <!-- Opcional embed de vídeo:
             <div class="mt-3">
               <div class="ratio ratio-16x9">
                 <iframe src="https://www.youtube.com/embed/ID_VIDEO_JUEGO_PLATAFORMAS" title="Demo Juego Plataformas y Naves con gestos" allowfullscreen></iframe>
               </div>
             </div>
             -->
-          </div>
+                </div>
+            </div>
+
+            <!-- Proyecto: Dashboard Domótico de Plantas (Demo Simulada) -->
+            <div class="row mb-4 align-items-start">
+                <!-- Columna de imagen: se centra verticalmente -->
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <!-- Imagen principal del dashboard -->
+                    <img src="/assets/images/Captura2.PNG" alt="Dashboard Domótico de Plantas"
+                        class="img-fluid rounded project-img">
+                    <!-- Captura adicional: gráfico de temperatura y humedad -->
+                    <!-- <img src="/assets/images/Captura2_graph.png" alt="Gráfica de Sensores"
+                        class="img-fluid rounded project-img mt-2"> -->
+                </div>
+
+                <div class="col-md-8">
+                    <h3>Dashboard Domótico de Plantas (Demo Simulada)</h3>
+                    <!-- Descripción general ampliada -->
+                    <p>
+                        Aplicación web desarrollada en Streamlit que emula en tiempo real un sistema domótico para el
+                        control de plantas.
+                        Simula lecturas de temperatura (15–30 °C), humedad (10–90 %) y color de hojas, además de
+                        gestionar un motor de riego
+                        y emitir alertas críticas según niveles de humedad.
+                    </p>
+
+                    <!-- Pipeline detallado -->
+                    <p><strong>Funcionamiento interno:</strong></p>
+                    <ul>
+                        <li>
+                            <strong>Generación de datos:</strong>
+                            Cada 2 segundos la app genera valores aleatorios para temperatura, humedad y color de hojas
+                            (<code>Verde</code>, <code>Amarillo</code>, <code>Seco</code>), almacenándolos en el estado
+                            de Streamlit.
+                        </li>
+                        <li>
+                            <strong>Lógica de riego automática:</strong>
+                            Se activa el motor de agua (<code>ENCENDER</code>) si la humedad cae por debajo de 40 %,
+                            y se apaga (<code>APAGAR</code>) a partir de ese umbral.
+                        </li>
+                        <li>
+                            <strong>Alertas críticas:</strong>
+                            Si la humedad &lt; 30 %, muestra un mensaje de alerta <em>⚠️ Humedad críticamente baja</em>;
+                            en caso contrario, <em>✅ Sistema OK</em>.
+                        </li>
+                        <li>
+                            <strong>Visualización en tiempo real:</strong>
+                            - Métricas de último valor y promedios calculados al vuelo.<br>
+                            - Gráficas de evolución histórica para temperatura y humedad.<br>
+                            - Gráfico de evolución de color de hojas, mapeado a índices (0=Verde,1=Amarillo,2=Seco).
+                        </li>
+                    </ul>
+
+                    <!-- Dependencias usadas -->
+                    <p><strong>Dependencias:</strong></p>
+                    <ul>
+                        <li><code>streamlit</code> para la interfaz y gestión del estado.</li>
+                        <li><code>matplotlib</code> para la generación de gráficos.</li>
+                        <li><code>streamlit-autorefresh</code> para recargar la página automáticamente.</li>
+                    </ul>
+
+                    <!-- Enlace a la demo online -->
+                    <p>
+                        <a href="https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/"
+                            class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a>
+                    </p>
+                </div>
+            </div>
+
+
         </div>
-
-        <!-- Proyecto: Plant Domotics Dashboard (Demo Simulada) -->
-        <div class="row mb-4 align-items-start">
-          <div class="col-md-4 d-flex flex-column align-items-center">
-            <!-- Múltiples imágenes apiladas verticalmente -->
-            <img src="/assets/images/Captura2.PNG" alt="Plant Domotics" class="img-fluid rounded project-img">
-          </div>
-          <div class="col-md-8">
-            <h3>Dashboard Domótico de Plantas (Demo Simulada)</h3>
-            <p>Aplicación web en Streamlit que simula en tiempo real datos de temperatura, humedad, color de hojas,
-              controla un motor de riego y lanza alertas según la humedad.</p>
-
-            <ul>
-              <li><strong>Dependencias:</strong>
-                <ul>
-                  <li><code>streamlit</code> para la interfaz web y recarga automática.</li>
-                  <li><code>matplotlib</code> para generar las gráficas.</li>
-                  <li><code>streamlit-autorefresh</code> para refrescar la página cada 2 s.</li>
-                </ul>
-              </li>
-              <li><strong>Descripción técnica:</strong>
-                <ul>
-                  <li>Generación de datos aleatorios (temperatura 15–30 °C, humedad 10–90 %, color de hojas).</li>
-                  <li>Lógica de riego: motor “ENCENDER” si humedad &lt; 40 %, “APAGAR” en caso contrario.</li>
-                  <li>Alertas críticas si humedad &lt; 30 %.</li>
-                  <li>Visualización en tiempo real con métricas, promedios y gráficas.</li>
-                </ul>
-              </li>
-              <li><strong>Activo 24/7:</strong>
-                <ul>
-                  <li>Desplegado en Streamlit Community Cloud.</li>
-                </ul>
-              </li>
-            </ul>
-
-            <p>
-              <a href="https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/"
-                class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a>
-            </p>
-          </div>
-        </div>
-
-       
-      </div>
     </section>
 
     <footer class="bg-dark text-white text-center py-3">
-      <div class="container"><small>&copy; 2025 Iker Redondo Serra</small></div>
+        <div class="container"><small>&copy; 2025 Iker Redondo Serra</small></div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+</body>
+
 </html>
