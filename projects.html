@@ -793,6 +793,49 @@
             -->
           </div>
         </div>
+
+        <!-- Proyecto: Plant Domotics Dashboard (Demo Simulada) -->
+        <div class="row mb-4 align-items-start">
+          <div class="col-md-4 d-flex flex-column align-items-center">
+            <!-- Múltiples imágenes apiladas verticalmente -->
+            <img src="/assets/images/Captura2.PNG" alt="Plant Domotics" class="img-fluid rounded project-img">
+          </div>
+          <div class="col-md-8">
+            <h3>Dashboard Domótico de Plantas (Demo Simulada)</h3>
+            <p>Aplicación web en Streamlit que simula en tiempo real datos de temperatura, humedad, color de hojas,
+              controla un motor de riego y lanza alertas según la humedad.</p>
+
+            <ul>
+              <li><strong>Dependencias:</strong>
+                <ul>
+                  <li><code>streamlit</code> para la interfaz web y recarga automática.</li>
+                  <li><code>matplotlib</code> para generar las gráficas.</li>
+                  <li><code>streamlit-autorefresh</code> para refrescar la página cada 2 s.</li>
+                </ul>
+              </li>
+              <li><strong>Descripción técnica:</strong>
+                <ul>
+                  <li>Generación de datos aleatorios (temperatura 15–30 °C, humedad 10–90 %, color de hojas).</li>
+                  <li>Lógica de riego: motor “ENCENDER” si humedad &lt; 40 %, “APAGAR” en caso contrario.</li>
+                  <li>Alertas críticas si humedad &lt; 30 %.</li>
+                  <li>Visualización en tiempo real con métricas, promedios y gráficas.</li>
+                </ul>
+              </li>
+              <li><strong>Activo 24/7:</strong>
+                <ul>
+                  <li>Desplegado en Streamlit Community Cloud.</li>
+                </ul>
+              </li>
+            </ul>
+
+            <p>
+              <a href="https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/"
+                class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a>
+            </p>
+          </div>
+        </div>
+
+       
       </div>
     </section>
 
