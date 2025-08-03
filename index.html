@@ -308,14 +308,41 @@
           <!-- Puedes añadir más imágenes si deseas, con la misma clase .project-img -->
         </div>
         <div class="col-md-8">
-          <h3>Plant Domotics Dashboard (Demo Simulada)</h3>
-          <p>Dashboard en tiempo real de sensores de planta, con datos simulados directamente en Streamlit.</p>
+          <!-- <h3>Plant Domotics Dashboard (Demo Simulada)</h3> -->
+          <!-- <p>Dashboard en tiempo real de sensores de planta, con datos simulados directamente en Streamlit.</p> -->
+          <h3>Dashboard Domótico de Plantas (Demo Simulada)</h3>
+          <p>Aplicación web en Streamlit que simula en tiempo real datos de temperatura, humedad, color de hojas, controla un motor de riego y lanza alertas según la humedad.</p>
           
+          <ul>
+            <!-- <li><strong>Enlace:</strong> <a href="https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/" target="_blank">https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/</a></li> -->
+            <li><strong>Dependencias:</strong>
+              <ul>
+                <li><code>streamlit</code> para la interfaz web y recarga automática.</li>
+                <li><code>matplotlib</code> para generar las gráficas.</li>
+                <li><code>streamlit-autorefresh</code> para refrescar la página cada 2 s.</li>
+              </ul>
+            </li>
+            <li><strong>Descripción técnica:</strong>
+              <ul>
+                <li>Generación de datos aleatorios (temperatura 15–30 °C, humedad 10–90 %, color de hojas).</li>
+                <li>Lógica de riego: motor “ENCENDER” si humedad < 40 %, “APAGAR” en caso contrario.</li>
+                <li>Alertas críticas si humedad < 30 %.</li>
+                <li>Visualización en tiempo real con métricas, promedios y gráficas.</li>
+              </ul>
+            </li>
+            <li><strong>Activo 24/7:</strong>
+              <ul>
+                <li>Desplegado en Streamlit Community Cloud.</li>
+                <li>Mantenido despierto mediante monitorización HTTP cada 5 min con UptimeRobot.</li>
+              </ul>
+            </li>
+          </ul>
           <p>
             <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
             <!-- <a href="https://github.com/gameandnight/trivia-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
             <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
-            <a href="https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> 
+            <a href="https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a>
+            
             <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo del trivial controlado con gestos -->
             <!-- <a href="https://youtu.be/atP5L56vz-Y" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a> -->
           </p>
