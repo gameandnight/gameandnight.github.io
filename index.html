@@ -1,270 +1,291 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio de Iker Redondo Serra</title>
-  <!-- Meta description para SEO -->
-  <meta name="description" content="Portfolio de Iker Redondo Serra: desarrollador web y entusiasta de IA generativa. Proyectos ML/IA, demos interactivas y más.">
-  <!-- Canonical -->
-  <link rel="canonical" href="https://gameandnight.github.io/">
-  <!-- Open Graph -->
-  <meta property="og:title" content="Portfolio de Iker Redondo Serra">
-  <meta property="og:description" content="Desarrollador web y entusiasta de IA generativa. Visita mis proyectos y demos interactivas.">
-  <meta property="og:url" content="https://gameandnight.github.io/">
-  <meta property="og:image" content="https://gameandnight.github.io/assets/images/avatar.jpg">
-  <meta property="og:type" content="website">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Portfolio de Iker Redondo Serra">
-  <meta name="twitter:description" content="Desarrollador web y entusiasta de IA generativa. Visita mis proyectos y demos interactivas.">
-  <meta name="twitter:image" content="https://gameandnight.github.io/assets/images/avatar.jpg">
-  <!-- Bootstrap 5 CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Favicon (opcional) -->
-  <!-- <link rel="icon" href="/assets/images/favicon.ico"> -->
-  <style>
-    /* Destacar enlace activo */
-    .nav-link[aria-current="page"] {
-      font-weight: bold;
-      color: #0d6efd; /* color primario Bootstrap */
-    }
-    /* Asegura que todas las imágenes de proyectos tengan la misma altura y cobertura */
-    .project-img {
-      width: 100%;
-      height: 400px; /* Ajusta la altura según convenga; se usa el mismo valor que la primera imagen */
-      object-fit: cover;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio de Iker Redondo Serra</title>
+    <!-- Meta description para SEO -->
+    <meta name="description"
+        content="Portfolio de Iker Redondo Serra: desarrollador web y entusiasta de IA generativa. Proyectos ML/IA, demos interactivas y más.">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://gameandnight.github.io/">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portfolio de Iker Redondo Serra">
+    <meta property="og:description"
+        content="Desarrollador web y entusiasta de IA generativa. Visita mis proyectos y demos interactivas.">
+    <meta property="og:url" content="https://gameandnight.github.io/">
+    <meta property="og:image" content="https://gameandnight.github.io/assets/images/avatar.jpg">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio de Iker Redondo Serra">
+    <meta name="twitter:description"
+        content="Desarrollador web y entusiasta de IA generativa. Visita mis proyectos y demos interactivas.">
+    <meta name="twitter:image" content="https://gameandnight.github.io/assets/images/avatar.jpg">
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicon (opcional) -->
+    <!-- <link rel="icon" href="/assets/images/favicon.ico"> -->
+    <style>
+        /* Destacar enlace activo */
+        .nav-link[aria-current="page"] {
+            font-weight: bold;
+            color: #0d6efd;
+            /* color primario Bootstrap */
+        }
+
+        /* Asegura que todas las imágenes de proyectos tengan la misma altura y cobertura */
+        .project-img {
+            width: 100%;
+            height: 400px;
+            /* Ajusta la altura según convenga; se usa el mismo valor que la primera imagen */
+            object-fit: cover;
+        }
+    </style>
 </head>
+
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">Iker Redondo Serra</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/" aria-current="page">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about.html">Sobre mí</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/projects.html">Proyectos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact.html">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/assets/cv/CV.pdf" target="_blank" rel="noopener">Descargar CV</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="bg-primary text-white text-center py-5">
-    <div class="container">
-      <img src="/assets/images/avatar.jpg" alt="Avatar Iker" class="rounded-circle mb-3" style="width:150px; height:150px; object-fit:cover;">
-      <h1 class="display-5">Iker Redondo Serra</h1>
-      <p class="lead">Desarrollador Web y entusiasta de IA Generativa</p>
-      <a href="#projects" class="btn btn-light btn-lg">Ver Proyectos</a>
-    </div>
-  </header>
-
-  <!-- About Section -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <h2>Sobre mí</h2>
-      <p>Soy desarrollador web con formación en Big Data e Inteligencia Artificial. Tengo experiencia en Python, ML/IA generativa, frameworks web y despliegue de demos interactivas. Me apasiona crear proyectos que demuestren mis habilidades y aprender continuamente.</p>
-      <ul>
-        <li><strong>Lenguajes:</strong> Python, Java, JavaScript, SQL, PHP, HTML, CSS.</li>
-        <li><strong>Machine Learning / IA:</strong> NumPy, pandas, scikit-learn; TensorFlow, PyTorch; Hugging Face Transformers; fine-tuning y prompting.</li>
-        <li><strong>Despliegue:</strong> Streamlit, Flask, Git;</li>
-        <li><strong>Visualización:</strong> Matplotlib, Power BI.</li>
-        <li><strong>Soft Skills:</strong> comunicación, trabajo en equipo, aprendizaje continuo.</li>
-      </ul>
-      <p>
-        <!-- <a href="https://github.com/gameandnight" target="_blank" rel="noopener">GitHub</a> -->|
-        <a href="https://www.linkedin.com/in/iker-redondo-serra-550b2015b" target="_blank" rel="noopener">LinkedIn</a> |
-        <a href="https://www.youtube.com/channel/UCbLvMQA_4PHbDs1lXV3jx_A" target="_blank" rel="noopener">YouTube</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="bg-light py-5">
-    <div class="container">
-      <h2>Proyectos Destacados</h2>
-
-      <!-- Proyecto: Detección de señales de tráfico con YOLO11x -->
-      <div class="row mb-4 align-items-start">
-        <div class="col-md-4 d-flex flex-column align-items-center">
-          <img
-            src="/assets/images/deteccion-senales.jpg"
-            alt="Detección de señales de tráfico con YOLO11x"
-            class="img-fluid rounded project-img"
-          >
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Iker Redondo Serra</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/" aria-current="page">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects.html">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/assets/cv/CV.pdf" target="_blank" rel="noopener">Descargar CV</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="col-md-8">
-          <h3>Detección de señales de tráfico con YOLO11x</h3>
-          <p>Fine-tuning de YOLO11x para detección de señales de tráfico en tiempo real usando la webcam.</p>
-          <p><strong>Pipeline:</strong></p>
-          <ul>
-            <li>Etiquetado con CVAT y exportación al formato YOLO.</li>
-            <li>Entrenamiento en GPU: variantes YOLO11n → YOLO11x, ajuste de hiperparámetros.</li>
-            <li>Pruebas en tiempo real: webcam, detección y síntesis de voz de la señal detectada.</li>
-            <li>Optimización de clases y balanceo para reducir falsos positivos.</li>
-          </ul>
-          <p>
-            <!-- <a href="https://github.com/gameandnight/deteccion-senales" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
-            <!-- <a href="https://tu-demo.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
-            <a href="https://youtu.be/JsIJ2fRwF0g" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
-          </p>
-          <!-- Opcional embed:
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-primary text-white text-center py-5">
+        <div class="container">
+            <img src="/assets/images/avatar.jpg" alt="Avatar Iker" class="rounded-circle mb-3"
+                style="width:150px; height:150px; object-fit:cover;">
+            <h1 class="display-5">Iker Redondo Serra</h1>
+            <p class="lead">Desarrollador Web y entusiasta de IA Generativa</p>
+            <a href="#projects" class="btn btn-light btn-lg">Ver Proyectos</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2>Sobre mí</h2>
+            <p>Soy desarrollador web con formación en Big Data e Inteligencia Artificial. Tengo experiencia en Python,
+                ML/IA generativa, frameworks web y despliegue de demos interactivas. Me apasiona crear proyectos que
+                demuestren mis habilidades y aprender continuamente.</p>
+            <ul>
+                <li><strong>Lenguajes:</strong> Python, Java, JavaScript, SQL, PHP, HTML, CSS.</li>
+                <li><strong>Machine Learning / IA:</strong> NumPy, pandas, scikit-learn; TensorFlow, PyTorch; Hugging
+                    Face Transformers; fine-tuning y prompting.</li>
+                <li><strong>Despliegue:</strong> Streamlit, Flask, Git;</li>
+                <li><strong>Visualización:</strong> Matplotlib, Power BI.</li>
+                <li><strong>Soft Skills:</strong> comunicación, trabajo en equipo, aprendizaje continuo.</li>
+            </ul>
+            <p>
+                <!-- <a href="https://github.com/gameandnight" target="_blank" rel="noopener">GitHub</a> -->|
+                <a href="https://www.linkedin.com/in/iker-redondo-serra-550b2015b" target="_blank"
+                    rel="noopener">LinkedIn</a> |
+                <a href="https://www.youtube.com/channel/UCbLvMQA_4PHbDs1lXV3jx_A" target="_blank"
+                    rel="noopener">YouTube</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-light py-5">
+        <div class="container">
+            <h2>Proyectos Destacados</h2>
+
+            <!-- Proyecto: Detección de señales de tráfico con YOLO11x -->
+            <div class="row mb-4 align-items-start">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <img src="/assets/images/deteccion-senales.jpg" alt="Detección de señales de tráfico con YOLO11x"
+                        class="img-fluid rounded project-img">
+                </div>
+                <div class="col-md-8">
+                    <h3>Detección de señales de tráfico con YOLO11x</h3>
+                    <p>Fine-tuning de YOLO11x para detección de señales de tráfico en tiempo real usando la webcam.</p>
+                    <p><strong>Pipeline:</strong></p>
+                    <ul>
+                        <li>Etiquetado con CVAT y exportación al formato YOLO.</li>
+                        <li>Entrenamiento en GPU: variantes YOLO11n → YOLO11x, ajuste de hiperparámetros.</li>
+                        <li>Pruebas en tiempo real: webcam, detección y síntesis de voz de la señal detectada.</li>
+                        <li>Optimización de clases y balanceo para reducir falsos positivos.</li>
+                    </ul>
+                    <p>
+                        <!-- <a href="https://github.com/gameandnight/deteccion-senales" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+                        <!-- <a href="https://tu-demo.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+                        <a href="https://youtu.be/JsIJ2fRwF0g" class="btn btn-info btn-sm" target="_blank"
+                            rel="noopener">Ver Vídeo</a>
+                    </p>
+                    <!-- Opcional embed:
           <div class="mt-3">
             <div class="ratio ratio-16x9">
               <iframe src="https://www.youtube.com/embed/ID_VIDEO_DETECCION" title="Demo detección señales" allowfullscreen></iframe>
             </div>
           </div>
           -->
-        </div>
-      </div>
+                </div>
+            </div>
 
-      <!-- Proyecto: Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter) -->
-      <div class="row mb-4 align-items-start">
-        <div class="col-md-4 d-flex flex-column align-items-center">
-          <img
-            src="/assets/images/mini-juegos-gestos.jpg"
-            alt="Suite de Mini Juegos controlados con gestos"
-            class="img-fluid rounded project-img"
-          >
-        </div>
-        <div class="col-md-8">
-          <h3>Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter)</h3>
-          <p>Aplicación en Python que ofrece varios mini juegos interactivos controlados mediante gestos o pose corporal, usando OpenCV y una interfaz Tkinter.</p>
-          <p><strong>Descripción general / Pipeline:</strong></p>
-          <ul>
-            <li>Launcher en Tkinter con botones para cada mini juego: "Manos", “Cuerpo”, “Dibujar”, “Atrapa la pelota”, “Piedra, Papel o Tijera” y “Snake”.</li>
-            <li>Para detección de landmarks de mano y pose se emplea CVZone PoseModule/HandTracking, facilitando el uso de MediaPipe para extraer coordenadas clave.</li>
-            <li>Lógica de cada mini juego: captura de cámara con <code>cv2.VideoCapture</code>, procesamiento de frames, interpretación de gestos para mover sprites, dibujar o decidir jugadas.</li>
-            <li>Manejo de eventos de teclado (‘q’ para salir) y retorno al menú sin cerrar la app por completo.</li>
-            <!-- <li>Pruebas y calibraciones para asegurar suficiente FPS y detección estable en distintas condiciones de iluminación.</li> -->
-          </ul>
-          <p>
-            <!-- <a href="https://github.com/gameandnight/mini-juegos-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
-            <!-- <a href="https://tu-demo-mini-juegos.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
-            <a href="https://youtu.be/Ss-ev0tnhW4" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
-          </p>
-          <!-- Opcional embed:
+            <!-- Proyecto: Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter) -->
+            <div class="row mb-4 align-items-start">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <img src="/assets/images/mini-juegos-gestos.jpg" alt="Suite de Mini Juegos controlados con gestos"
+                        class="img-fluid rounded project-img">
+                </div>
+                <div class="col-md-8">
+                    <h3>Suite de Mini Juegos controlados con gestos (OpenCV + Tkinter)</h3>
+                    <p>Aplicación en Python que ofrece varios mini juegos interactivos controlados mediante gestos o
+                        pose corporal, usando OpenCV y una interfaz Tkinter.</p>
+                    <p><strong>Descripción general / Pipeline:</strong></p>
+                    <ul>
+                        <li>Launcher en Tkinter con botones para cada mini juego: "Manos", “Cuerpo”, “Dibujar”, “Atrapa
+                            la pelota”, “Piedra, Papel o Tijera” y “Snake”.</li>
+                        <li>Para detección de landmarks de mano y pose se emplea CVZone PoseModule/HandTracking,
+                            facilitando el uso de MediaPipe para extraer coordenadas clave.</li>
+                        <li>Lógica de cada mini juego: captura de cámara con <code>cv2.VideoCapture</code>,
+                            procesamiento de frames, interpretación de gestos para mover sprites, dibujar o decidir
+                            jugadas.</li>
+                        <li>Manejo de eventos de teclado (‘q’ para salir) y retorno al menú sin cerrar la app por
+                            completo.</li>
+                        <!-- <li>Pruebas y calibraciones para asegurar suficiente FPS y detección estable en distintas condiciones de iluminación.</li> -->
+                    </ul>
+                    <p>
+                        <!-- <a href="https://github.com/gameandnight/mini-juegos-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+                        <!-- <a href="https://tu-demo-mini-juegos.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+                        <a href="https://youtu.be/Ss-ev0tnhW4" class="btn btn-info btn-sm" target="_blank"
+                            rel="noopener">Ver Vídeo</a>
+                    </p>
+                    <!-- Opcional embed:
           <div class="mt-3">
             <div class="ratio ratio-16x9">
               <iframe src="https://www.youtube.com/embed/ID_VIDEO_MINIJUEGOS" title="Demo Mini Juegos controlados con gestos" allowfullscreen></iframe>
             </div>
           </div>
           -->
-        </div>
-      </div>
+                </div>
+            </div>
 
-      <!-- Proyecto: Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter) -->
-      <div class="row mb-4 align-items-start">
-        <div class="col-md-4 d-flex flex-column align-items-center">
-          <!-- Múltiples imágenes apiladas verticalmente -->
-          <img
-            src="/assets/images/trivial-gestos.jpg"
-            alt="Juego de Trivial - captura 1"
-            class="img-fluid rounded project-img"
-          >
-          <!-- <img
+            <!-- Proyecto: Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter) -->
+            <div class="row mb-4 align-items-start">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <!-- Múltiples imágenes apiladas verticalmente -->
+                    <img src="/assets/images/trivial-gestos.jpg" alt="Juego de Trivial - captura 1"
+                        class="img-fluid rounded project-img">
+                    <!-- <img
             src="/assets/images/trivial-gestos-2.jpg"
             alt="Juego de Trivial - captura 2"
             class="img-fluid rounded project-img"
           > -->
-          <!-- Puedes añadir más imágenes si deseas, con la misma clase .project-img -->
-        </div>
-        <div class="col-md-8">
-          <h3>Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter)</h3>
-          <p>Aplicación en Python que presenta preguntas de trivia en diferentes categorías, permitiendo seleccionar la respuesta mediante gestos de mano (rock/paper/scissors) capturados por la webcam.</p>
-          <ul>              
-            <li><strong>Dependencias:</strong>
-              <ul>
-                <li>Python 3.x</li>
-                <li>OpenCV (<code>opencv-python</code>)</li>
-                <li>CVZone (<code>cvzone</code>, requiere <code>mediapipe</code>)</li>
-                <li>gTTS (<code>gtts</code>), pygame (para reproducir audio) o librería similar</li>
-                <li>Pillow (<code>PIL</code>) para dibujar texto sobre la imagen con fuentes personalizadas</li>
-                <li>Tkinter (incluido en la mayoría de distribuciones Python) para la GUI del menú</li>
-                <li>Otros: <code>numpy</code>, <code>random</code>, <code>time</code>, <code>json</code> etc.</li>
-              </ul>
-            </li>
-            <!-- <li><strong>Pruebas y grabación de demo:</strong>
+                    <!-- Puedes añadir más imágenes si deseas, con la misma clase .project-img -->
+                </div>
+                <div class="col-md-8">
+                    <h3>Juego de Trivial controlado con gestos (OpenCV + CVZone + Tkinter)</h3>
+                    <p>Aplicación en Python que presenta preguntas de trivia en diferentes categorías, permitiendo
+                        seleccionar la respuesta mediante gestos de mano (rock/paper/scissors) capturados por la webcam.
+                    </p>
+                    <ul>
+                        <li><strong>Dependencias:</strong>
+                            <ul>
+                                <li>Python 3.x</li>
+                                <li>OpenCV (<code>opencv-python</code>)</li>
+                                <li>CVZone (<code>cvzone</code>, requiere <code>mediapipe</code>)</li>
+                                <li>gTTS (<code>gtts</code>), pygame (para reproducir audio) o librería similar</li>
+                                <li>Pillow (<code>PIL</code>) para dibujar texto sobre la imagen con fuentes
+                                    personalizadas</li>
+                                <li>Tkinter (incluido en la mayoría de distribuciones Python) para la GUI del menú</li>
+                                <li>Otros: <code>numpy</code>, <code>random</code>, <code>time</code>, <code>json</code>
+                                    etc.</li>
+                            </ul>
+                        </li>
+                        <!-- <li><strong>Pruebas y grabación de demo:</strong>
               <ul>
                 <li>Grabar con OBS o Game Bar mostrando la ventana Tkinter de selección y luego la sesión de trivial: pregunta en pantalla, usuario realiza gesto, detección y feedback de voz.</li>
                 <li>Tomar capturas de pantalla para la imagen representativa del proyecto en tu portfolio.</li>
               </ul>
             </li> -->
-          </ul>
-          <p>
-            <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
-            <!-- <a href="https://github.com/gameandnight/trivia-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
-            <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
-            <!-- <a href="https://tu-demo-trivia.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
-            <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo del trivial controlado con gestos -->
-            <a href="https://youtu.be/atP5L56vz-Y" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
-          </p>
-          <!-- Opcional embed de vídeo:
+                    </ul>
+                    <p>
+                        <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
+                        <!-- <a href="https://github.com/gameandnight/trivia-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+                        <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
+                        <!-- <a href="https://tu-demo-trivia.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+                        <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo del trivial controlado con gestos -->
+                        <a href="https://youtu.be/atP5L56vz-Y" class="btn btn-info btn-sm" target="_blank"
+                            rel="noopener">Ver Vídeo</a>
+                    </p>
+                    <!-- Opcional embed de vídeo:
           <div class="mt-3">
             <div class="ratio ratio-16x9">
               <iframe src="https://www.youtube.com/embed/ID_VIDEO_TRIVIAL" title="Demo Juego de Trivial con gestos" allowfullscreen></iframe>
             </div>
           </div>
           -->
-        </div>
-      </div>
+                </div>
+            </div>
 
-      <!-- Proyecto: Juego de Plataformas y Shooter de Naves controlado con gestos RPS -->
-      <div class="row mb-4 align-items-start">
-        <div class="col-md-4 d-flex flex-column align-items-center">
-          <!-- Múltiples imágenes apiladas verticalmente -->
-          <img
-            src="/assets/images/juego-nivel1.jpg"
-            alt="Juego Plataformas - Nivel 1"
-            class="img-fluid rounded project-img"
-          >
-          <!-- <img
+            <!-- Proyecto: Juego de Plataformas y Shooter de Naves controlado con gestos RPS -->
+            <div class="row mb-4 align-items-start">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <!-- Múltiples imágenes apiladas verticalmente -->
+                    <img src="/assets/images/juego-nivel1.jpg" alt="Juego Plataformas - Nivel 1"
+                        class="img-fluid rounded project-img">
+                    <!-- <img
             src="/assets/images/juego-nivel2.jpg"
             alt="Juego Plataformas - Nivel 2"
             class="img-fluid rounded project-img"
           > -->
-          <!-- <img
+                    <!-- <img
             src="/assets/images/juego-nivel3.jpg"
             alt="Juego Shooter de Naves - Nivel 3"
             class="img-fluid rounded project-img"
           > -->
-          <!-- Si deseas más capturas, añade más <img> con la clase project-img -->
-        </div>
-        <div class="col-md-8">
-          <h3>Juego de Plataformas y Shooter de Naves controlado con gestos RPS</h3>
-          <p>Aplicación en Python que combina dos niveles de plataformas y un tercer nivel de shooter de naves con scroll automático y boss final, controlados mediante gestos de mano (Rock/Paper/Scissors) detectados con la webcam.</p>
-          <ul>
-            <li><strong>Dependencias:</strong>
-              <ul>
-                <li>Python 3.x</li>
-                <li>OpenCV (<code>opencv-python</code>) y CVZone (<code>cvzone</code>, <code>mediapipe</code>) para detección de gestos.</li>
-                <li>Pygame para renderizado 2D, gestión de sonido y detección de teclado.</li>
-                <li>Tkinter (opcional) para menú inicial, o todo en Pygame.</li>
-                <!-- <li>gTTS o librería de audio para síntesis de voz (opcional).</li> -->
-                <!-- <li>Pillow (<code>PIL</code>) para manipular sprites o fondos si es necesario.</li> -->
-                <li>Otras librerías: <code>numpy</code>, <code>random</code>, <code>time</code>, <code>json</code>.</li>
-              </ul>
-            </li>
-            <!-- <li><strong>Pruebas y grabación de demo:</strong>
+                    <!-- Si deseas más capturas, añade más <img> con la clase project-img -->
+                </div>
+                <div class="col-md-8">
+                    <h3>Juego de Plataformas y Shooter de Naves controlado con gestos RPS</h3>
+                    <p>Aplicación en Python que combina dos niveles de plataformas y un tercer nivel de shooter de naves
+                        con scroll automático y boss final, controlados mediante gestos de mano (Rock/Paper/Scissors)
+                        detectados con la webcam.</p>
+                    <ul>
+                        <li><strong>Dependencias:</strong>
+                            <ul>
+                                <li>Python 3.x</li>
+                                <li>OpenCV (<code>opencv-python</code>) y CVZone (<code>cvzone</code>,
+                                    <code>mediapipe</code>) para detección de gestos.
+                                </li>
+                                <li>Pygame para renderizado 2D, gestión de sonido y detección de teclado.</li>
+                                <li>Tkinter (opcional) para menú inicial, o todo en Pygame.</li>
+                                <!-- <li>gTTS o librería de audio para síntesis de voz (opcional).</li> -->
+                                <!-- <li>Pillow (<code>PIL</code>) para manipular sprites o fondos si es necesario.</li> -->
+                                <li>Otras librerías: <code>numpy</code>, <code>random</code>, <code>time</code>,
+                                    <code>json</code>.
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- <li><strong>Pruebas y grabación de demo:</strong>
               <ul>
                 <li>Ejecutar localmente en distintas condiciones de iluminación y ángulos de cámara.</li>
                 <li>Grabar con OBS Studio o Game Bar: mostrar menú inicial, Nivel 1, Nivel 2, Nivel 3 con boss final, evidenciando gestos RPS controlando acciones.</li>
@@ -272,115 +293,165 @@
                 <li>Opcionalmente editar vídeo (cortar inicio/fin, añadir texto) antes de subir a YouTube.</li>
               </ul>
             </li> -->
-          </ul>
-          <p>
-            <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
-            <!-- <a href="https://github.com/gameandnight/juego-plataformas-naves-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
-            <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
-            <!-- <a href="https://tu-demo-juego-gestos.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
-            <!-- Enlace a vídeo de demostración en YouTube mostrando los tres niveles y boss final controlados con gestos -->
-            <a href="https://youtu.be/6NqIDnq6rIg" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a>
-          </p>
-          <!-- Opcional embed de vídeo:
+                    </ul>
+                    <p>
+                        <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
+                        <!-- <a href="https://github.com/gameandnight/juego-plataformas-naves-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+                        <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
+                        <!-- <a href="https://tu-demo-juego-gestos.streamlitapp.com" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a> -->
+                        <!-- Enlace a vídeo de demostración en YouTube mostrando los tres niveles y boss final controlados con gestos -->
+                        <a href="https://youtu.be/6NqIDnq6rIg" class="btn btn-info btn-sm" target="_blank"
+                            rel="noopener">Ver Vídeo</a>
+                    </p>
+                    <!-- Opcional embed de vídeo:
           <div class="mt-3">
             <div class="ratio ratio-16x9">
               <iframe src="https://www.youtube.com/embed/ID_VIDEO_JUEGO_PLATAFORMAS" title="Demo Juego Plataformas y Naves con gestos" allowfullscreen></iframe>
             </div>
           </div>
           -->
-        </div>
-      </div>
+                </div>
+            </div>
 
-      <!-- Proyecto: Plant Domotics Dashboard (Demo Simulada) -->
-      <div class="row mb-4 align-items-start">
-        <div class="col-md-4 d-flex flex-column align-items-center">
-          <!-- Múltiples imágenes apiladas verticalmente -->
-          <img
-            src="/assets/images/Captura2.PNG"
-            alt="Plant Domotics"
-            class="img-fluid rounded project-img"
-          >
-          <!-- <img
+            <!-- Proyecto: Plant Domotics Dashboard (Demo Simulada) -->
+            <div class="row mb-4 align-items-start">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <!-- Múltiples imágenes apiladas verticalmente -->
+                    <img src="/assets/images/Captura2.PNG" alt="Plant Domotics" class="img-fluid rounded project-img">
+                    <!-- <img
             src="/assets/images/trivial-gestos-2.jpg"
             alt="Juego de Trivial - captura 2"
             class="img-fluid rounded project-img"
           > -->
-          <!-- Puedes añadir más imágenes si deseas, con la misma clase .project-img -->
-        </div>
-        <div class="col-md-8">
-          <!-- <h3>Plant Domotics Dashboard (Demo Simulada)</h3> -->
-          <!-- <p>Dashboard en tiempo real de sensores de planta, con datos simulados directamente en Streamlit.</p> -->
-          <h3>Dashboard Domótico de Plantas (Demo Simulada)</h3>
-          <p>Aplicación web en Streamlit que simula en tiempo real datos de temperatura, humedad, color de hojas, controla un motor de riego y lanza alertas según la humedad.</p>
-          
-          <ul>
-            <!-- <li><strong>Enlace:</strong> <a href="https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/" target="_blank">https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/</a></li> -->
-            <li><strong>Dependencias:</strong>
-              <ul>
-                <li><code>streamlit</code> para la interfaz web y recarga automática.</li>
-                <li><code>matplotlib</code> para generar las gráficas.</li>
-                <li><code>streamlit-autorefresh</code> para refrescar la página cada 2 s.</li>
-              </ul>
-            </li>
-            <li><strong>Descripción técnica:</strong>
-              <ul>
-                <li>Generación de datos aleatorios (temperatura 15–30 °C, humedad 10–90 %, color de hojas).</li>
-                <li>Lógica de riego: motor “ENCENDER” si humedad < 40 %, “APAGAR” en caso contrario.</li>
-                <li>Alertas críticas si humedad < 30 %.</li>
-                <li>Visualización en tiempo real con métricas, promedios y gráficas.</li>
-              </ul>
-            </li>
-            <li><strong>Activo 24/7:</strong>
-              <ul>
-                <li>Desplegado en Streamlit Community Cloud.</li>
-                <!-- <li>Mantenido despierto mediante monitorización HTTP cada 5 min con UptimeRobot.</li> -->
-              </ul>
-            </li>
-          </ul>
-          <p>
-            <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
-            <!-- <a href="https://github.com/gameandnight/trivia-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
-            <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
-            <a href="https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a>
-            
-            <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo del trivial controlado con gestos -->
-            <!-- <a href="https://youtu.be/atP5L56vz-Y" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a> -->
-          </p>
-          <!-- Opcional embed de vídeo:
+                    <!-- Puedes añadir más imágenes si deseas, con la misma clase .project-img -->
+                </div>
+                <div class="col-md-8">
+                    <!-- <h3>Plant Domotics Dashboard (Demo Simulada)</h3> -->
+                    <!-- <p>Dashboard en tiempo real de sensores de planta, con datos simulados directamente en Streamlit.</p> -->
+                    <h3>Dashboard Domótico de Plantas (Demo Simulada)</h3>
+                    <p>Aplicación web en Streamlit que simula en tiempo real datos de temperatura, humedad, color de
+                        hojas, controla un motor de riego y lanza alertas según la humedad.</p>
+
+                    <ul>
+                        <!-- <li><strong>Enlace:</strong> <a href="https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/" target="_blank">https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/</a></li> -->
+                        <li><strong>Dependencias:</strong>
+                            <ul>
+                                <li><code>streamlit</code> para la interfaz web y recarga automática.</li>
+                                <li><code>matplotlib</code> para generar las gráficas.</li>
+                                <li><code>streamlit-autorefresh</code> para refrescar la página cada 2 s.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Descripción técnica:</strong>
+                            <ul>
+                                <li>Generación de datos aleatorios (temperatura 15–30 °C, humedad 10–90 %, color de
+                                    hojas).</li>
+                                <li>Lógica de riego: motor “ENCENDER” si humedad < 40 %, “APAGAR” en caso
+                                        contrario.</li>
+                                <li>Alertas críticas si humedad < 30 %.</li>
+                                <li>Visualización en tiempo real con métricas, promedios y gráficas.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Activo 24/7:</strong>
+                            <ul>
+                                <li>Desplegado en Streamlit Community Cloud.</li>
+                                <!-- <li>Mantenido despierto mediante monitorización HTTP cada 5 min con UptimeRobot.</li> -->
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>
+                        <!-- Enlace al repositorio de código: reemplaza con tu URL real -->
+                        <!-- <a href="https://github.com/gameandnight/trivia-gestos" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+                        <!-- Si tuvieras demo online, descomenta y ajusta este enlace -->
+                        <a href="https://plant-domotics-dashboard-kr5z8q5dj5rqm296glpj3g.streamlit.app/"
+                            class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Demo</a>
+
+                        <!-- Enlace a vídeo de demostración en YouTube mostrando el flujo completo del trivial controlado con gestos -->
+                        <!-- <a href="https://youtu.be/atP5L56vz-Y" class="btn btn-info btn-sm" target="_blank" rel="noopener">Ver Vídeo</a> -->
+                    </p>
+                    <!-- Opcional embed de vídeo:
           <div class="mt-3">
             <div class="ratio ratio-16x9">
               <iframe src="https://www.youtube.com/embed/ID_VIDEO_TRIVIAL" title="Demo Juego de Trivial con gestos" allowfullscreen></iframe>
             </div>
           </div>
           -->
+                </div>
+            </div>
+
+            <!-- Proyecto: Tienda en Línea Vue (Demo SPA) -->
+            <div class="row mb-4 align-items-start">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <!-- Captura de pantalla de la app Vue -->
+                    <img src="/assets/images/vue.png" alt="Tienda Vue - Vista Productos"
+                        class="img-fluid rounded project-img">
+                    <!-- Si quieres más capturas, duplica este <img> -->
+                </div>
+                <div class="col-md-8">
+                    <h3>Tienda en Línea con Vue 3 + Vite</h3>
+                    <p>SPA de comercio electrónico: navegación entre categorías y productos, vista detalle de artículo,
+                        carrito de compras con cálculo de totales y rutas protegidas por Vue Router.</p>
+                    <ul>
+                        <li><strong>Stack:</strong>
+                            <ul>
+                                <li>Vue 3 + Vite como bundler y dev-server.</li>
+                                <li>Vue Router para rutas `/`, `/articulo/:id`, `/carroCompra`.</li>
+                                <li>Pinia para gestión de estado del carrito.</li>
+                                <li>Axios para peticiones HTTP a API simulada.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Características:</strong>
+                            <ul>
+                                <li>Listado de productos con paginación.</li>
+                                <li>Detalle de artículo dinámico.</li>
+                                <li>Añadir/quitar ítems al carrito con totales en tiempo real.</li>
+                                <li>Rutas “Not Found” y navegación 100% client-side.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>
+                        <!-- Enlace a demo online en GitHub Pages -->
+                        <a href="https://gameandnight.github.io/mi-vue-flask-app/" class="btn btn-primary btn-sm"
+                            target="_blank" rel="noopener">
+                            Demo
+                        </a>
+                        <!-- Enlace al código fuente -->
+                        <!-- <a href="https://github.com/gameandnight/mi-vue-flask-app" class="btn btn-secondary btn-sm"
+                            target="_blank" rel="noopener">
+                            Ver Código
+                        </a> -->
+                    </p>
+                </div>
+            </div>
+
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <h2>Contacto</h2>
-      <p>Escríbeme a <a href="mailto:iker.rs.1991@gmail.com">iker.rs.1991@gmail.com</a></p>
-      
-      <p>También me encuentras en:</p>
-      <ul>
-        <!-- <li><a href="https://github.com/gameandnight" target="_blank" rel="noopener">GitHub</a></li> -->
-        <li><a href="https://www.linkedin.com/in/iker-redondo-serra-550b2015b" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="https://www.youtube.com/channel/UCbLvMQA_4PHbDs1lXV3jx_A" target="_blank" rel="noopener">YouTube</a></li>
-      </ul>
-    </div>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>Escríbeme a <a href="mailto:iker.rs.1991@gmail.com">iker.rs.1991@gmail.com</a></p>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <div class="container">
-      <small>&copy; 2025 Iker Redondo Serra. Portfolio alojado en GitHub Pages.</small>
-    </div>
-  </footer>
+            <p>También me encuentras en:</p>
+            <ul>
+                <!-- <li><a href="https://github.com/gameandnight" target="_blank" rel="noopener">GitHub</a></li> -->
+                <li><a href="https://www.linkedin.com/in/iker-redondo-serra-550b2015b" target="_blank"
+                        rel="noopener">LinkedIn</a></li>
+                <li><a href="https://www.youtube.com/channel/UCbLvMQA_4PHbDs1lXV3jx_A" target="_blank"
+                        rel="noopener">YouTube</a></li>
+            </ul>
+        </div>
+    </section>
 
-  <!-- Bootstrap 5 JS Bundle CDN (incluye Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <small>&copy; 2025 Iker Redondo Serra. Portfolio alojado en GitHub Pages.</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle CDN (incluye Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
