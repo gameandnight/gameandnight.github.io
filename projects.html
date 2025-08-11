@@ -1081,6 +1081,140 @@
                 </div>
             </div>
 
+            <!-- Proyecto: Catálogo de Productos con Recomendaciones IA -->
+            <div class="row mb-4 align-items-start">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <!-- Capturas apiladas (añade más imágenes si quieres) -->
+                    <img src="/assets/images/mi-tienda-online-1.png" alt="Product Catalog - Home"
+                        class="img-fluid rounded project-img">
+                    <!-- <img src="/assets/images/mi-tienda-online-2.png" alt="Product Catalog - List & Filters"
+                        class="img-fluid rounded project-img mt-2">
+                    <img src="/assets/images/mi-tienda-online-3.png"
+                        alt="Product Catalog - Product Detail & Recommendations"
+                        class="img-fluid rounded project-img mt-2"> -->
+                    <!-- Si no tienes todas las capturas, deja sólo la primera y elimina las demás -->
+                </div>
+
+                <div class="col-md-8">
+                    <h3>Catálogo de Productos con Recomendaciones IA</h3>
+
+                    <p>
+                        Single Page Application (SPA) pequeña desarrollada con <strong>React + Vite</strong> que
+                        presenta un catálogo
+                        de productos con búsqueda, filtros por categoría y precio máximo, vista de detalle y un motor de
+                        recomendaciones estilo IA (enfoque <em>content-based</em> rule-based). La app está diseñada para
+                        ser ligera,
+                        fácil de desplegar (GitHub Pages) y demostrable desde el enlace público.
+                    </p>
+
+                    <ul>
+                        <li><strong>Stack & Herramientas:</strong>
+                            <ul>
+                                <li>React 19 (functional components + hooks) y Vite como bundler/dev server.</li>
+                                <li>CSS simple para un diseño limpio y responsive; estructura preparada para añadir
+                                    Tailwind o Bootstrap.</li>
+                                <li>Datos de producto estáticos (JSON embebido en cliente) — no requiere backend.</li>
+                                <li>Despliegue continuo sencillo con <code>gh-pages</code> en GitHub Pages (demo público
+                                    disponible).</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Objetivo técnico:</strong>
+                            <ul>
+                                <li>Demostrar capacidad para construir una experiencia e-commerce básica y añadir una
+                                    característica de IA que mejore la toma de decisiones del usuario.</li>
+                                <li>Implementar un sistema de recomendaciones explicable y reproducible sin dependencia
+                                    de servicios externos.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Características principales:</strong>
+                            <ul>
+                                <li><strong>Búsqueda:</strong> texto libre sobre nombre y descripción del producto.</li>
+                                <li><strong>Filtros:</strong> por categoría y por precio máximo (input numérico).</li>
+                                <li><strong>Reset rápido:</strong> botón "Clear" para volver al estado inicial.</li>
+                                <li><strong>Detalle de producto:</strong> panel con nombre, descripción, precio y
+                                    valoración.</li>
+                                <li><strong>Recomendador IA (rule-based):</strong> al seleccionar un producto, la app
+                                    sugiere hasta 3 ítems relevantes basados en:
+                                    <ul>
+                                        <li>Coincidencia de categoría (prioritaria).</li>
+                                        <li>Rating mínimo (filtrado para mostrar sólo artículos con buena valoración).
+                                        </li>
+                                        <li>Proximidad de precio (opcional — se puede configurar como ±20€ para mayor
+                                            relevancia).</li>
+                                        <li>Ordenación por rating para priorizar calidad en las sugerencias.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Responsive & accesibilidad:</strong> controles con buen contraste y enfoque,
+                                    y layout adaptable a móviles.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Pipeline de desarrollo y deploy:</strong>
+                            <ul>
+                                <li><strong>Local:</strong> <code>npm install</code> y <code>npm run dev</code> para
+                                    desarrollo con recarga rápida.</li>
+                                <li><strong>Build:</strong> <code>npm run build</code> genera la carpeta
+                                    <code>dist/</code>.
+                                </li>
+                                <li><strong>Deploy:</strong> <code>npm run deploy</code> (script con
+                                    <code>gh-pages</code>) publica la carpeta <code>dist/</code> en GitHub Pages.
+                                </li>
+                                <li>Configuración Vite: <code>vite.config.js</code> incluye
+                                    <code>base: '/mi-tienda-online/'</code> para que los assets se resuelvan
+                                    correctamente en GitHub Pages.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- <li><strong>Testing & validación:</strong>
+                            <ul>
+                                <li>Manual: comprobación de búsqueda, combinaciones de filtros, selección de producto y
+                                    validación de recomendaciones.</li>
+                                <li>Comprobación en distintos navegadores y tamaños (desktop / móvil) y limpieza de
+                                    caché tras despliegue para evitar 404 en assets.</li>
+                                <li>Logs mínimos en consola para debug (solo en desarrollo).</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Por qué este enfoque cumple la evaluación:</strong>
+                            <ul>
+                                <li>La práctica solicitaba integrar una característica de IA; el motor de
+                                    recomendaciones rule-based implementa un <em>content-based filtering</em>, enfoque
+                                    clásico de sistemas de recomendación y perfectamente válido para un assessment
+                                    técnico.</li>
+                                <li>Es explicable (fácil de justificar en el README y en el video demo) y reproducible
+                                    sin claves o servicios externos, lo que facilita la evaluación por parte del
+                                    reclutador.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Futuras mejoras (ideas para ampliar):</strong>
+                            <ul>
+                                <li>Transformar recomendaciones en híbridas (content + collaborative) almacenando
+                                    interacciones del usuario en localStorage o en backend.</li>
+                                <li>Usar embeddings (OpenAI / Faiss) para búsqueda semántica y recomendaciones por
+                                    similitud textual.</li>
+                                <li>Agregar autenticación para perfiles y preferencias on-chain (token-gated pricing) o
+                                    almacenamiento en un backend para personalización persistente.</li>
+                            </ul>
+                        </li> -->
+                    </ul>
+
+                    <p>
+                        <!-- Live demo (GitHub Pages) -->
+                        <a href="https://gameandnight.github.io/mi-tienda-online/" class="btn btn-secondary btn-sm"
+                            target="_blank" rel="noopener">Demo</a>
+                        <!-- Código fuente (descomenta y añade URL si quieres mostrar el repo) -->
+                        <!-- <a href="https://github.com/gameandnight/mi-tienda-online" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Código</a> -->
+                        <!-- Vídeo walkthrough opcional: sube a YouTube y añade aquí el enlace -->
+                        <!-- <a href="https://youtu.be/YOUR_VIDEO_ID" class="btn btn-info btn-sm" target="_blank" rel="noopener">Video</a> -->
+                    </p>
+                </div>
+            </div>
+
+
 
         </div>
     </section>
