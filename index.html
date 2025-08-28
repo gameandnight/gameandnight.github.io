@@ -493,6 +493,83 @@
             </div>
 
 
+            <!-- Proyecto: Recomendador Semántico (Catálogo / Búsqueda híbrida) -->
+            <div class="row mb-4 align-items-start">
+                <div class="col-md-4 d-flex flex-column align-items-center">
+                    <!-- Capturas del proyecto (usa 1 o varias). Cambia los nombres de archivo si necesitas -->
+                    <img src="/assets/images/recomendador-1.png" alt="Recomendador Semántico - Home"
+                        class="img-fluid rounded project-img">
+                    <!--  <img src="/assets/images/recomendador-2.png" alt="Recomendador Semántico - Resultados"
+                        class="img-fluid rounded project-img mt-2"> -->
+                    <!-- Si no tienes segunda captura, elimina la segunda <img> -->
+                </div>
+
+                <div class="col-md-8">
+                    <h3>Recomendador Semántico — Catálogo con búsqueda híbrida</h3>
+
+                    <p>
+                        Demo de un motor de búsqueda híbrido para catálogo de productos que combina embeddings (FAISS) y
+                        BM25,
+                        con opción de re-ranking por Cross-Encoder. Backend en <strong>FastAPI</strong> y frontend SPA
+                        en <strong>React + Vite</strong>.
+                    </p>
+
+                    <ul>
+                        <li><strong>Stack:</strong>
+                            <ul>
+                                <li>Python 3.10 — FastAPI</li>
+                                <li>Sentence-Transformers, FAISS (faiss-cpu) — búsqueda semántica por vectores</li>
+                                <li>rank_bm25 — búsqueda textual</li>
+                                <li>React + Vite para UI; despliegue estático / demo</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Características clave:</strong>
+                            <ul>
+                                <li>Búsqueda híbrida — unión de candidatos FAISS + BM25 y mezcla de scores.</li>
+                                <li>Boost por coincidencia textual (Jaccard + stemming) y normalización softmax.</li>
+                                <li>Reranker opcional (cross-encoder) para ajustar el ranking final.</li>
+                                <li>Generación automática de corpus tokenizado si no existe (activa BM25).</li>
+                                <li>Interfaz responsive con controles (α/β, k, re-rank).</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>¿Cómo probarlo?</strong>
+                            <ul>
+                                <li>Clona el repo:
+                                    <code>git clone https://github.com/gameandnight/Recomendador-semantico</code>
+                                </li>
+                                <li>Backend: crea un entorno Python, instala dependencias y arranca con:
+                                    <pre>uvicorn backend.app.main:app --reload --port 8000</pre>
+                                </li>
+                                <li>Frontend: <code>cd frontend && npm install && npm run dev</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p>
+                        <a href="https://github.com/gameandnight/Recomendador-semantico" class="btn btn-primary btn-sm"
+                            target="_blank" rel="noopener">Código (GitHub)</a>
+                        <!-- Si tienes demo pública, descomenta / ajusta la URL: -->
+                        <!-- <a href="https://recomendador-semantico.onrender.com" class="btn btn-secondary btn-sm"
+                            target="_blank" rel="noopener">Demo</a> -->
+                        <!-- Si tienes un vídeo walkthrough, añade un botón similar con el enlace a YouTube -->
+                        <a href="https://youtu.be/TU_VIDEO" class="btn btn-info btn-sm" target="_blank"
+                            rel="noopener">Ver Vídeo</a>
+                    </p>
+
+                    <p class="mt-2">
+                        <small class="text-muted">
+                            Nota: demo con datos de ejemplo. Por razones de memoria y coste, el re-ranker es opcional y
+                            puede desactivarse
+                            (USE_RERANKER=0) para despliegues ligeros.
+                        </small>
+                    </p>
+                </div>
+            </div>
+
+
+
         </div>
     </section>
 
